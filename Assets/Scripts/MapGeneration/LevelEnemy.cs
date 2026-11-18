@@ -1,13 +1,14 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Added automatically to every enemy / boss the room spawner creates (or put it on your prefab yourself).
-/// An enemy counts as defeated when you call <see cref="NotifyDefeated"/> from your health script,
-/// or automatically when the enemy object is destroyed. Reporting twice is safe.
-/// If your enemies are pooled or just disabled on death, call NotifyDefeated() yourself.
-/// </summary>
 public class LevelEnemy : MonoBehaviour
 {
+    /// <summary>Enemies of the current map that are still alive. Used by the enemy compass.</summary>
+    public static readonly List<LevelEnemy> Active = new List<LevelEnemy>();
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void ResetStatics() { Active.Clear(); }
+
     private LevelObjective objective;
     private bool reported;
 
@@ -20,17 +21,20 @@ public class LevelEnemy : MonoBehaviour
         IsBoss = isBoss;
         Generation = levelObjective.Generation;
         reported = false;
+        if (!Active.Contains(this)) Active.Add(this);
     }
 
     public void NotifyDefeated()
     {
         if (reported || objective == null) return;
         reported = true;
+        Active.Remove(this);
         objective.NotifyDefeated(this);
     }
 
     private void OnDestroy()
     {
+        Active.Remove(this);
         NotifyDefeated();
     }
 }

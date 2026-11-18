@@ -49,6 +49,14 @@ public class SpawnSettings
 
     [Tooltip("Extra empty tiles kept between two spawned things, on top of their margins")]
     [Range(0, 10)] public int spacingBetweenSpawns = 1;
+
+    [Header("Crates (throwable objects, spawned in every room before everything else)")]
+    [Tooltip("Crate prefabs. If there are several, one is picked by weight for each crate. Leave empty to disable crates")]
+    public SpawnEntry[] crates;
+    [Tooltip("Min crates per grid cell of the room (a 2x1 room gets double)")]
+    [Min(0)] public int minCratesPerCell = 1;
+    [Tooltip("Max crates per grid cell of the room")]
+    [Min(0)] public int maxCratesPerCell = 3;
 }
 
 /// <summary>
@@ -64,10 +72,13 @@ public static class RoomSpawner
     {
         if (cell == null) return;
 
+        bool wantsCrates = settings != null && settings.enabled &&
+                           settings.maxCratesPerCell > 0 && HasAny(settings.crates);
+
         bool wantsSomething = cell.enemyCount > 0 || cell.eliteCount > 0 || cell.hasBoss ||
                               cell.roomType == MapGenerationBase.RoomTypes.Final ||
                               (cell.roomType == MapGenerationBase.RoomTypes.Item && cell.hasItem);
-        if (!wantsSomething) return;
+        if (!wantsSomething && !wantsCrates) return;
 
         if (settings == null || !settings.enabled)
         {
@@ -82,6 +93,9 @@ public static class RoomSpawner
 
         var map = new SpawnMap(cave, settings, rng);
         LevelObjective objective = MapGenerationBase.instance != null ? MapGenerationBase.instance.Objective : null;
+
+        // Crates first: the rest of the spawns will avoid them
+        if (wantsCrates) SpawnCrates(map, roomInstance, cell, settings, rng);
 
         // Most important things first, so they get the best spots
         if (cell.roomType == MapGenerationBase.RoomTypes.Final)
@@ -119,14 +133,28 @@ public static class RoomSpawner
                   $"boss {cell.hasBoss}, item {cell.hasItem}; free floor tiles: {map.FreeCount}; spawned {map.SpawnedCount} object(s).");
     }
 
+    private static void SpawnCrates(SpawnMap map, GameObject parent, Cell cell, SpawnSettings settings, System.Random rng)
+    {
+        int min = settings.minCratesPerCell;
+        int max = Mathf.Max(min, settings.maxCratesPerCell);
+        int total = rng.Next(min, max + 1) * Mathf.Max(1, cell.cellList.Count);
+
+        for (int i = 0; i < total; i++)
+        {
+            // Stop at the first failure: the room is full, no need to keep trying
+            if (Spawn(map, parent, PickEntry(settings.crates, rng), SpawnPlacement.Random, warn: false) == null) break;
+        }
+    }
+
     /// <summary>Spawns the entry on a valid spot. Returns the instance, or null if nothing was spawned.</summary>
-    private static GameObject Spawn(SpawnMap map, GameObject parent, SpawnEntry entry, SpawnPlacement placement)
+    private static GameObject Spawn(SpawnMap map, GameObject parent, SpawnEntry entry, SpawnPlacement placement, bool warn = true)
     {
         if (entry == null || entry.prefab == null) return null;
 
         if (!map.TryFindSpot(entry.margin, placement, out Vector2Int spot))
         {
-            Debug.LogWarning($"RoomSpawner: no free spot for '{entry.prefab.name}' in '{parent.name}' (room too full or too small).");
+            if (warn)
+                Debug.LogWarning($"RoomSpawner: no free spot for '{entry.prefab.name}' in '{parent.name}' (room too full or too small).");
             return null;
         }
 

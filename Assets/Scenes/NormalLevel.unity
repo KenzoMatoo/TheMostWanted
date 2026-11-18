@@ -826,6 +826,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f03b591bebbafe24aa8bddc63e44585d, type: 3}
+--- !u!1 &853728602 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6033265025629983807, guid: 606db31fd0087a240b72f60a1d4755ce, type: 3}
+  m_PrefabInstance: {fileID: 1476735489}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1177588836
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,6 +1170,82 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8720605379785435561, guid: a3d3c6088e01f1c458bdbf7ce0388727, type: 3}
   m_PrefabInstance: {fileID: 1264668321}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1272426064 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2533968765781946269, guid: 606db31fd0087a240b72f60a1d4755ce, type: 3}
+  m_PrefabInstance: {fileID: 1476735489}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1272426066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272426064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b7120e402d861f4b91189649d6ed4f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyCounterUI
+  label: {fileID: 1272426067}
+  format: 'Enemies left: {0}'
+  completedText: All enemies defeated! The exit is open
+  container: {fileID: 853728602}
+--- !u!114 &1272426067 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6217007426336481833, guid: 606db31fd0087a240b72f60a1d4755ce, type: 3}
+  m_PrefabInstance: {fileID: 1476735489}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272426064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1466293544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1466293546}
+  - component: {fileID: 1466293545}
+  m_Layer: 0
+  m_Name: SceneLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1466293545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466293544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 281d7364837d5c041b5dac5d0e56557b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
+--- !u!4 &1466293546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466293544}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 507.7234, y: -164.88733, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1476735489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1211,6 +1292,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4628861921072677643, guid: 606db31fd0087a240b72f60a1d4755ce, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738886266838971035, guid: 606db31fd0087a240b72f60a1d4755ce, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738886266838971035, guid: 606db31fd0087a240b72f60a1d4755ce, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738886266838971035, guid: 606db31fd0087a240b72f60a1d4755ce, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738886266838971035, guid: 606db31fd0087a240b72f60a1d4755ce, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5225341151382103927, guid: 606db31fd0087a240b72f60a1d4755ce, type: 3}
@@ -1377,7 +1474,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 5348440668303768553, guid: 606db31fd0087a240b72f60a1d4755ce, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2533968765781946269, guid: 606db31fd0087a240b72f60a1d4755ce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1272426066}
   m_SourcePrefab: {fileID: 100100000, guid: 606db31fd0087a240b72f60a1d4755ce, type: 3}
 --- !u!1 &1476735490 stripped
 GameObject:
@@ -1582,6 +1682,7 @@ MonoBehaviour:
     pathRadius: 2
     pathWobble: 4
     pathTwist: 3
+    rockTile: {fileID: 0}
     maxRockCoverage: 0.35
     minRockIslandSize: 6
     fillTrappedGaps: 1
@@ -1589,7 +1690,10 @@ MonoBehaviour:
     rockColor: {r: 0.38, g: 0.32, b: 0.29, a: 1}
   spawnSettings:
     enabled: 1
-    normalEnemies: []
+    normalEnemies:
+    - prefab: {fileID: 3081933642787246480, guid: de48886014931eb418ca4e6c47335ea8, type: 3}
+      margin: 0
+      weight: 0
     eliteEnemies: []
     boss:
       prefab: {fileID: 0}
@@ -1597,18 +1701,23 @@ MonoBehaviour:
       weight: 1
     bossPlacement: 2
     item:
-      prefab: {fileID: 0}
+      prefab: {fileID: 267705913943844497, guid: a9ac0f8b2ef9bdf4aab8112de51ec9b5, type: 3}
       margin: 1
       weight: 1
     itemPlacement: 0
     exit:
-      prefab: {fileID: 0}
+      prefab: {fileID: 7946895156485567007, guid: f5340cdbccff9264c96360fff181319d, type: 3}
       margin: 2
       weight: 1
     exitPlacement: 1
-    exitStartsInactive: 0
     doorSafeRadius: 4
     spacingBetweenSpawns: 1
+    crates:
+    - prefab: {fileID: 267705913943844497, guid: a9ac0f8b2ef9bdf4aab8112de51ec9b5, type: 3}
+      margin: 1
+      weight: 1
+    minCratesPerCell: 1
+    maxCratesPerCell: 3
 --- !u!4 &1550861226
 Transform:
   m_ObjectHideFlags: 0
@@ -1650,18 +1759,18 @@ MonoBehaviour:
   gridHeight: 12
   horizontalBias: 0.35
   maxRows: 0
-  minRooms: 12
-  maxRooms: 24
+  minRooms: 5
+  maxRooms: 12
   chanceToSpawnRoom: 0.55
   chanceToSpawnLargeRoom: 0.3
   minItemDistance: 1
   maxItemDistance: 6
-  minEndDistance: 6
+  minEndDistance: 4
   maxEndDistance: 999
   spawnItem: 1
-  minEnemy: 6
-  maxEnemy: 12
-  maxEnemiesPerRoom: 4
+  minEnemy: 3
+  maxEnemy: 6
+  maxEnemiesPerRoom: 2
 --- !u!1 &1738505031
 GameObject:
   m_ObjectHideFlags: 0
@@ -1850,7 +1959,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2143822852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1953,3 +2062,4 @@ SceneRoots:
   - {fileID: 1476735489}
   - {fileID: 1550861226}
   - {fileID: 306903103}
+  - {fileID: 1466293546}
