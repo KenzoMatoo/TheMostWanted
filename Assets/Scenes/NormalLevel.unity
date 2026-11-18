@@ -935,7 +935,7 @@ MonoBehaviour:
   refreshInterval: 0.1
   rotationSpeed: 720
   spriteAngleOffset: 0
-  orbitPlayer: 0
+  orbitPlayer: 1
   orbitRadius: 90
   cam: {fileID: 1738505035}
   roomCenterOffset: {x: 0, y: 0}
