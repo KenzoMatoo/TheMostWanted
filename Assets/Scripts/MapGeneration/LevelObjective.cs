@@ -29,6 +29,8 @@ public class LevelObjective
     public bool BossDefeated { get; private set; }
     public bool IsCompleted { get; private set; }
 
+    public LevelExit Exit => exit;
+
     /// <summary>Raised when the map starts and whenever the counts change.</summary>
     public event Action Changed;
     /// <summary>Raised once, when the condition is met (the exit is unlocked just before).</summary>

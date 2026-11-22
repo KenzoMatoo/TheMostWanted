@@ -30,6 +30,7 @@ public class LevelExit : MonoBehaviour
 
     public bool IsLocked { get; private set; } = true;
 
+
     private void Awake()
     {
         Apply();
@@ -42,7 +43,11 @@ public class LevelExit : MonoBehaviour
 
             if (sceneLoader != null)
             {
-                onPlayerEntered.AddListener(() => sceneLoader.LoadScene("HUB"));
+                onPlayerEntered.AddListener(() =>
+                {
+                    RunProgression.NotifyLevelCompleted();   // advances the run (does nothing if no run is active)
+                    sceneLoader.LoadScene("HUB");
+                });
             }
             else
             {

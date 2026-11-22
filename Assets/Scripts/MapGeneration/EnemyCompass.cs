@@ -117,38 +117,58 @@ public class EnemyCompass : MonoBehaviour
 
         ComputePaths(start, grid);
 
-        int bestCell = -1, bestSteps = int.MaxValue;
-        float bestSqr = float.MaxValue;
-        LevelEnemy best = null;
+        LevelObjective objective = map.Objective;
 
-        int generation = map.Objective.Generation;
-        foreach (LevelEnemy enemy in LevelEnemy.Active)
+        Transform target = null;
+        int targetCell = -1, targetSteps = int.MaxValue;
+
+        if (objective.IsCompleted)
         {
-            if (enemy == null || !enemy.isActiveAndEnabled) continue;
-            if (enemy.Generation != generation) continue;
-            if (enemy.IsBoss && !includeBoss) continue;
+            // Platformer maps, or the condition is already met: guide the player to the exit
+            LevelExit exit = objective.Exit;
+            if (exit == null || !exit.gameObject.activeInHierarchy) return;
 
-            int cell = WorldToGrid(enemy.transform.position, grid);
-            if (cell < 0 || dist[cell] < 0) continue;   // no walkable path: try another enemy
+            int cell = WorldToGrid(exit.transform.position, grid);
+            if (cell < 0 || dist[cell] < 0) return;
 
-            int steps = dist[cell];
-            float sqr = (enemy.transform.position - player.position).sqrMagnitude;
-            if (steps < bestSteps || (steps == bestSteps && sqr < bestSqr))
+            target = exit.transform; targetCell = cell; targetSteps = dist[cell];
+        }
+        else
+        {
+            bool bossOnly = objective.Type == ObjectiveType.DefeatBoss;
+            int generation = objective.Generation;
+            float bestSqr = float.MaxValue;
+
+            foreach (LevelEnemy enemy in LevelEnemy.Active)
             {
-                best = enemy; bestCell = cell; bestSteps = steps; bestSqr = sqr;
+                if (enemy == null || !enemy.isActiveAndEnabled) continue;
+                if (enemy.Generation != generation) continue;
+
+                if (bossOnly) { if (!enemy.IsBoss) continue; }
+                else if (enemy.IsBoss && !includeBoss) continue;
+
+                int cell = WorldToGrid(enemy.transform.position, grid);
+                if (cell < 0 || dist[cell] < 0) continue;
+
+                int steps = dist[cell];
+                float sqr = (enemy.transform.position - player.position).sqrMagnitude;
+                if (steps < targetSteps || (steps == targetSteps && sqr < bestSqr))
+                {
+                    target = enemy.transform; targetCell = cell; targetSteps = steps; bestSqr = sqr;
+                }
             }
         }
 
-        if (best == null) return;
+        if (target == null) return;
 
-        if (bestSteps == 0)
+        if (targetSteps == 0)
         {
-            aimTransform = best.transform;   // same room cell: straight at the enemy
+            aimTransform = target;   // same room cell: straight at it
         }
         else
         {
             // Walk the path backwards to find the first room after the player's
-            int step = bestCell;
+            int step = targetCell;
             while (parent[step] != start) step = parent[step];
             aimPoint = GridToWorld(step);
         }

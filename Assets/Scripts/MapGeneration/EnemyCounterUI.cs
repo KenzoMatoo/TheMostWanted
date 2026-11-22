@@ -19,6 +19,16 @@ public class EnemyCounterUI : MonoBehaviour
     [Tooltip("Optional object to show/hide with the counter (e.g. a panel). Defaults to the label itself")]
     [SerializeField] private GameObject container;
 
+
+    [Tooltip("Shown on boss maps while the boss is alive. Leave empty to hide the label on boss maps")]
+    [SerializeField] private string bossText = "Defeat the boss!";
+
+    [Tooltip("Shown on boss maps once the boss is dead")]
+    [SerializeField] private string bossDefeatedText = "Boss defeated! The exit is open";
+
+    [Tooltip("Shown on maps without a condition (platformer), where the exit is open from the start. Leave empty to hide the label")]
+    [SerializeField] private string reachExitText = "Reach the exit!";
+
     private LevelObjective objective;
 
     private void Start()
@@ -45,14 +55,28 @@ public class EnemyCounterUI : MonoBehaviour
     {
         if (label == null) return;
 
-        bool show = objective.Type == ObjectiveType.KillAllEnemies;
+        string text = null;
+
+        switch (objective.Type)
+        {
+            case ObjectiveType.KillAllEnemies:
+                text = (objective.IsCompleted && !string.IsNullOrEmpty(completedText))
+                    ? completedText
+                    : string.Format(format, objective.EnemiesLeft, objective.TotalEnemies);
+                break;
+
+            case ObjectiveType.DefeatBoss:
+                text = objective.IsCompleted ? bossDefeatedText : bossText;
+                break;
+
+            case ObjectiveType.None:
+                text = reachExitText;
+                break;
+        }
+
+        bool show = !string.IsNullOrEmpty(text);
         GameObject target = container != null ? container : label.gameObject;
         target.SetActive(show);
-        if (!show) return;
-
-        if (objective.IsCompleted && !string.IsNullOrEmpty(completedText))
-            label.text = completedText;
-        else
-            label.text = string.Format(format, objective.EnemiesLeft, objective.TotalEnemies);
+        if (show) label.text = text;
     }
 }

@@ -10,6 +10,13 @@ public class BossMapGenerator : MapGenerationBase
     // End condition: DefeatBoss
     protected override ObjectiveType ObjectiveKind => ObjectiveType.DefeatBoss;
 
+    [Tooltip("Shown on boss maps while the boss is alive. Leave empty to hide the label on boss maps")]
+    [SerializeField] private string bossText = "Defeat the boss!";
+
+    [Tooltip("Shown on boss maps once the boss is dead")]
+    [SerializeField] private string bossDefeatedText = "Boss defeated! The exit is open";
+
+
     protected override void Reset()
     {
         gridWidth = 24; gridHeight = 12;
