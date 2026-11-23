@@ -67,7 +67,7 @@ MonoBehaviour:
   MaxGrappleDistance: 20
   GrappleLayer:
     serializedVersion: 2
-    m_Bits: 520
+    m_Bits: 4616
   GrappleAimRadius: 0.3
   PullStrength: 10
   PullTime: 0.33
@@ -77,7 +77,7 @@ MonoBehaviour:
   ConstraintSpeed: 35
   Dampening: 0.95
   MaxSwingSpeed: 20
-  MaxSwingAngle: 100
+  MaxSwingAngle: 120
   CooldownTime: 0.3
   MeleeDamage: 10
   AttackCooldown: 0.33

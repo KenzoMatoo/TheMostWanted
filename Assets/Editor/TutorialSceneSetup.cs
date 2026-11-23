@@ -164,6 +164,70 @@ public static class TutorialSceneSetup
         Debug.Log($"[TutorialSetup] {rooms.Length} cuartos con camara propia.");
     }
 
+    const string FillName = "Relleno Exterior";
+    const string FillTilePath = "Assets/Sprites/Tutorial/RellenoPiedra.asset";
+    const int FillMargin = 24;
+
+    // Fills everything around the rooms with dark stone, like rooms carved out of solid rock.
+    // While the camera moves between rooms it sees wall instead of the empty camera background.
+    // Only fills cells with no Ground and no Background tile, so it never covers a room.
+    // Run it again after building or moving rooms (e.g. when T4 exists): it clears and redoes the fill.
+    [MenuItem("Tools/Tutorial/Rellenar exterior")]
+    public static void FillOutside()
+    {
+        var tilemaps = Object.FindObjectsByType<Tilemap>(FindObjectsSortMode.None);
+        var ground = tilemaps.FirstOrDefault(t => t.name == "Ground");
+        var background = tilemaps.FirstOrDefault(t => t.name == "Background");
+        if (ground == null || background == null) { Debug.LogError("[TutorialSetup] Faltan los tilemaps Ground o Background."); return; }
+
+        // Plain tile with the sprite of the stone ceiling (a rule tile would draw edges everywhere)
+        var tile = AssetDatabase.LoadAssetAtPath<Tile>(FillTilePath);
+        if (tile == null)
+        {
+            Sprite sprite = null;
+            foreach (var c in ground.cellBounds.allPositionsWithin)
+                if (ground.GetTile(c) != null && ground.GetTile(c).name.Contains("Piso_Piedra") && ground.GetSprite(c) != null) { sprite = ground.GetSprite(c); break; }
+            if (sprite == null) { Debug.LogError("[TutorialSetup] No encontre el tile de piedra para el relleno."); return; }
+            tile = ScriptableObject.CreateInstance<Tile>();
+            tile.sprite = sprite;
+            tile.colliderType = Tile.ColliderType.None;
+            AssetDatabase.CreateAsset(tile, FillTilePath);
+        }
+
+        var fill = tilemaps.FirstOrDefault(t => t.name == FillName);
+        if (fill == null)
+        {
+            var go = new GameObject(FillName);
+            Undo.RegisterCreatedObjectUndo(go, "Fill");
+            go.transform.SetParent(ground.transform.parent, false);
+            fill = go.AddComponent<Tilemap>();
+            var r = go.AddComponent<TilemapRenderer>();
+            r.sharedMaterial = background.GetComponent<TilemapRenderer>().sharedMaterial;
+            r.sortingOrder = background.GetComponent<TilemapRenderer>().sortingOrder - 1;
+        }
+        Undo.RegisterCompleteObjectUndo(fill, "Fill");
+        fill.color = new Color(0.32f, 0.3f, 0.36f); // darker than the room walls so the rooms stand out
+        fill.ClearAllTiles();
+
+        ground.CompressBounds(); background.CompressBounds();
+        var b = ground.cellBounds;
+        var bb = background.cellBounds;
+        int xMin = Mathf.Min(b.xMin, bb.xMin) - FillMargin, xMax = Mathf.Max(b.xMax, bb.xMax) + FillMargin;
+        int yMin = Mathf.Min(b.yMin, bb.yMin) - FillMargin, yMax = Mathf.Max(b.yMax, bb.yMax) + FillMargin;
+
+        var positions = new System.Collections.Generic.List<Vector3Int>();
+        for (int x = xMin; x < xMax; x++)
+            for (int y = yMin; y < yMax; y++)
+            {
+                var c = new Vector3Int(x, y, 0);
+                if (ground.GetTile(c) == null && background.GetTile(c) == null) positions.Add(c);
+            }
+        fill.SetTiles(positions.ToArray(), Enumerable.Repeat<TileBase>(tile, positions.Count).ToArray());
+
+        EditorSceneManager.MarkSceneDirty(fill.gameObject.scene);
+        Debug.Log($"[TutorialSetup] Relleno exterior: {positions.Count} tiles. Guarda la escena (Ctrl+S).");
+    }
+
     // Creates a room area at the center of the Scene view. Resize it with the BoxCollider2D's "Edit Collider" button
     // so it covers the room from wall to wall, then run "Arreglar camara y latigo".
     [MenuItem("Tools/Tutorial/Nuevo cuarto de camara")]

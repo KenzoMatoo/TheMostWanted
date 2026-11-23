@@ -21,6 +21,9 @@ public class GrapplingHook : MonoBehaviour
     private float swingDirection = 1f;
     private float lastHookTime = -999f;
     public bool canUseHook = true;
+    private GrappleLamp hookedLamp;
+
+    public float MaxDistance => stats != null ? stats.MaxGrappleDistance : 0f;
 
     void Awake()
     {
@@ -88,7 +91,10 @@ public class GrapplingHook : MonoBehaviour
 
         if (hit.collider != null)
         {
-            hookPoint = hit.point;
+            // Las lamparas de gancho fijan el punto en su centro
+            hookedLamp = hit.collider.GetComponentInParent<GrappleLamp>();
+            hookPoint = hookedLamp != null ? hookedLamp.HookPoint : hit.point;
+            if (hookedLamp != null) hookedLamp.SetHooked(true);
             ropeLength = Vector2.Distance(transform.position, hookPoint);
             targetRopeLength = ropeLength * stats.RopeShorten;
 
@@ -112,6 +118,8 @@ public class GrapplingHook : MonoBehaviour
         {
             rb.linearVelocity = launchVelocity * 1.1f;
         }
+
+        if (hookedLamp != null) { hookedLamp.SetHooked(false); hookedLamp = null; }
 
         isHooked = false;
         isPulling = false;
