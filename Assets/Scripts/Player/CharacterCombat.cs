@@ -47,6 +47,22 @@ public class CharacterCombat : MonoBehaviour
 
     private Camera mainCamera;
 
+    // ---------- Absorber (curacion) ----------
+    // Con un enemigo capturado, mantener CLIC DERECHO lo absorbe: el jugador se queda quieto
+    // AbsorbTime segundos y al terminar recupera AbsorbHealMasks mascaras y el enemigo muere.
+    // (El clic derecho es el gancho, pero el gancho esta bloqueado mientras hay algo capturado.)
+    private PlayerStats playerStats;
+    private PlayerController playerController;
+    private bool absorbHeld;
+    private bool absorbLocked;
+    private float absorbProgress;
+    private PlayerStamina stamina;
+
+    /// <summary>0..1 mientras se absorbe (para la UI). 0 si no se esta absorbiendo.</summary>
+    public float AbsorbProgress01 => absorbProgress;
+    /// <summary>True si ahora mismo se puede absorber (hay un enemigo capturado y falta vida).</summary>
+    public bool CanAbsorbNow => CanAbsorb();
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -54,6 +70,9 @@ public class CharacterCombat : MonoBehaviour
         mainCamera = Camera.main;
         animator = GetComponentInChildren<Animator>();
         whipAttack = GetComponent<WhipAttack>();
+        playerStats = GetComponent<PlayerStats>();
+        playerController = GetComponent<PlayerController>();
+        stamina = PlayerStamina.Get(gameObject);
 
         if (audioSource == null)
         {
@@ -67,6 +86,9 @@ public class CharacterCombat : MonoBehaviour
         controls.Combat.HitWhip.performed += ctx => HandleHitWhipInput();
 
         controls.Combat.Capture.started += ctx => HandleCaptureClick();
+
+        controls.Movement.FireWhip.started += ctx => absorbHeld = true;
+        controls.Movement.FireWhip.canceled += ctx => absorbHeld = false;
 
         // Validar que las stats existan
         if (stats == null)
@@ -118,10 +140,64 @@ public class CharacterCombat : MonoBehaviour
             }
         }
 
+        UpdateAbsorb();
+
+        // Tener algo capturado gasta resistencia (mientras absorbes no). Al acabarse, se suelta.
+        if (hasEnemyCaptured && !absorbLocked && stamina != null && stats != null
+            && !stamina.Drain(stats.CaptureDrainPerSecond, Time.deltaTime))
+        {
+            Debug.Log("[RESISTENCIA] Sin resistencia: se suelta lo capturado");
+            ReleaseEnemy();
+        }
+
         if (hookScript != null)
         {
             hookScript.canUseHook = !hasEnemyCaptured;
         }
+    }
+
+    ///////////////////////// ABSORB (curacion)
+    bool CanAbsorb()
+    {
+        return hasEnemyCaptured
+               && targetEnemy != null
+               && currentCapturedController != null
+               && !currentCapturedController.IsBox()
+               && playerStats != null
+               && !playerStats.IsDead()
+               && playerStats.GetCurrentHealth() < playerStats.GetMaxHealth();
+    }
+
+    void UpdateAbsorb()
+    {
+        if (!absorbHeld || !CanAbsorb())
+        {
+            absorbProgress = 0f;
+            SetAbsorbLock(false);
+            return;
+        }
+
+        SetAbsorbLock(true);
+        absorbProgress += Time.deltaTime / Mathf.Max(0.05f, stats.AbsorbTime);
+        if (absorbProgress < 1f) return;
+
+        // Absorbido: curar y matar al enemigo (CharacterCombat lo suelta solo al ver que murio)
+        IDamageable victim = targetMB != null ? targetMB.GetComponent<IDamageable>() : null;
+        absorbProgress = 0f;
+        absorbHeld = false; // hay que volver a presionar para absorber otro
+        SetAbsorbLock(false);
+        playerStats.Heal(stats.AbsorbHealMasks);
+        if (victim != null && !victim.IsDead()) victim.TakeDamage(9999, transform.position);
+        Debug.Log("[ABSORBER] Enemigo absorbido, vida +" + stats.AbsorbHealMasks);
+    }
+
+    // Mientras absorbe, el jugador no se mueve (es el riesgo de curarse)
+    void SetAbsorbLock(bool locked)
+    {
+        if (locked == absorbLocked || playerController == null) return;
+        absorbLocked = locked;
+        playerController.canMove = !locked;
+        if (locked && rb != null) rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
     }
 
     ///////////////////////// AUDIO

@@ -14,7 +14,17 @@ public class PlayerStats : MonoBehaviour, IDamageable
     [SerializeField] private Sprite damageSprite;
     [SerializeField] private float damageSpriteDuration = 0.2f;
 
-    private int currentHealth;
+    private int currentHealth; // en MASCARAS (ver ScriptableStats.MaxMasks)
+
+    // Mascaras agrietadas: las que perdiste con el ultimo golpe. Si golpeas a un enemigo antes de que
+    // se acabe el tiempo, recuperas una por golpe. Si no, se rompen del todo.
+    private int crackedMasks;
+    private float crackTimer;
+
+    /// <summary>Cambio en mascaras (vida, agrietadas). Lo escucha la UI.</summary>
+    public event System.Action MasksChanged;
+    public int CrackedMasks => crackedMasks;
+    public float CrackTimeLeft01 => playerStatsData != null && playerStatsData.CrackedRecoverTime > 0f ? Mathf.Clamp01(crackTimer / playerStatsData.CrackedRecoverTime) : 0f;
 
     [Header("Events")]
     public UnityEngine.Events.UnityEvent OnDeath;
@@ -38,6 +48,13 @@ public class PlayerStats : MonoBehaviour, IDamageable
     private Animator animator;
     private bool isInvincible = false;
 
+    // La vida se inicializa en Awake (no en Start) para que la UI y otros scripts que leen la vida
+    // en su Start ya vean las mascaras llenas.
+    void Awake()
+    {
+        if (playerStatsData != null) currentHealth = playerStatsData.MaxMasks;
+    }
+
     void Start()
     {
         // Validar que tenemos el ScriptableObject
@@ -59,7 +76,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
         animator = GetComponentInChildren<Animator>();
 
         // Inicializar la vida desde el ScriptableObject
-        currentHealth = playerStatsData.maxHealth;
+        currentHealth = playerStatsData.MaxMasks;
 
         // Auto-encontrar la HealthBar si no est� asignada
         if (healthBar == null)
@@ -77,6 +94,31 @@ public class PlayerStats : MonoBehaviour, IDamageable
     void Update()
     {
         UpdateKnockback();
+        UpdateCrackedMasks();
+    }
+
+    private void UpdateCrackedMasks()
+    {
+        if (crackedMasks <= 0) return;
+        crackTimer -= Time.deltaTime;
+        if (crackTimer <= 0f)
+        {
+            crackedMasks = 0; // se rompen del todo
+            MasksChanged?.Invoke();
+        }
+    }
+
+    /// <summary>
+    /// Llamado cuando el jugador golpea a un enemigo: recupera una mascara agrietada (estilo "rally").
+    /// </summary>
+    public void OnPlayerHitEnemy()
+    {
+        if (isDead || crackedMasks <= 0) return;
+        crackedMasks--;
+        currentHealth = Mathf.Min(currentHealth + 1, playerStatsData.MaxMasks);
+        UpdateHealthBar();
+        OnHealthChanged?.Invoke(currentHealth);
+        MasksChanged?.Invoke();
     }
 
     #region Knockback
@@ -200,13 +242,63 @@ public class PlayerStats : MonoBehaviour, IDamageable
     {
         if (playerStatsData.InvincibilityDuration <= 0f) return;
 
-        StopCoroutine(nameof(InvincibilityCoroutine));
-        StartCoroutine(InvincibilityCoroutine());
+        StopInvincibilityRoutine();
+        invincibilityRoutine = StartCoroutine(InvincibilityCoroutine());
+    }
+
+    // Pares (collider del jugador, collider de enemigo) que ignoramos durante la invencibilidad,
+    // para restaurar solo esos (el enemigo capturado ya ignora al jugador por su cuenta).
+    private readonly System.Collections.Generic.List<(Collider2D, Collider2D)> ignoredEnemyPairs =
+        new System.Collections.Generic.List<(Collider2D, Collider2D)>();
+
+    /// <summary>
+    /// Durante los i-frames el jugador atraviesa a los enemigos (no lo empujan ni lo bloquean),
+    /// asi puede salir de encima de ellos despues de recibir un golpe.
+    /// </summary>
+    private void SetPassThroughEnemies(bool passThrough)
+    {
+        if (passThrough)
+        {
+            var playerColliders = GetComponentsInChildren<Collider2D>();
+            foreach (var enemy in FindObjectsByType<EnemyBase>(FindObjectsSortMode.None))
+            {
+                foreach (var enemyCol in enemy.GetComponentsInChildren<Collider2D>())
+                {
+                    if (enemyCol.isTrigger) continue;
+                    foreach (var playerCol in playerColliders)
+                    {
+                        if (playerCol.isTrigger || Physics2D.GetIgnoreCollision(playerCol, enemyCol)) continue;
+                        Physics2D.IgnoreCollision(playerCol, enemyCol, true);
+                        ignoredEnemyPairs.Add((playerCol, enemyCol));
+                    }
+                }
+            }
+        }
+        else
+        {
+            foreach (var (playerCol, enemyCol) in ignoredEnemyPairs)
+            {
+                if (playerCol != null && enemyCol != null) Physics2D.IgnoreCollision(playerCol, enemyCol, false);
+            }
+            ignoredEnemyPairs.Clear();
+        }
+    }
+
+    private Coroutine invincibilityRoutine;
+
+    // StopCoroutine(nameof(...)) no detiene corrutinas iniciadas con StartCoroutine(IEnumerator),
+    // asi que se guarda la referencia.
+    private void StopInvincibilityRoutine()
+    {
+        if (invincibilityRoutine != null) StopCoroutine(invincibilityRoutine);
+        invincibilityRoutine = null;
     }
 
     private IEnumerator InvincibilityCoroutine()
     {
         isInvincible = true;
+        SetPassThroughEnemies(false); // por si venia de otra invencibilidad
+        SetPassThroughEnemies(true);
 
         float elapsed = 0f;
         float interval = Mathf.Max(0.01f, playerStatsData.InvincibilityFlickerInterval);
@@ -222,6 +314,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
 
         SetSpritesVisible(true);
         isInvincible = false;
+        SetPassThroughEnemies(false);
     }
 
     private void SetSpritesVisible(bool visible)
@@ -242,10 +335,19 @@ public class PlayerStats : MonoBehaviour, IDamageable
     {
         if (isDead || isInvincible) return; // No recibir da�o si ya est� muerto o es invencible
 
-        currentHealth -= amount;
+        // El dano de los enemigos se convierte a mascaras (al menos 1 por golpe)
+        int perMask = Mathf.Max(1, playerStatsData.DamagePerMask);
+        int masksLost = Mathf.Max(1, Mathf.CeilToInt((float)amount / perMask));
+        masksLost = Mathf.Min(masksLost, currentHealth);
+        currentHealth -= masksLost;
         currentHealth = Mathf.Max(currentHealth, 0); // No bajar de 0
 
-        Debug.Log($"Player recibi� {amount} de da�o. Vida actual: {currentHealth}/{playerStatsData.maxHealth}");
+        // Las mascaras de este golpe quedan agrietadas (las agrietadas de antes ya se rompen)
+        crackedMasks = currentHealth > 0 ? masksLost : 0;
+        crackTimer = playerStatsData.CrackedRecoverTime;
+        MasksChanged?.Invoke();
+
+        Debug.Log($"Player recibi� {amount} de da�o. Vida actual: {currentHealth}/{playerStatsData.MaxMasks} mascaras");
 
         if (damageSourcePosition != default)
         {
@@ -284,14 +386,14 @@ public class PlayerStats : MonoBehaviour, IDamageable
     }
     public int GetMaxHealth()
     {
-        return playerStatsData != null ? playerStatsData.maxHealth : 0;
+        return playerStatsData != null ? playerStatsData.MaxMasks : 0;
     }
     public float GetHealthPercentage()
     {
-        if (playerStatsData == null || playerStatsData.maxHealth <= 0)
+        if (playerStatsData == null || playerStatsData.MaxMasks <= 0)
             return 0f;
 
-        return (float)currentHealth / playerStatsData.maxHealth;
+        return (float)currentHealth / playerStatsData.MaxMasks;
     }
 
     #endregion
@@ -306,14 +408,16 @@ public class PlayerStats : MonoBehaviour, IDamageable
         if (isDead || playerStatsData == null) return;
 
         currentHealth += amount;
-        currentHealth = Mathf.Min(currentHealth, playerStatsData.maxHealth); // No superar el m�ximo
+        currentHealth = Mathf.Min(currentHealth, playerStatsData.MaxMasks);
+        crackedMasks = Mathf.Min(crackedMasks, playerStatsData.MaxMasks - currentHealth); // no puede haber mas agrietadas que mascaras faltantes
 
-        Debug.Log($"Player curado {amount}. Vida actual: {currentHealth}/{playerStatsData.maxHealth}");
+        Debug.Log($"Player curado {amount}. Vida actual: {currentHealth}/{playerStatsData.MaxMasks}");
 
         // Actualizar la barra de vida
         UpdateHealthBar();
 
         OnHealthChanged?.Invoke(currentHealth);
+        MasksChanged?.Invoke();
     }
 
     /// <summary>
@@ -323,7 +427,9 @@ public class PlayerStats : MonoBehaviour, IDamageable
     {
         if (isDead || playerStatsData == null) return;
 
-        currentHealth = playerStatsData.maxHealth;
+        currentHealth = playerStatsData.MaxMasks;
+        crackedMasks = 0;
+        MasksChanged?.Invoke();
 
         Debug.Log("Player completamente curado!");
 
@@ -345,8 +451,9 @@ public class PlayerStats : MonoBehaviour, IDamageable
 
         CancelKnockback();
 
-        StopCoroutine(nameof(InvincibilityCoroutine));
+        StopInvincibilityRoutine();
         isInvincible = false;
+        SetPassThroughEnemies(false);
         SetSpritesVisible(true);
 
         StopCoroutine(nameof(DamageSpriteCoroutine));
@@ -441,12 +548,15 @@ public class PlayerStats : MonoBehaviour, IDamageable
         if (playerStatsData == null) return;
 
         isDead = false;
-        currentHealth = playerStatsData.maxHealth;
+        currentHealth = playerStatsData.MaxMasks;
+        crackedMasks = 0;
+        MasksChanged?.Invoke();
 
         CancelKnockback();
 
-        StopCoroutine(nameof(InvincibilityCoroutine));
+        StopInvincibilityRoutine();
         isInvincible = false;
+        SetPassThroughEnemies(false);
         SetSpritesVisible(true);
 
         StopCoroutine(nameof(DamageSpriteCoroutine));
@@ -477,7 +587,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
     {
         if (healthBar != null && playerStatsData != null)
         {
-            healthBar.UpdateHealthBar(currentHealth, playerStatsData.maxHealth);
+            healthBar.UpdateHealthBar(currentHealth, playerStatsData.MaxMasks);
         }
     }
 

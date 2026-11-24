@@ -228,6 +228,62 @@ public static class TutorialSceneSetup
         Debug.Log($"[TutorialSetup] Relleno exterior: {positions.Count} tiles. Guarda la escena (Ctrl+S).");
     }
 
+    const string OneWayName = "Plataformas Traspasables";
+    static readonly string[] OneWayTiles = { "Tiles_207", "Tiles_208", "Tiles_209" }; // repisa de madera: punta izq, centro, punta der
+
+    // Moves every wooden shelf tile from Ground to its own tilemap with a PlatformEffector2D, so the player
+    // can jump through them from below and land on top (like Mario). Paint new shelves on Ground as usual
+    // and run this again: it moves the new ones too.
+    [MenuItem("Tools/Tutorial/Plataformas traspasables")]
+    public static void MakeOneWayPlatforms()
+    {
+        var tilemaps = Object.FindObjectsByType<Tilemap>(FindObjectsSortMode.None);
+        var ground = tilemaps.FirstOrDefault(t => t.name == "Ground");
+        if (ground == null) { Debug.LogError("[TutorialSetup] Falta el tilemap Ground."); return; }
+
+        var platforms = tilemaps.FirstOrDefault(t => t.name == OneWayName);
+        if (platforms == null)
+        {
+            var go = new GameObject(OneWayName) { layer = ground.gameObject.layer }; // misma capa: cuenta como suelo y el gancho la detecta
+            Undo.RegisterCreatedObjectUndo(go, "One-way platforms");
+            go.transform.SetParent(ground.transform.parent, false);
+            platforms = go.AddComponent<Tilemap>();
+            var groundRenderer = ground.GetComponent<TilemapRenderer>();
+            var r = go.AddComponent<TilemapRenderer>();
+            r.sharedMaterial = groundRenderer.sharedMaterial;
+            r.sortingLayerID = groundRenderer.sortingLayerID;
+            r.sortingOrder = groundRenderer.sortingOrder;
+
+            var rb = go.AddComponent<Rigidbody2D>();
+            rb.bodyType = RigidbodyType2D.Static;
+            var tc = go.AddComponent<TilemapCollider2D>();
+            tc.compositeOperation = Collider2D.CompositeOperation.Merge;
+            var cc = go.AddComponent<CompositeCollider2D>();
+            cc.usedByEffector = true;
+            var effector = go.AddComponent<PlatformEffector2D>();
+            effector.useOneWay = true;
+            effector.surfaceArc = 160f; // solo se puede pisar desde arriba; desde abajo y los lados se atraviesa
+            effector.useSideFriction = false;
+            effector.useSideBounce = false;
+        }
+
+        Undo.RegisterCompleteObjectUndo(new Object[] { ground, platforms }, "One-way platforms");
+        int moved = 0;
+        foreach (var c in ground.cellBounds.allPositionsWithin)
+        {
+            var tile = ground.GetTile(c);
+            if (tile == null || !OneWayTiles.Contains(tile.name)) continue;
+            platforms.SetTile(c, tile);
+            platforms.SetTransformMatrix(c, ground.GetTransformMatrix(c));
+            platforms.SetColor(c, ground.GetColor(c));
+            ground.SetTile(c, null);
+            moved++;
+        }
+
+        EditorSceneManager.MarkSceneDirty(ground.gameObject.scene);
+        Debug.Log($"[TutorialSetup] {moved} tiles de repisa ahora son traspasables. Guarda la escena (Ctrl+S).");
+    }
+
     // Creates a room area at the center of the Scene view. Resize it with the BoxCollider2D's "Edit Collider" button
     // so it covers the room from wall to wall, then run "Arreglar camara y latigo".
     [MenuItem("Tools/Tutorial/Nuevo cuarto de camara")]

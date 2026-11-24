@@ -47,10 +47,11 @@ MonoBehaviour:
   InvincibilityDuration: 1
   InvincibilityFlickerInterval: 0.1
   WalkSpeed: 7.5
-  Acceleration: 45
-  Deceleration: 60
-  AirAcceleration: 22
-  AirDeceleration: 15
+  Acceleration: 70
+  Deceleration: 90
+  AirAcceleration: 40
+  AirDeceleration: 45
+  TurnAcceleration: 150
   ApexBonus: 1.5
   DashForce: 22
   DashDuration: 0.7

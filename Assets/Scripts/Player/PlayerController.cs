@@ -216,10 +216,18 @@ public class PlayerController : MonoBehaviour
             float accel = isGrounded ? stats.Acceleration : stats.AirAcceleration;
             float decel = isGrounded ? stats.Deceleration : stats.AirDeceleration;
 
+            float currentX = rb.linearVelocity.x;
+            float rate;
             if (moveInput.x == 0)
-                velocity.x = Mathf.MoveTowards(rb.linearVelocity.x, 0, decel * Time.fixedDeltaTime);
+                rate = decel; // soltar la tecla: frenar
+            else if (currentX != 0f && Mathf.Sign(moveInput.x) != Mathf.Sign(currentX))
+                rate = stats.TurnAcceleration; // cambiar de direccion: giro rapido, sin derrapar
+            else if (Mathf.Abs(currentX) > Mathf.Abs(targetSpeed))
+                rate = decel; // vas mas rapido de lo normal (dash, pico del salto): bajar con el frenado, no con la aceleracion
             else
-                velocity.x = Mathf.MoveTowards(rb.linearVelocity.x, targetSpeed, accel * Time.fixedDeltaTime);
+                rate = accel;
+
+            velocity.x = Mathf.MoveTowards(currentX, targetSpeed, rate * Time.fixedDeltaTime);
 
             rb.linearVelocity = new Vector2(velocity.x, rb.linearVelocity.y);
         }
@@ -304,6 +312,9 @@ public class PlayerController : MonoBehaviour
     /// Rebote al golpear hacia abajo (pogo estilo Hollow Knight): fija la velocidad vertical
     /// y opcionalmente recupera el dash y los saltos aéreos.
     /// </summary>
+    // Se dispara cada vez que el jugador hace un pogo (lo usa PogoGate en el tutorial).
+    public event System.Action Pogoed;
+
     public void Pogo(float force, bool refreshDash, bool refreshAirJumps)
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, force);
@@ -312,5 +323,7 @@ public class PlayerController : MonoBehaviour
 
         if (refreshDash) dashCooldownTimer = 0f;
         if (refreshAirJumps) jumpCount = stats.MaxJumps;
+
+        Pogoed?.Invoke();
     }
 }

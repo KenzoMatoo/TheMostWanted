@@ -4,7 +4,34 @@ using UnityEngine;
 public class ScriptableStats : ScriptableObject
 {
     [Header("--------HEALTH--------")]
+    [Tooltip("Solo se usa para escalar el knockback segun el dano recibido. La vida real son las mascaras.")]
     public int maxHealth = 100;
+
+    [Header("--------MASCARAS (vida)--------")]
+    public int MaxMasks = 5;
+    [Tooltip("Cuanto dano de los enemigos equivale a una mascara. Cada golpe quita al menos 1 (20 de dano = 1 mascara, 40 = 2...).")]
+    public int DamagePerMask = 20;
+    [Tooltip("Segundos que una mascara recien perdida queda AGRIETADA. Si golpeas a un enemigo en ese tiempo, la recuperas.")]
+    public float CrackedRecoverTime = 3f;
+
+    [Header("--------RESISTENCIA (gancho y captura)--------")]
+    public float MaxStamina = 100f;
+    [Tooltip("Cuanta resistencia se recupera por segundo cuando no la estas usando.")]
+    public float StaminaRegenPerSecond = 40f;
+    [Tooltip("Segundos sin usarla antes de empezar a recuperarla.")]
+    public float StaminaRegenDelay = 0.6f;
+    [Tooltip("Costo de lanzar el gancho (solo si se engancha).")]
+    public float HookShotCost = 10f;
+    [Tooltip("Gasto por segundo mientras estas colgado del gancho.")]
+    public float HookDrainPerSecond = 15f;
+    [Tooltip("Gasto por segundo mientras tienes algo capturado. Si llega a 0, lo sueltas.")]
+    public float CaptureDrainPerSecond = 12f;
+
+    [Header("--------ABSORBER (curacion)--------")]
+    [Tooltip("Segundos manteniendo clic derecho con un enemigo capturado para absorberlo.")]
+    public float AbsorbTime = 1.2f;
+    [Tooltip("Mascaras que recuperas al absorber un enemigo capturado.")]
+    public int AbsorbHealMasks = 1;
 
     [Header("--------VISUAL EFFECTS--------")]
     public GameObject HitParticleEffect;
@@ -32,6 +59,8 @@ public class ScriptableStats : ScriptableObject
     public float Deceleration = 35f;       // rapidez al frenar
     public float AirAcceleration = 15f;    // en aire
     public float AirDeceleration = 20f;    // en aire
+    [Tooltip("Rapidez al cambiar de direccion (input contrario a la velocidad). Mas alto = giros mas secos, menos resbaloso.")]
+    public float TurnAcceleration = 150f;
     public float ApexBonus = 2f;           // multiplicador de velocidad cerca del pico del salto
 
     [Header("DASH")]

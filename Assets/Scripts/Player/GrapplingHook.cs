@@ -32,10 +32,13 @@ public class GrapplingHook : MonoBehaviour
         controls.Movement.FireWhip.canceled += ctx => ReleaseHook();
     }
 
+    private PlayerStamina stamina;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         ropeRenderer.enabled = false;
+        stamina = PlayerStamina.Get(gameObject);
     }
 
     void OnEnable() => controls?.Enable();
@@ -53,6 +56,12 @@ public class GrapplingHook : MonoBehaviour
     {
         if (isHooked)
         {
+            // Colgar gasta resistencia; al acabarse te sueltas
+            if (stamina != null && !stamina.Drain(stats.HookDrainPerSecond, Time.fixedDeltaTime))
+            {
+                ReleaseHook();
+                return;
+            }
             ApplySwingPhysics();
         }
     }
@@ -91,6 +100,9 @@ public class GrapplingHook : MonoBehaviour
 
         if (hit.collider != null)
         {
+            // Engancharse cuesta resistencia; si no alcanza, no se engancha
+            if (stamina != null && !stamina.TrySpend(stats.HookShotCost)) return;
+
             // Las lamparas de gancho fijan el punto en su centro
             hookedLamp = hit.collider.GetComponentInParent<GrappleLamp>();
             hookPoint = hookedLamp != null ? hookedLamp.HookPoint : hit.point;

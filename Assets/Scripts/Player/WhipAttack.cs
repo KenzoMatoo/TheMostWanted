@@ -52,6 +52,14 @@ public class WhipAttack : MonoBehaviour
     [SerializeField] private bool pogoRefreshesDash = true;
     [SerializeField] private bool pogoRefreshesAirJumps = true;
 
+    [Header("Pogo asistido (golpe hacia abajo en el aire)")]
+    [Tooltip("Ancho (unidades) de la caja que golpea hacia abajo. La linea normal del latigo mide 0.5.")]
+    [SerializeField] private float pogoBoxWidth = 1.2f;
+    [Tooltip("Que tan abajo llega la caja, medido desde el centro del jugador.")]
+    [SerializeField] private float pogoBoxLength = 2.6f;
+    [Tooltip("Segundos despues del clic durante los que se revisa el golpe hacia abajo cada frame, sin esperar el chasquido de la animacion.")]
+    [SerializeField] private float pogoEarlyWindow = 0.2f;
+
     [Header("Debug")]
     [SerializeField] private bool showHitbox = true;
 
@@ -60,6 +68,7 @@ public class WhipAttack : MonoBehaviour
     private GrapplingHook grapplingHook;
     private PlayerSounds sounds;
     private PlayerEffects effects;
+    private PlayerStats playerStats;
     private Camera mainCamera;
 
     private int bodyStateHash;
@@ -74,6 +83,8 @@ public class WhipAttack : MonoBehaviour
     private bool hitSoundDoneThisAttack;
     private float cooldownEndTime;
     private float bufferedInputTime = -1f;
+    private bool isPogoAttack;      // golpe hacia abajo en el aire: usa la caja ancha y golpea desde el clic
+    private float pogoWindowEnd;
 
     private Vector2 aimDirection = Vector2.right;   // dirección real del chasquido (hacia el mouse)
     private float spriteAngle;                      // rotación aplicada al sprite del látigo (mundo)
@@ -92,6 +103,7 @@ public class WhipAttack : MonoBehaviour
         grapplingHook = GetComponent<GrapplingHook>();
         sounds = GetComponent<PlayerSounds>();
         effects = GetComponent<PlayerEffects>();
+        playerStats = GetComponent<PlayerStats>();
         mainCamera = Camera.main;
 
         if (whipPivot == null) whipPivot = transform.Find("WhipPivot");
@@ -142,6 +154,10 @@ public class WhipAttack : MonoBehaviour
         if (hitboxActive)
         {
             CheckHits();
+        }
+        else if (isPogoAttack && !pogoDoneThisAttack && Time.time <= pogoWindowEnd)
+        {
+            CheckHits(); // pogo: golpea desde el clic, sin esperar el chasquido
         }
 
         // Respaldo por si el evento WhipEnd no llegara a dispararse
@@ -207,7 +223,23 @@ public class WhipAttack : MonoBehaviour
 
         // 1) Dirección hacia el mouse, bloqueada para todo el ataque
         aimDirection = GetMouseDirection();
-        aimingLeft = aimDirection.x < 0f;
+
+        // Pogo asistido: en el aire y apuntando dentro del cono de pogo, el golpe va recto hacia
+        // abajo (aunque el clic quede chueco) y se revisa desde ya con una caja ancha.
+        isPogoAttack = enablePogo
+                       && !playerController.IsGrounded()
+                       && (grapplingHook == null || !grapplingHook.IsHooked())
+                       && Vector2.Angle(aimDirection, Vector2.down) <= pogoAngle;
+        if (isPogoAttack)
+        {
+            aimingLeft = !playerController.facingRight; // el cuerpo sigue mirando a donde miraba
+            aimDirection = Vector2.down;
+            pogoWindowEnd = Time.time + pogoEarlyWindow;
+        }
+        else
+        {
+            aimingLeft = aimDirection.x < 0f;
+        }
 
         // 2) Ángulo del sprite: se resta el ángulo de la punta en el chasquido para que el
         //    chasquido (no el sprite base) apunte al mouse. Con flipY la punta queda espejada.
@@ -247,6 +279,8 @@ public class WhipAttack : MonoBehaviour
         {
             bodyAnimator.Play(bodyStateHash, 0, 0f);
         }
+
+        if (isPogoAttack) CheckHits(); // el mismo frame del clic ya puede rebotar
     }
 
     /// <summary>
@@ -287,6 +321,7 @@ public class WhipAttack : MonoBehaviour
     private void EndAttackState()
     {
         isAttacking = false;
+        isPogoAttack = false;
         hitboxActive = false;
         canCancel = false;
         pendingEnd = false;
@@ -312,12 +347,29 @@ public class WhipAttack : MonoBehaviour
         angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
     }
 
+    private void GetPogoBox(out Vector2 center, out Vector2 size)
+    {
+        Vector2 origin = whipPivot != null ? (Vector2)whipPivot.position : (Vector2)transform.position;
+        size = new Vector2(pogoBoxWidth, pogoBoxLength);
+        center = origin + Vector2.down * (pogoBoxLength * 0.5f);
+    }
+
     private void CheckHits()
     {
         if (combat == null) return;
 
-        GetHitbox(out Vector2 center, out Vector2 size, out float angle);
-        Physics2D.OverlapCapsule(center, size, CapsuleDirection2D.Horizontal, angle, enemyFilter, overlapResults);
+        Vector2 center;
+        if (isPogoAttack)
+        {
+            // Caja ancha debajo del jugador (en vez de la linea delgada del latigo)
+            GetPogoBox(out center, out Vector2 boxSize);
+            Physics2D.OverlapBox(center, boxSize, 0f, enemyFilter, overlapResults);
+        }
+        else
+        {
+            GetHitbox(out center, out Vector2 size, out float angle);
+            Physics2D.OverlapCapsule(center, size, CapsuleDirection2D.Horizontal, angle, enemyFilter, overlapResults);
+        }
 
         bool hitSomething = false;
         foreach (Collider2D hit in overlapResults)
@@ -331,6 +383,9 @@ public class WhipAttack : MonoBehaviour
             combat.ApplyWhipHit(hit, damageable, damage, whipPivot.position, aimDirection, center);
             if (effects != null) effects.PlayAttackHit(hit.ClosestPoint(center), aimDirection);
             hitSomething = true;
+
+            // Golpear a un enemigo recupera una mascara agrietada
+            if (playerStats != null && hit.GetComponent<EnemyBase>() != null) playerStats.OnPlayerHitEnemy();
         }
 
         if (hitSomething && !hitStopDoneThisAttack && combat.Stats != null && combat.Stats.HitStopDuration > 0f)
@@ -426,9 +481,13 @@ public class WhipAttack : MonoBehaviour
         Gizmos.DrawLine(a - normal, b - normal);
         Gizmos.DrawLine(whipPivot.position, center);
 
-        // Cono de direcciones que cuentan como pogo
+        // Cono de direcciones que cuentan como pogo + caja ancha del pogo asistido
         if (enablePogo)
         {
+            GetPogoBox(out Vector2 pogoCenter, out Vector2 pogoSize);
+            Gizmos.color = new Color(0.3f, 0.8f, 1f, isPogoAttack ? 0.9f : 0.35f);
+            Gizmos.DrawWireCube(pogoCenter, pogoSize);
+
             Gizmos.color = new Color(0.3f, 0.8f, 1f, 0.8f);
             float reach = hitboxEndPx / pixelsPerUnit;
             Vector3 origin = whipPivot.position;
