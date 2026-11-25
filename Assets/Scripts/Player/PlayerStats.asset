@@ -52,6 +52,17 @@ MonoBehaviour:
   AirAcceleration: 40
   AirDeceleration: 45
   TurnAcceleration: 150
+  MaxMasks: 5
+  DamagePerMask: 20
+  CrackedRecoverTime: 3
+  MaxStamina: 100
+  StaminaRegenPerSecond: 40
+  StaminaRegenDelay: 0.6
+  HookShotCost: 5
+  HookDrainPerSecond: 6
+  CaptureDrainPerSecond: 5
+  AbsorbTime: 1.2
+  AbsorbHealMasks: 1
   ApexBonus: 1.5
   DashForce: 22
   DashDuration: 0.7

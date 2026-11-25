@@ -53,6 +53,8 @@ public class WhipAttack : MonoBehaviour
     [SerializeField] private bool pogoRefreshesAirJumps = true;
 
     [Header("Pogo asistido (golpe hacia abajo en el aire)")]
+    [Tooltip("Si el clic esta a menos de estos grados de 'recto hacia abajo', el golpe se endereza hacia abajo y usa la caja ancha. Fuera de este cono el latigo va al mouse normal.")]
+    [SerializeField][Range(0f, 60f)] private float pogoSnapAngle = 30f;
     [Tooltip("Ancho (unidades) de la caja que golpea hacia abajo. La linea normal del latigo mide 0.5.")]
     [SerializeField] private float pogoBoxWidth = 1.2f;
     [Tooltip("Que tan abajo llega la caja, medido desde el centro del jugador.")]
@@ -224,21 +226,20 @@ public class WhipAttack : MonoBehaviour
         // 1) Dirección hacia el mouse, bloqueada para todo el ataque
         aimDirection = GetMouseDirection();
 
-        // Pogo asistido: en el aire y apuntando dentro del cono de pogo, el golpe va recto hacia
-        // abajo (aunque el clic quede chueco) y se revisa desde ya con una caja ancha.
+        // Pogo asistido: en el aire y apuntando CASI recto hacia abajo (cono pogoSnapAngle, mas
+        // angosto que el cono de pogo), el golpe va recto hacia abajo aunque el clic quede un poco
+        // chueco, y se revisa desde ya con una caja ancha. Los golpes en diagonal NO se tocan: van
+        // hacia el mouse como siempre (y siguen pudiendo rebotar si caen dentro de pogoAngle).
+        // El lado del cuerpo siempre sale del mouse, no de hacia donde mirabas antes.
+        aimingLeft = aimDirection.x < 0f;
         isPogoAttack = enablePogo
                        && !playerController.IsGrounded()
                        && (grapplingHook == null || !grapplingHook.IsHooked())
-                       && Vector2.Angle(aimDirection, Vector2.down) <= pogoAngle;
+                       && Vector2.Angle(aimDirection, Vector2.down) <= Mathf.Min(pogoSnapAngle, pogoAngle);
         if (isPogoAttack)
         {
-            aimingLeft = !playerController.facingRight; // el cuerpo sigue mirando a donde miraba
             aimDirection = Vector2.down;
             pogoWindowEnd = Time.time + pogoEarlyWindow;
-        }
-        else
-        {
-            aimingLeft = aimDirection.x < 0f;
         }
 
         // 2) Ángulo del sprite: se resta el ángulo de la punta en el chasquido para que el

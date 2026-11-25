@@ -41,6 +41,16 @@ public class CharacterCombat : MonoBehaviour
     private EnemyBase lastAttackedEnemy;
     private Animator animator;
 
+    [Header("Atadura (cuerda enrollada sobre lo capturado)")]
+    [SerializeField] private Sprite captureWrapSprite;
+    private CaptureWrap captureWrap;
+
+    [Header("Feedback de captura (lazo que se cierra)")]
+    [SerializeField] private Sprite lassoSegmentSprite;
+    [SerializeField] private Sprite slimeDropSprite;
+    [SerializeField] private Sprite captureMarkerSprite;
+    private CaptureLasso lasso;
+
     [Header("Capture UI")]
     public GameObject captureUI; // Panel que contiene la barra
     public Slider captureProgressBar; // Barra de progreso
@@ -58,6 +68,10 @@ public class CharacterCombat : MonoBehaviour
     private float absorbProgress;
     private PlayerStamina stamina;
 
+    // Eventos para el tutorial (puertas que se abren al aprender cada cosa)
+    public event System.Action CaptureCompleted;
+    public event System.Action Absorbed;
+
     /// <summary>0..1 mientras se absorbe (para la UI). 0 si no se esta absorbiendo.</summary>
     public float AbsorbProgress01 => absorbProgress;
     /// <summary>True si ahora mismo se puede absorber (hay un enemigo capturado y falta vida).</summary>
@@ -73,6 +87,8 @@ public class CharacterCombat : MonoBehaviour
         playerStats = GetComponent<PlayerStats>();
         playerController = GetComponent<PlayerController>();
         stamina = PlayerStamina.Get(gameObject);
+        if (lassoSegmentSprite != null)
+            lasso = CaptureLasso.Create(lassoSegmentSprite, slimeDropSprite, captureMarkerSprite, whipSound, null);
 
         if (audioSource == null)
         {
@@ -142,6 +158,12 @@ public class CharacterCombat : MonoBehaviour
 
         UpdateAbsorb();
 
+        if (lasso != null)
+        {
+            MonoBehaviour hovered = (!isCapturing && !hasEnemyCaptured) ? currentHoveredCapturable as MonoBehaviour : null;
+            lasso.SetHover(hovered != null ? hovered.transform : null);
+        }
+
         // Tener algo capturado gasta resistencia (mientras absorbes no). Al acabarse, se suelta.
         if (hasEnemyCaptured && !absorbLocked && stamina != null && stats != null
             && !stamina.Drain(stats.CaptureDrainPerSecond, Time.deltaTime))
@@ -189,6 +211,7 @@ public class CharacterCombat : MonoBehaviour
         playerStats.Heal(stats.AbsorbHealMasks);
         if (victim != null && !victim.IsDead()) victim.TakeDamage(9999, transform.position);
         Debug.Log("[ABSORBER] Enemigo absorbido, vida +" + stats.AbsorbHealMasks);
+        Absorbed?.Invoke();
     }
 
     // Mientras absorbe, el jugador no se mueve (es el riesgo de curarse)
@@ -367,6 +390,11 @@ public class CharacterCombat : MonoBehaviour
         currentCaptureProgress = Mathf.Min(currentCaptureProgress, stats.CaptureTime);
 
         UpdateCaptureUI();
+        if (lasso != null)
+        {
+            lasso.SetProgress(currentCaptureProgress / stats.CaptureTime);
+            lasso.OnClick();
+        }
 
         Debug.Log($"[CAPTURA] Click de carga: {currentCaptureProgress:F1}/{stats.CaptureTime:F1}");
 
@@ -395,6 +423,7 @@ public class CharacterCombat : MonoBehaviour
             // IMPORTANTE: Inicializar con el progreso basado en el stun del enemigo
             float initialProgress = targetCapturable.GetCaptureStartProgress();
             currentCaptureProgress = initialProgress * stats.CaptureTime;
+            if (lasso != null) lasso.Begin(targetMB.transform, initialProgress, stats.CaptureChargePerClick);
 
             captureStartPosition = transform.position;
 
@@ -446,6 +475,7 @@ public class CharacterCombat : MonoBehaviour
     }
     void StopCapture()
     {
+        if (lasso != null) lasso.End(false);
         isCapturing = false;
         currentCaptureProgress = 0f;
 
@@ -484,6 +514,7 @@ public class CharacterCombat : MonoBehaviour
         currentCaptureProgress = Mathf.Max(currentCaptureProgress, 0f);
 
         UpdateCaptureUI();
+        if (lasso != null) lasso.SetProgress(currentCaptureProgress / stats.CaptureTime);
 
         if (currentCaptureProgress <= 0f)
         {
@@ -516,6 +547,12 @@ public class CharacterCombat : MonoBehaviour
                 isCapturing = false;
                 currentCaptureProgress = 0f;
 
+                // Se ve atado: el lazo se cierra del todo y queda la cuerda enrollada encima
+                if (lasso != null) lasso.End(true);
+                RemoveCaptureWrap();
+                captureWrap = CaptureWrap.Create(captureWrapSprite, targetMB.transform);
+                CaptureCompleted?.Invoke();
+
                 UpdateCaptureUI();
 
                 currentCapturedController = targetMB.gameObject.AddComponent<CapturedEnemyController>();
@@ -546,9 +583,7 @@ public class CharacterCombat : MonoBehaviour
         }
 
         // Dibujar la cuerda desde el jugador hasta el enemigo
-        ropeRenderer.positionCount = 2;
-        ropeRenderer.SetPosition(0, transform.position); // Posición del jugador
-        ropeRenderer.SetPosition(1, enemyPosition);      // Posición del enemigo capturado
+        SlimeRope.Draw(ropeRenderer, transform.position, enemyPosition); // cuerda de slime del jugador al enemigo
     }
     void HideCaptureRope()
     {
@@ -608,8 +643,16 @@ public class CharacterCombat : MonoBehaviour
 
         return nearestCapturable;
     }
+    void RemoveCaptureWrap()
+    {
+        if (captureWrap != null) Destroy(captureWrap.gameObject);
+        captureWrap = null;
+    }
+
     private void CleanupCaptureState()
     {
+        RemoveCaptureWrap();
+        if (lasso != null) lasso.End(false);
         // Destruir el controller si existe
         if (currentCapturedController != null)
         {
@@ -633,6 +676,7 @@ public class CharacterCombat : MonoBehaviour
     ///////////////////////// RELEASE
     public void ReleaseEnemy()
     {
+        RemoveCaptureWrap();
         if (targetCapturable != null && targetMB != null && hasEnemyCaptured)
         {
             Debug.Log($"Liberando a: {targetMB.name}");

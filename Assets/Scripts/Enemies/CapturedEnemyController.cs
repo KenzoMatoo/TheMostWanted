@@ -17,11 +17,16 @@ public class CapturedEnemyController : MonoBehaviour
     private bool isBox;             // Flag para saber si es una caja
 
     [Header("Drag Settings")]
-    [SerializeField] private float dragSpeed = 75;
+    [SerializeField] private float dragSpeed = 45;
     [SerializeField] private float maxDistanceFromPlayer = 10f;
-    [SerializeField] private float smoothTime = 0.1f;
+    [SerializeField] private float smoothTime = 0.15f;
+    [Tooltip("Segundos al capturar en los que el objeto acelera poco a poco (sin jalon brusco).")]
+    [SerializeField] private float grabEaseTime = 0.35f;
+    [Tooltip("Velocidad maxima justo al capturar; sube hasta dragSpeed en grabEaseTime.")]
+    [SerializeField] private float grabStartSpeed = 6f;
+    private float grabTimer;
     [Tooltip("Qué tan fuerte (unidades de mundo por segundo) el cursor es arrastrado solo hacia el centro del jugador cada frame. Si no compensás moviendo el mouse, el cursor -y el objeto capturado con él- vuelve al centro a esta velocidad. 0 = desactivado")]
-    [SerializeField] private float cursorCenteringForce = 6f;
+    [SerializeField] private float cursorCenteringForce = 1.5f;
 
     [Header("Velocity Tracking")]
     private Vector2 previousPosition;
@@ -245,12 +250,17 @@ public class CapturedEnemyController : MonoBehaviour
     }
     void MoveTowardsTarget()
     {
+        // Al capturar, la velocidad maxima sube poco a poco: se acerca sin un jalon brusco
+        grabTimer += Time.fixedDeltaTime;
+        float ease = grabEaseTime > 0f ? Mathf.Clamp01(grabTimer / grabEaseTime) : 1f;
+        float maxSpeed = Mathf.Lerp(grabStartSpeed, dragSpeed, ease * ease);
+
         Vector2 newPosition = Vector2.SmoothDamp(
             rb.position,
             targetPosition,
             ref smoothVelocity,
             smoothTime,
-            dragSpeed
+            maxSpeed
         );
 
         rb.MovePosition(newPosition);

@@ -21,11 +21,11 @@ public class ScriptableStats : ScriptableObject
     [Tooltip("Segundos sin usarla antes de empezar a recuperarla.")]
     public float StaminaRegenDelay = 0.6f;
     [Tooltip("Costo de lanzar el gancho (solo si se engancha).")]
-    public float HookShotCost = 10f;
+    public float HookShotCost = 5f;
     [Tooltip("Gasto por segundo mientras estas colgado del gancho.")]
-    public float HookDrainPerSecond = 15f;
+    public float HookDrainPerSecond = 6f;
     [Tooltip("Gasto por segundo mientras tienes algo capturado. Si llega a 0, lo sueltas.")]
-    public float CaptureDrainPerSecond = 12f;
+    public float CaptureDrainPerSecond = 5f;
 
     [Header("--------ABSORBER (curacion)--------")]
     [Tooltip("Segundos manteniendo clic derecho con un enemigo capturado para absorberlo.")]

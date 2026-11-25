@@ -256,9 +256,7 @@ public class GrapplingHook : MonoBehaviour
     {
         if (!ropeRenderer.enabled) return;
 
-        ropeRenderer.positionCount = 2;
-        ropeRenderer.SetPosition(0, hookPoint);
-        ropeRenderer.SetPosition(1, transform.position);
+        SlimeRope.Draw(ropeRenderer, hookPoint, transform.position);
     }
 
     void OnDrawGizmos()
