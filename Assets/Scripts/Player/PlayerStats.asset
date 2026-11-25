@@ -13,6 +13,17 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
   maxHealth: 100
+  MaxMasks: 5
+  DamagePerMask: 20
+  CrackedRecoverTime: 3
+  MaxStamina: 100
+  StaminaRegenPerSecond: 40
+  StaminaRegenDelay: 0.6
+  HookShotCost: 5
+  HookDrainPerSecond: 6
+  CaptureDrainPerSecond: 5
+  AbsorbTime: 1.2
+  AbsorbHealMasks: 1
   HitParticleEffect: {fileID: 541851277332201417, guid: b9e8453e48eb6dd4bbd79c4bf9b5f737, type: 3}
   HitStopDuration: 0.15
   CanBeKnockback: 1
@@ -52,22 +63,11 @@ MonoBehaviour:
   AirAcceleration: 40
   AirDeceleration: 45
   TurnAcceleration: 150
-  MaxMasks: 5
-  DamagePerMask: 20
-  CrackedRecoverTime: 3
-  MaxStamina: 100
-  StaminaRegenPerSecond: 40
-  StaminaRegenDelay: 0.6
-  HookShotCost: 5
-  HookDrainPerSecond: 6
-  CaptureDrainPerSecond: 5
-  AbsorbTime: 1.2
-  AbsorbHealMasks: 1
   ApexBonus: 1.5
   DashForce: 22
   DashDuration: 0.7
   DashCooldown: 0.75
-  JumpForce: 17.5
+  JumpForce: 20
   MaxJumps: 0
   JumpCutMultiplier: 0.5
   CoyoteTime: 0.2

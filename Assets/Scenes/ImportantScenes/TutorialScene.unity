@@ -1780,6 +1780,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!1001 &300419730
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 445559256092260753, guid: 022c2a57ab98bbd47945a006e4d9170f, type: 3}
+      propertyPath: m_Name
+      value: ImpactFrameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251955381507825869, guid: 022c2a57ab98bbd47945a006e4d9170f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251955381507825869, guid: 022c2a57ab98bbd47945a006e4d9170f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251955381507825869, guid: 022c2a57ab98bbd47945a006e4d9170f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251955381507825869, guid: 022c2a57ab98bbd47945a006e4d9170f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251955381507825869, guid: 022c2a57ab98bbd47945a006e4d9170f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251955381507825869, guid: 022c2a57ab98bbd47945a006e4d9170f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251955381507825869, guid: 022c2a57ab98bbd47945a006e4d9170f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251955381507825869, guid: 022c2a57ab98bbd47945a006e4d9170f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251955381507825869, guid: 022c2a57ab98bbd47945a006e4d9170f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251955381507825869, guid: 022c2a57ab98bbd47945a006e4d9170f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 022c2a57ab98bbd47945a006e4d9170f, type: 3}
 --- !u!1 &311076375
 GameObject:
   m_ObjectHideFlags: 0
@@ -283873,11 +283930,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8720605379785435561, guid: a3d3c6088e01f1c458bdbf7ce0388727, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -28.6
+      value: -19.5
       objectReference: {fileID: 0}
     - target: {fileID: 8720605379785435561, guid: a3d3c6088e01f1c458bdbf7ce0388727, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 100.53
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8720605379785435561, guid: a3d3c6088e01f1c458bdbf7ce0388727, type: 3}
       propertyPath: m_LocalPosition.z
@@ -284163,7 +284220,7 @@ MonoBehaviour:
 
     al muneco y MANTEN
 
-    CLIC DERECHO para
+    la tecla E para
 
     absorberlo
     y curarte'
@@ -300680,7 +300737,7 @@ Transform:
   m_GameObject: {fileID: 1229593889}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.785179, y: 70, z: -10}
+  m_LocalPosition: {x: -8.785179, y: 6, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -309636,7 +309693,7 @@ Transform:
   m_GameObject: {fileID: 1781136184}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.6, y: 102.53, z: -10}
+  m_LocalPosition: {x: -19.5, y: 2.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -387741,3 +387798,4 @@ SceneRoots:
   - {fileID: 884064674}
   - {fileID: 5250648104049749023}
   - {fileID: 761255697}
+  - {fileID: 300419730}

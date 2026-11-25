@@ -333,6 +333,7 @@ public static class RoomSpawner
                 for (int y = 0; y < h; y++)
                 {
                     if (!cave.freeFloor[x, y]) continue;
+                    if (cave.spawnAllowed != null && !cave.spawnAllowed[x, y]) continue;
                     if (clearance[x, y] < margin + 1) continue;      // every tile within the margin must be free
                     if (doorDistSq[x, y] < doorSq) continue;
                     if (AnyTaken(x, y, margin)) continue;

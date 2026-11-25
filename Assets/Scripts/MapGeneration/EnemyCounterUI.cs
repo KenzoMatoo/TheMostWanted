@@ -36,7 +36,9 @@ public class EnemyCounterUI : MonoBehaviour
         MapGenerationBase generator = MapGenerationBase.instance;
         if (generator == null)
         {
-            Debug.LogWarning("EnemyCounterUI: no map generator in the scene.");
+            // Escenas sin mapa generado (por ejemplo el tutorial): esconder el contador
+            GameObject target = container != null ? container : (label != null ? label.gameObject : null);
+            if (target != null) target.SetActive(false);
             enabled = false;
             return;
         }

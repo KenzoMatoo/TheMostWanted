@@ -151,14 +151,15 @@ public class PlayerMapMarker : MonoBehaviour
             var image = go.GetComponent<Image>();
             image.color = markerColor;
             image.raycastTarget = false;
-
-            // Same size for every room: a fraction of one map cell (measured on a 1x1 room)
-            RectTransform reference = cellRect;
-            foreach (Cell c in generator.getSpawnedCells)
-                if (c.roomShape == MapGenerationBase.RoomShape.Single) { reference = (RectTransform)c.transform; break; }
-            float cellSize = Mathf.Min(reference.sizeDelta.x, reference.sizeDelta.y);
-            marker.sizeDelta = Vector2.one * cellSize * markerScale;
         }
+
+        // Same size for every room: a fraction of one map cell (measured on a 1x1 room).
+        // Also applies to the prefab marker, so it never keeps the prefab's own (huge) size.
+        RectTransform reference = cellRect;
+        foreach (Cell c in generator.getSpawnedCells)
+            if (c.roomShape == MapGenerationBase.RoomShape.Single) { reference = (RectTransform)c.transform; break; }
+        float cellSize = Mathf.Min(reference.sizeDelta.x, reference.sizeDelta.y);
+        marker.sizeDelta = Vector2.one * cellSize * markerScale;
         marker.pivot = new Vector2(0.5f, 0.5f);
     }
 }

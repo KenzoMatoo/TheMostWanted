@@ -470,6 +470,10 @@ public class PlayerStats : MonoBehaviour, IDamageable
             combat.ReleaseEnemy();
         }
 
+        // Soltar el gancho antes de apagar los scripts (si no, al revivir sigue "colgado")
+        GrapplingHook hook = GetComponent<GrapplingHook>();
+        if (hook != null) hook.ReleaseHook();
+
         DisablePlayerScripts();
 
         // Invocar evento de muerte
@@ -564,6 +568,12 @@ public class PlayerStats : MonoBehaviour, IDamageable
 
         // NUEVO: Reactivar los scripts del jugador
         EnablePlayerScripts();
+
+        // Resistencia llena y un momento de invencibilidad al reaparecer
+        PlayerStamina stamina = GetComponent<PlayerStamina>();
+        if (stamina != null) stamina.Refill();
+        if (playerController != null) playerController.canMove = true;
+        StartInvincibility();
 
         if (animator != null && animator.runtimeAnimatorController != null)
         {

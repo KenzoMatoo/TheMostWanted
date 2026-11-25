@@ -151,6 +151,43 @@ public class Door : MonoBehaviour
     /// <summary>Door objects that were opened (disabled) for this room.</summary>
     public IReadOnlyList<GameObject> OpenedDoors => openedDoors;
 
+    /// <summary>The door object of a quadrant (1 = north-west ... 4 = south-east) and side, or null.</summary>
+    public GameObject GetDoor(int quadrant, EdgeDirection direction)
+    {
+        switch (quadrant)
+        {
+            case 1: return Pick(direction, Q1_nDoor, Q1_sDoor, Q1_eDoor, Q1_wDoor);
+            case 2: return Pick(direction, Q2_nDoor, Q2_sDoor, Q2_eDoor, Q2_wDoor);
+            case 3: return Pick(direction, Q3_nDoor, Q3_sDoor, Q3_eDoor, Q3_wDoor);
+            case 4: return Pick(direction, Q4_nDoor, Q4_sDoor, Q4_eDoor, Q4_wDoor);
+            default: return null;
+        }
+    }
+
+    public bool IsOpen(GameObject door) => door != null && openedDoors.Contains(door);
+
+    /// <summary>Every assigned door object of the room (open or closed).</summary>
+    public IEnumerable<GameObject> AllDoors
+    {
+        get
+        {
+            GameObject[] all = { Q1_nDoor, Q1_sDoor, Q1_eDoor, Q1_wDoor, Q2_nDoor, Q2_sDoor, Q2_eDoor, Q2_wDoor,
+                                 Q3_nDoor, Q3_sDoor, Q3_eDoor, Q3_wDoor, Q4_nDoor, Q4_sDoor, Q4_eDoor, Q4_wDoor };
+            foreach (GameObject d in all) if (d != null) yield return d;
+        }
+    }
+
+    private static GameObject Pick(EdgeDirection direction, GameObject n, GameObject s, GameObject e, GameObject w)
+    {
+        switch (direction)
+        {
+            case EdgeDirection.Up: return n;
+            case EdgeDirection.Down: return s;
+            case EdgeDirection.Right: return e;
+            default: return w;
+        }
+    }
+
     // Doors are walls that get disabled to open the passage
     private void OpenDoor(GameObject door, string fieldName)
     {

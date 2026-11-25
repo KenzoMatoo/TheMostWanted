@@ -76,10 +76,17 @@ public class Room : MonoBehaviour
                 break;
         }
 
+        var rng = new System.Random(Random.Range(int.MinValue, int.MaxValue));
+
+        // Hand-made rooms: mirror at random, keep the pieces that fit the open doors, no cave noise
+        HandmadeRoom handmade = gameObject.GetComponent<HandmadeRoom>();
+        if (handmade != null) handmade.Build(roomDoor, rng);
+
         if (RoomManager.instance != null)
         {
-            var rng = new System.Random(Random.Range(int.MinValue, int.MaxValue));
-            CaveResult cave = CaveGenerator.Generate(gameObject, roomDoor.OpenedDoors, RoomManager.instance.caveSettings, rng);
+            CaveSettings caves = handmade != null ? HandmadeRoom.NoCaves : RoomManager.instance.caveSettings;
+            CaveResult cave = CaveGenerator.Generate(gameObject, roomDoor.OpenedDoors, caves, rng);
+            if (handmade != null) handmade.PrepareSpawns(cave);
             RoomSpawner.Populate(gameObject, cave, currentCell, RoomManager.instance.spawnSettings, rng);
         }
     }

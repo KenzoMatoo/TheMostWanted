@@ -28,7 +28,7 @@ public class ScriptableStats : ScriptableObject
     public float CaptureDrainPerSecond = 5f;
 
     [Header("--------ABSORBER (curacion)--------")]
-    [Tooltip("Segundos manteniendo clic derecho con un enemigo capturado para absorberlo.")]
+    [Tooltip("Segundos manteniendo la tecla E con un enemigo capturado para absorberlo.")]
     public float AbsorbTime = 1.2f;
     [Tooltip("Mascaras que recuperas al absorber un enemigo capturado.")]
     public int AbsorbHealMasks = 1;

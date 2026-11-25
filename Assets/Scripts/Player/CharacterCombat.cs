@@ -58,12 +58,22 @@ public class CharacterCombat : MonoBehaviour
     private Camera mainCamera;
 
     // ---------- Absorber (curacion) ----------
-    // Con un enemigo capturado, mantener CLIC DERECHO lo absorbe: el jugador se queda quieto
-    // AbsorbTime segundos y al terminar recupera AbsorbHealMasks mascaras y el enemigo muere.
-    // (El clic derecho es el gancho, pero el gancho esta bloqueado mientras hay algo capturado.)
+    // Con un enemigo capturado, MANTENER LA TECLA E lo absorbe: el jugador se queda quieto
+    // AbsorbTime segundos y al terminar recupera AbsorbHealMasks mascaras y el enemigo explota.
+    // El enemigo brilla en blanco cuando se puede absorber y, mientras se absorbe, suelta gotas hacia el jugador.
+    [Header("Absorber")]
+    [Tooltip("Gotas por segundo que vuelan del enemigo al jugador mientras se absorbe")]
+    [SerializeField] private float absorbStreamRate = 45f;
     private PlayerStats playerStats;
     private PlayerController playerController;
     private bool absorbHeld;
+    private float streamAccumulator;
+    private AbsorbGlow absorbGlow;
+    private PlayerEffects playerEffects;
+    private const string AbsorbHintKey = "AbsorbHintSeen";
+
+    /// <summary>True cuando el jugador ya absorbio alguna vez: el aviso de texto ya no se muestra.</summary>
+    public static bool AbsorbHintSeen => PlayerPrefs.GetInt(AbsorbHintKey, 0) == 1;
     private bool absorbLocked;
     private float absorbProgress;
     private PlayerStamina stamina;
@@ -103,8 +113,6 @@ public class CharacterCombat : MonoBehaviour
 
         controls.Combat.Capture.started += ctx => HandleCaptureClick();
 
-        controls.Movement.FireWhip.started += ctx => absorbHeld = true;
-        controls.Movement.FireWhip.canceled += ctx => absorbHeld = false;
 
         // Validar que las stats existan
         if (stats == null)
@@ -190,21 +198,56 @@ public class CharacterCombat : MonoBehaviour
                && playerStats.GetCurrentHealth() < playerStats.GetMaxHealth();
     }
 
+    void UpdateAbsorbGlow()
+    {
+        bool want = hasEnemyCaptured && targetMB != null && CanAbsorb();
+        if (want && absorbGlow == null) absorbGlow = AbsorbGlow.Attach(targetMB.transform);
+        else if (!want && absorbGlow != null) { Destroy(absorbGlow.gameObject); absorbGlow = null; }
+        if (absorbGlow != null) absorbGlow.SetProgress(absorbProgress);
+    }
+
     void UpdateAbsorb()
     {
-        if (!absorbHeld || !CanAbsorb())
+        // Tecla E: hay que presionarla (no basta con traerla apretada desde antes de absorber otro)
+        var keyboard = UnityEngine.InputSystem.Keyboard.current;
+        if (keyboard != null)
+        {
+            if (keyboard.eKey.wasPressedThisFrame) absorbHeld = true;
+            if (!keyboard.eKey.isPressed) absorbHeld = false;
+        }
+        bool holding = absorbHeld;
+        if (!holding || !CanAbsorb())
         {
             absorbProgress = 0f;
             SetAbsorbLock(false);
+            UpdateAbsorbGlow();
             return;
         }
 
         SetAbsorbLock(true);
         absorbProgress += Time.deltaTime / Mathf.Max(0.05f, stats.AbsorbTime);
+        UpdateAbsorbGlow();
+        StreamAbsorbDroplets();
         if (absorbProgress < 1f) return;
 
         // Absorbido: curar y matar al enemigo (CharacterCombat lo suelta solo al ver que murio)
         IDamageable victim = targetMB != null ? targetMB.GetComponent<IDamageable>() : null;
+
+        // Explota en gotas blancas de slime (las mismas del jugador), desde el centro del enemigo
+        if (targetMB != null)
+        {
+            var effects = GetComponent<PlayerEffects>();
+            if (effects != null)
+            {
+                Collider2D col = targetMB.GetComponentInChildren<Collider2D>();
+                Renderer rend = targetMB.GetComponentInChildren<Renderer>();
+                Vector2 center = col != null ? (Vector2)col.bounds.center : rend != null ? (Vector2)rend.bounds.center : (Vector2)targetMB.transform.position;
+                effects.PlayAbsorbBurst(center);
+            }
+        }
+
+        if (absorbGlow != null) { Destroy(absorbGlow.gameObject); absorbGlow = null; }
+        if (!AbsorbHintSeen) { PlayerPrefs.SetInt(AbsorbHintKey, 1); PlayerPrefs.Save(); }
         absorbProgress = 0f;
         absorbHeld = false; // hay que volver a presionar para absorber otro
         SetAbsorbLock(false);
@@ -212,6 +255,27 @@ public class CharacterCombat : MonoBehaviour
         if (victim != null && !victim.IsDead()) victim.TakeDamage(9999, transform.position);
         Debug.Log("[ABSORBER] Enemigo absorbido, vida +" + stats.AbsorbHealMasks);
         Absorbed?.Invoke();
+    }
+
+    // Gotas que salen del enemigo y vuelan hacia el jugador, como si lo estuviera sorbiendo
+    void StreamAbsorbDroplets()
+    {
+        if (targetMB == null) return;
+        if (playerEffects == null) playerEffects = GetComponent<PlayerEffects>();
+        if (playerEffects == null) return;
+
+        streamAccumulator += absorbStreamRate * Mathf.Lerp(0.5f, 1.5f, absorbProgress) * Time.deltaTime;
+        if (streamAccumulator < 1f) return;
+
+        Collider2D col = targetMB.GetComponentInChildren<Collider2D>();
+        Vector2 from = col != null ? (Vector2)col.bounds.center : (Vector2)targetMB.transform.position;
+        Collider2D own = GetComponent<Collider2D>();
+        Vector2 to = own != null ? (Vector2)own.bounds.center : (Vector2)transform.position;
+        while (streamAccumulator >= 1f)
+        {
+            streamAccumulator -= 1f;
+            playerEffects.PlayAbsorbStreamDrop(from, to);
+        }
     }
 
     // Mientras absorbe, el jugador no se mueve (es el riesgo de curarse)

@@ -55,6 +55,10 @@ public class CaveResult
     /// <summary>true = walkable floor with no rock on it (doorways are not included).</summary>
     public bool[,] freeFloor;
 
+    /// <summary>Optional: where a spawned thing may be centered (null = any free floor). Set by hand-made rooms
+    /// so enemies and crates appear close to the ground instead of in mid-air.</summary>
+    public bool[,] spawnAllowed;
+
     /// <summary>Door tiles in local coordinates.</summary>
     public List<Vector2Int> doorCells = new List<Vector2Int>();
 

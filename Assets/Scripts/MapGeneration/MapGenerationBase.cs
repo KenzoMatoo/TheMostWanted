@@ -38,6 +38,8 @@ public abstract class MapGenerationBase : MonoBehaviour
 
     // Fitness Function params
     protected int startIndex;
+    /// <summary>Grid index of the cell where the player starts.</summary>
+    public int StartIndex => startIndex;
     protected int finalRoomIndex;
     protected int itemRoomIndex;
 

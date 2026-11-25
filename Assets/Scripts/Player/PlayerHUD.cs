@@ -32,6 +32,7 @@ public class PlayerHUD : MonoBehaviour
     [Header("Absorber")]
     [SerializeField] private RectTransform absorbGroup;
     [SerializeField] private Image absorbRing;
+    private Transform absorbHint;
 
     [Header("Colores")]
     [SerializeField] private Color staminaColor = new Color(0.36f, 0.79f, 0.65f);
@@ -186,6 +187,14 @@ public class PlayerHUD : MonoBehaviour
         bool show = combat != null && (combat.CanAbsorbNow || combat.AbsorbProgress01 > 0f);
         if (absorbGroup.gameObject.activeSelf != show) absorbGroup.gameObject.SetActive(show);
         if (!show) return;
+
+        // El texto "Manten la RUEDA" solo sale hasta la primera vez que absorbes
+        if (absorbHint == null) absorbHint = absorbGroup.Find("Aviso");
+        if (absorbHint != null)
+        {
+            bool hint = !CharacterCombat.AbsorbHintSeen;
+            if (absorbHint.gameObject.activeSelf != hint) absorbHint.gameObject.SetActive(hint);
+        }
 
         if (absorbRing != null) absorbRing.fillAmount = combat.AbsorbProgress01;
         if (cam == null) cam = Camera.main;
