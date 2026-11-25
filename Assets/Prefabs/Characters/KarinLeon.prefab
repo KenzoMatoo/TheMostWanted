@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 805989675645204218}
   - component: {fileID: 9201700776626801549}
   - component: {fileID: 2799509936285819466}
-  m_Layer: 7
+  m_Layer: 17
   m_Name: WhipPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,8 +79,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 771954991
+  m_SortingLayer: 1
   m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 5842270830056406147, guid: 893334d2a58077347ad3c2166ce6a641, type: 3}

@@ -76,12 +76,11 @@ public class Room : MonoBehaviour
                 break;
         }
 
-        // Fill the room with caves (all shapes; the generator reads the floor from the Background tilemap)
         if (RoomManager.instance != null)
         {
-            // Seed from Unity's Random so the whole map follows the same random state
             var rng = new System.Random(Random.Range(int.MinValue, int.MaxValue));
-            CaveGenerator.Generate(gameObject, roomDoor.OpenedDoors, RoomManager.instance.caveSettings, rng);
+            CaveResult cave = CaveGenerator.Generate(gameObject, roomDoor.OpenedDoors, RoomManager.instance.caveSettings, rng);
+            RoomSpawner.Populate(gameObject, cave, currentCell, RoomManager.instance.spawnSettings, rng);
         }
     }
 
