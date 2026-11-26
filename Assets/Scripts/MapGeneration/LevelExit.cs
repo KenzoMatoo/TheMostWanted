@@ -34,30 +34,15 @@ public class LevelExit : MonoBehaviour
     private void Awake()
     {
         Apply();
-        // Find the GameObject named "SceneLoader" and get its SceneLoader script component
-        GameObject loaderObject = GameObject.Find("SceneLoader");
-
-        if (loaderObject != null)
+        // Entering the open door finishes the level: advance the run and go back to the hub.
+        // Uses the scene's SceneLoader if there is one (any name), otherwise loads the hub directly.
+        onPlayerEntered.AddListener(() =>
         {
-            SceneLoader sceneLoader = loaderObject.GetComponent<SceneLoader>();
-
-            if (sceneLoader != null)
-            {
-                onPlayerEntered.AddListener(() =>
-                {
-                    RunProgression.NotifyLevelCompleted();   // advances the run (does nothing if no run is active)
-                    sceneLoader.LoadScene("HUB");
-                });
-            }
-            else
-            {
-                Debug.LogWarning("Found 'SceneLoader' GameObject, but it is missing the SceneLoader script component!");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("GameObject named 'SceneLoader' was not found in the scene!");
-        }
+            RunProgression.NotifyLevelCompleted();   // advances the run (does nothing if no run is active)
+            SceneLoader sceneLoader = FindAnyObjectByType<SceneLoader>();
+            if (sceneLoader != null) sceneLoader.LoadScene("HUB");
+            else UnityEngine.SceneManagement.SceneManager.LoadScene("HUB");
+        });
     }
 
     public void SetLocked(bool locked)

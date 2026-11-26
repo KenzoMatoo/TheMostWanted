@@ -1,0 +1,1872 @@
+fileFormatVersion: 2
+guid: 563b118113fb35740801fc445df6bec3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7519931522748522052
+    second: CartelPlataformeo_0
+  - first:
+      213: 5882055509385894899
+    second: CartelPlataformeo_1
+  - first:
+      213: -2414703293577944356
+    second: CartelPlataformeo_2
+  - first:
+      213: -4974636977646111251
+    second: CartelPlataformeo_3
+  - first:
+      213: -8973589989355059166
+    second: CartelPlataformeo_4
+  - first:
+      213: -8179250767819616750
+    second: CartelPlataformeo_5
+  - first:
+      213: -3126883172437755528
+    second: CartelPlataformeo_6
+  - first:
+      213: -3755126336321661051
+    second: CartelPlataformeo_7
+  - first:
+      213: 5621812542394990634
+    second: CartelPlataformeo_8
+  - first:
+      213: -2330281527572016444
+    second: CartelPlataformeo_9
+  - first:
+      213: 2157908396420034823
+    second: CartelPlataformeo_10
+  - first:
+      213: 440490821846621682
+    second: CartelPlataformeo_11
+  - first:
+      213: 3007252417245830938
+    second: CartelPlataformeo_12
+  - first:
+      213: -3500955546657251738
+    second: CartelPlataformeo_13
+  - first:
+      213: -7567845325497268737
+    second: CartelPlataformeo_14
+  - first:
+      213: 1566576854818054366
+    second: CartelPlataformeo_15
+  - first:
+      213: 8723368959217393051
+    second: CartelPlataformeo_16
+  - first:
+      213: 5240028781090350729
+    second: CartelPlataformeo_17
+  - first:
+      213: -2678016127857518355
+    second: CartelPlataformeo_18
+  - first:
+      213: 6420249543797748522
+    second: CartelPlataformeo_19
+  - first:
+      213: 9165630518434562846
+    second: CartelPlataformeo_20
+  - first:
+      213: 3436097779167363316
+    second: CartelPlataformeo_21
+  - first:
+      213: 7573543720992367921
+    second: CartelPlataformeo_22
+  - first:
+      213: -1190060557547076639
+    second: CartelPlataformeo_23
+  - first:
+      213: 7139475719724302001
+    second: CartelPlataformeo_24
+  - first:
+      213: 8303726565227750552
+    second: CartelPlataformeo_25
+  - first:
+      213: 3211155631093128359
+    second: CartelPlataformeo_26
+  - first:
+      213: 973999798165751406
+    second: CartelPlataformeo_27
+  - first:
+      213: 7328335676446974141
+    second: CartelPlataformeo_28
+  - first:
+      213: -1194398265731503304
+    second: CartelPlataformeo_29
+  - first:
+      213: -3701166661898151202
+    second: CartelPlataformeo_30
+  - first:
+      213: 3582362370437537568
+    second: CartelPlataformeo_31
+  - first:
+      213: -8446437456843258090
+    second: CartelPlataformeo_32
+  - first:
+      213: -4100851501006107942
+    second: CartelPlataformeo_33
+  - first:
+      213: -1185441842170721098
+    second: CartelPlataformeo_34
+  - first:
+      213: -6302072047331186356
+    second: CartelPlataformeo_35
+  - first:
+      213: -460267773466697563
+    second: CartelPlataformeo_36
+  - first:
+      213: 3685531382555067043
+    second: CartelPlataformeo_37
+  - first:
+      213: 856710857769558946
+    second: CartelPlataformeo_38
+  - first:
+      213: 1248136460618482955
+    second: CartelPlataformeo_39
+  - first:
+      213: -672732864501011077
+    second: CartelPlataformeo_40
+  - first:
+      213: -8866978038358601105
+    second: CartelPlataformeo_41
+  - first:
+      213: -5960413116281310022
+    second: CartelPlataformeo_42
+  - first:
+      213: -871085356449068623
+    second: CartelPlataformeo_43
+  - first:
+      213: 8159267052698659708
+    second: CartelPlataformeo_44
+  - first:
+      213: -467736695982158810
+    second: CartelPlataformeo_45
+  - first:
+      213: 8342760673436557173
+    second: CartelPlataformeo_46
+  - first:
+      213: 1261673240320168979
+    second: CartelPlataformeo_47
+  - first:
+      213: -8011924019426287923
+    second: CartelPlataformeo_48
+  - first:
+      213: 6374073964173601433
+    second: CartelPlataformeo_49
+  - first:
+      213: -1688230637205836172
+    second: CartelPlataformeo_50
+  - first:
+      213: 3630131369905921036
+    second: CartelPlataformeo_51
+  - first:
+      213: -66478264306184334
+    second: CartelPlataformeo_52
+  - first:
+      213: 3769292607969964474
+    second: CartelPlataformeo_53
+  - first:
+      213: 95847092807323768
+    second: CartelPlataformeo_54
+  - first:
+      213: -3923996228989158224
+    second: CartelPlataformeo_55
+  - first:
+      213: -6918544544704479777
+    second: CartelPlataformeo_56
+  - first:
+      213: 4216438299393746437
+    second: CartelPlataformeo_57
+  - first:
+      213: 1184831820221058924
+    second: CartelPlataformeo_58
+  - first:
+      213: -2623658637831863050
+    second: CartelPlataformeo_59
+  - first:
+      213: -8622301239821892430
+    second: CartelPlataformeo_60
+  - first:
+      213: -2684997461457352280
+    second: CartelPlataformeo_61
+  - first:
+      213: -4700724169288482865
+    second: CartelPlataformeo_62
+  - first:
+      213: -4449345013909511085
+    second: CartelPlataformeo_63
+  - first:
+      213: 8860298855967778205
+    second: CartelPlataformeo_64
+  - first:
+      213: 3193081746935191174
+    second: CartelPlataformeo_65
+  - first:
+      213: 6039584611695209209
+    second: CartelPlataformeo_66
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CartelPlataformeo_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 198
+        width: 62
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44e10bca0e92c5860800000000000000
+      internalID: 7519931522748522052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_1
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fb5312425241a150800000000000000
+      internalID: 5882055509385894899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd2225ce5204d7ed0800000000000000
+      internalID: -2414703293577944356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_3
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de571ec860a86fab0800000000000000
+      internalID: -4974636977646111251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_4
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2288d74e277677380800000000000000
+      internalID: -8973589989355059166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_5
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21e454f13c67d7e80800000000000000
+      internalID: -8179250767819616750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_6
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87973b452541b94d0800000000000000
+      internalID: -3126883172437755528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_7
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 173
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58755dc1e7c13ebc0800000000000000
+      internalID: -3755126336321661051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_8
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 173
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a200a4fb8b0b40e40800000000000000
+      internalID: 5621812542394990634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_9
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 146
+        width: 42
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c25a6a0c4d29afd0800000000000000
+      internalID: -2330281527572016444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_10
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 160
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 701f272e04e62fd10800000000000000
+      internalID: 2157908396420034823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_11
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 146
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fddcf29110fc1600800000000000000
+      internalID: 440490821846621682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_12
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1f5fdfe328ebb920800000000000000
+      internalID: 3007252417245830938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_13
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66e9f0baa7b1a6fc0800000000000000
+      internalID: -3500955546657251738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_14
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff582aac5cc99f690800000000000000
+      internalID: -7567845325497268737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_15
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed067c079599db510800000000000000
+      internalID: 1566576854818054366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_16
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9d52da99d1af0970800000000000000
+      internalID: 8723368959217393051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_17
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 986a6bdd96258b840800000000000000
+      internalID: 5240028781090350729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_18
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de8194c3586c5dad0800000000000000
+      internalID: -2678016127857518355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_19
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a23bd63b1fe491950800000000000000
+      internalID: 6420249543797748522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_20
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1385c9156cd23f70800000000000000
+      internalID: 9165630518434562846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_21
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f087c499b87faf20800000000000000
+      internalID: 3436097779167363316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_22
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 135e3ac43e1aa1960800000000000000
+      internalID: 7573543720992367921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_23
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e304366a3e0c7fe0800000000000000
+      internalID: -1190060557547076639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_24
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be71bc2753841360800000000000000
+      internalID: 7139475719724302001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_25
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 894ef58e053cc3370800000000000000
+      internalID: 8303726565227750552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_26
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ac1dc57801509c20800000000000000
+      internalID: 3211155631093128359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_27
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e66c8fce7a7548d00800000000000000
+      internalID: 973999798165751406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_28
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 102
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db0a175787a73b560800000000000000
+      internalID: 7328335676446974141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_29
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83b2bb20b15ac6fe0800000000000000
+      internalID: -1194398265731503304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_30
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edada07d780d2acc0800000000000000
+      internalID: -3701166661898151202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_31
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02fd7a2889b17b130800000000000000
+      internalID: 3582362370437537568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_32
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 617cd4752e938ca80800000000000000
+      internalID: -8446437456843258090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_33
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ada47ed7949d617c0800000000000000
+      internalID: -4100851501006107942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_34
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bc878fdce67c8fe0800000000000000
+      internalID: -1185441842170721098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_35
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 92
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c49e7eddcda8a88a0800000000000000
+      internalID: -6302072047331186356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_36
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 92
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a025fc06eccc99f0800000000000000
+      internalID: -460267773466697563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_37
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 92
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a2cfb10443a52330800000000000000
+      internalID: 3685531382555067043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_38
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 92
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a323907cf5a3eb00800000000000000
+      internalID: 856710857769558946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_39
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 92
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b05c06e7f75425110800000000000000
+      internalID: 1248136460618482955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_40
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 92
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7dafa62609f9a6f0800000000000000
+      internalID: -672732864501011077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_41
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f621270147a22f480800000000000000
+      internalID: -8866978038358601105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_42
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab43971b9db584da0800000000000000
+      internalID: -5960413116281310022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_43
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b90fc7cb7849e3f0800000000000000
+      internalID: -871085356449068623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_44
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7be6af972a8b3170800000000000000
+      internalID: 8159267052698659708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_45
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62c819304f34289f0800000000000000
+      internalID: -467736695982158810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_46
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57fd84271a077c370800000000000000
+      internalID: 8342760673436557173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_47
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31456ef902d528110800000000000000
+      internalID: 1261673240320168979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_48
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 72
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dce1da6ad8defc090800000000000000
+      internalID: -8011924019426287923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_49
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 72
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99a22a6cf72457850800000000000000
+      internalID: 6374073964173601433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_50
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 72
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47e2a6a1e233298e0800000000000000
+      internalID: -1688230637205836172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_51
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 72
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0c9e376f31d06230800000000000000
+      internalID: 3630131369905921036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_52
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 72
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27fcebeee52d31ff0800000000000000
+      internalID: -66478264306184334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_53
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 28
+        width: 62
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab13e8808a73f4430800000000000000
+      internalID: 3769292607969964474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_54
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 870d88f4c64845100800000000000000
+      internalID: 95847092807323768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_55
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bcf02f483a2b89c0800000000000000
+      internalID: -3923996228989158224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_56
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdd3c2284646cff90800000000000000
+      internalID: -6918544544704479777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_57
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50667bc2b4cc38a30800000000000000
+      internalID: 4216438299393746437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_58
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6f0bd2534e517010800000000000000
+      internalID: 1184831820221058924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_59
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f48520ae54e69bd0800000000000000
+      internalID: -2623658637831863050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_60
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b4810e84be675880800000000000000
+      internalID: -8622301239821892430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_61
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a94207d809fcbad0800000000000000
+      internalID: -2684997461457352280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_62
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcf7776064ca3ceb0800000000000000
+      internalID: -4700724169288482865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_63
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 14
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 354a4c29840c042c0800000000000000
+      internalID: -4449345013909511085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_64
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 14
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9562c99dda16fa70800000000000000
+      internalID: 8860298855967778205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_65
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 14
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6861bd06eea105c20800000000000000
+      internalID: 3193081746935191174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelPlataformeo_66
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 14
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fa220b843ae0d350800000000000000
+      internalID: 6039584611695209209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CartelPlataformeo_0: 7519931522748522052
+      CartelPlataformeo_1: 5882055509385894899
+      CartelPlataformeo_10: 2157908396420034823
+      CartelPlataformeo_11: 440490821846621682
+      CartelPlataformeo_12: 3007252417245830938
+      CartelPlataformeo_13: -3500955546657251738
+      CartelPlataformeo_14: -7567845325497268737
+      CartelPlataformeo_15: 1566576854818054366
+      CartelPlataformeo_16: 8723368959217393051
+      CartelPlataformeo_17: 5240028781090350729
+      CartelPlataformeo_18: -2678016127857518355
+      CartelPlataformeo_19: 6420249543797748522
+      CartelPlataformeo_2: -2414703293577944356
+      CartelPlataformeo_20: 9165630518434562846
+      CartelPlataformeo_21: 3436097779167363316
+      CartelPlataformeo_22: 7573543720992367921
+      CartelPlataformeo_23: -1190060557547076639
+      CartelPlataformeo_24: 7139475719724302001
+      CartelPlataformeo_25: 8303726565227750552
+      CartelPlataformeo_26: 3211155631093128359
+      CartelPlataformeo_27: 973999798165751406
+      CartelPlataformeo_28: 7328335676446974141
+      CartelPlataformeo_29: -1194398265731503304
+      CartelPlataformeo_3: -4974636977646111251
+      CartelPlataformeo_30: -3701166661898151202
+      CartelPlataformeo_31: 3582362370437537568
+      CartelPlataformeo_32: -8446437456843258090
+      CartelPlataformeo_33: -4100851501006107942
+      CartelPlataformeo_34: -1185441842170721098
+      CartelPlataformeo_35: -6302072047331186356
+      CartelPlataformeo_36: -460267773466697563
+      CartelPlataformeo_37: 3685531382555067043
+      CartelPlataformeo_38: 856710857769558946
+      CartelPlataformeo_39: 1248136460618482955
+      CartelPlataformeo_4: -8973589989355059166
+      CartelPlataformeo_40: -672732864501011077
+      CartelPlataformeo_41: -8866978038358601105
+      CartelPlataformeo_42: -5960413116281310022
+      CartelPlataformeo_43: -871085356449068623
+      CartelPlataformeo_44: 8159267052698659708
+      CartelPlataformeo_45: -467736695982158810
+      CartelPlataformeo_46: 8342760673436557173
+      CartelPlataformeo_47: 1261673240320168979
+      CartelPlataformeo_48: -8011924019426287923
+      CartelPlataformeo_49: 6374073964173601433
+      CartelPlataformeo_5: -8179250767819616750
+      CartelPlataformeo_50: -1688230637205836172
+      CartelPlataformeo_51: 3630131369905921036
+      CartelPlataformeo_52: -66478264306184334
+      CartelPlataformeo_53: 3769292607969964474
+      CartelPlataformeo_54: 95847092807323768
+      CartelPlataformeo_55: -3923996228989158224
+      CartelPlataformeo_56: -6918544544704479777
+      CartelPlataformeo_57: 4216438299393746437
+      CartelPlataformeo_58: 1184831820221058924
+      CartelPlataformeo_59: -2623658637831863050
+      CartelPlataformeo_6: -3126883172437755528
+      CartelPlataformeo_60: -8622301239821892430
+      CartelPlataformeo_61: -2684997461457352280
+      CartelPlataformeo_62: -4700724169288482865
+      CartelPlataformeo_63: -4449345013909511085
+      CartelPlataformeo_64: 8860298855967778205
+      CartelPlataformeo_65: 3193081746935191174
+      CartelPlataformeo_66: 6039584611695209209
+      CartelPlataformeo_7: -3755126336321661051
+      CartelPlataformeo_8: 5621812542394990634
+      CartelPlataformeo_9: -2330281527572016444
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -17,13 +17,13 @@ MonoBehaviour:
     displayName: Normal
     sceneName: NormalLevel
   - type: 1
-    displayName: Platformer
+    displayName: Plataformeo
     sceneName: PlatformerLevel
   - type: 2
-    displayName: Elite
+    displayName: Élite
     sceneName: EliteLevel
   - type: 3
-    displayName: Boss
+    displayName: Jefe
     sceneName: BossLevel
   steps:
   - name: 1 - Normal
@@ -51,15 +51,12 @@ MonoBehaviour:
     optionsShown: 0
     lore: []
   defaultLore:
-  - The corridors shift behind you. Whatever hunts here has noticed your footsteps.
-  - A faint signal crackles from deeper inside. Someone, or something, is calling
-    you onward.
-  - The air grows heavy. Old machinery hums in the walls, still guarding what it
-    was built to protect.
-  - You find scratches on the wall, a tally of those who came before. The count is
-    not encouraging.
-  - A distant echo answers your every step. You are not alone down here.
-  - 'The path forks ahead. Each way smells of rust and ozone: {options}.'
-  - Stage {step} of {total}. The deeper you go, the less the maps can be trusted.
-  - Dust swirls in the dark. Somewhere ahead, a door waits for those who survive.
-  runCompleteText: The way is clear. You made it through.
+  - 'Tu cartel de SE BUSCA ya cuelga en cada pueblo. Los cazarrecompensas siguen tu rastro.'
+  - 'El viento trae olor a pólvora. Alguien te espera más adelante.'
+  - 'Paso {step} de {total}. Cada vez hay más forajidos tras tu cabeza.'
+  - 'Los caminos se separan: {options}. Elige bien, vaquero.'
+  - 'Las huellas en la arena no son tuyas. No estás solo.'
+  - 'La recompensa por tu captura acaba de subir otra vez.'
+  - 'Un coyote aúlla a lo lejos. La noche en el desierto es larga.'
+  - 'Dicen que el jefe de la banda espera al final del camino.'
+  runCompleteText: 'Venciste al jefe. Ya nadie en el oeste se atreve a cazarte.'

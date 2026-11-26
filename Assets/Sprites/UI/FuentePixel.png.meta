@@ -1,0 +1,1404 @@
+fileFormatVersion: 2
+guid: 483d4b4cb16fa7340978911c1889b3ca
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1101911606473187910
+    second: FuentePixel_0
+  - first:
+      213: -2625002088528445192
+    second: FuentePixel_1
+  - first:
+      213: -339130913163307484
+    second: FuentePixel_2
+  - first:
+      213: 8640639952790253624
+    second: FuentePixel_3
+  - first:
+      213: 8879802611868215861
+    second: FuentePixel_4
+  - first:
+      213: 2916254760235849742
+    second: FuentePixel_5
+  - first:
+      213: 2131369894843910335
+    second: FuentePixel_6
+  - first:
+      213: -4849209357565426060
+    second: FuentePixel_7
+  - first:
+      213: 7101916079617535234
+    second: FuentePixel_8
+  - first:
+      213: -890007165559608264
+    second: FuentePixel_9
+  - first:
+      213: 8901111647216807578
+    second: FuentePixel_10
+  - first:
+      213: -3144807214131520541
+    second: FuentePixel_11
+  - first:
+      213: 4697734618250340232
+    second: FuentePixel_12
+  - first:
+      213: -3264321070176984789
+    second: FuentePixel_13
+  - first:
+      213: 1851968258688338157
+    second: FuentePixel_14
+  - first:
+      213: 3768665023090467088
+    second: FuentePixel_15
+  - first:
+      213: -445859901117390818
+    second: FuentePixel_16
+  - first:
+      213: 6409212412340288825
+    second: FuentePixel_17
+  - first:
+      213: 8989323912954703504
+    second: FuentePixel_18
+  - first:
+      213: -3189234612413250215
+    second: FuentePixel_19
+  - first:
+      213: -1995103783414037358
+    second: FuentePixel_20
+  - first:
+      213: 7765972359888123246
+    second: FuentePixel_21
+  - first:
+      213: -2131922564344921099
+    second: FuentePixel_22
+  - first:
+      213: -3238873939401042669
+    second: FuentePixel_23
+  - first:
+      213: -1940276780506691577
+    second: FuentePixel_24
+  - first:
+      213: 7963037183167757539
+    second: FuentePixel_25
+  - first:
+      213: 1101419299208781871
+    second: FuentePixel_26
+  - first:
+      213: -8496520636087745075
+    second: FuentePixel_27
+  - first:
+      213: -8169351303210955783
+    second: FuentePixel_28
+  - first:
+      213: -6167635033368566121
+    second: FuentePixel_29
+  - first:
+      213: -6456029928258452873
+    second: FuentePixel_30
+  - first:
+      213: -5587054238651188493
+    second: FuentePixel_31
+  - first:
+      213: 5414440215858203422
+    second: FuentePixel_32
+  - first:
+      213: -4446110579881650088
+    second: FuentePixel_33
+  - first:
+      213: 2784891917846213964
+    second: FuentePixel_34
+  - first:
+      213: 8493364593552708512
+    second: FuentePixel_35
+  - first:
+      213: 3935562501979753148
+    second: FuentePixel_36
+  - first:
+      213: 8886493054830363742
+    second: FuentePixel_37
+  - first:
+      213: -534409104518602400
+    second: FuentePixel_38
+  - first:
+      213: 6710998299760741600
+    second: FuentePixel_39
+  - first:
+      213: -742710971227518298
+    second: FuentePixel_40
+  - first:
+      213: -1530209066348454285
+    second: FuentePixel_41
+  - first:
+      213: -8906116618301462293
+    second: FuentePixel_42
+  - first:
+      213: 7981576647213570914
+    second: FuentePixel_43
+  - first:
+      213: -508353516858407352
+    second: FuentePixel_44
+  - first:
+      213: 9158812872977239675
+    second: FuentePixel_45
+  - first:
+      213: -2019894296223740064
+    second: FuentePixel_46
+  - first:
+      213: 1482271519369567972
+    second: FuentePixel_47
+  - first:
+      213: -4453376925302313258
+    second: FuentePixel_48
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FuentePixel_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 36
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 642e6b594c6ca4f00800000000000000
+      internalID: 1101911606473187910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 36
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f08a92228e129bd0800000000000000
+      internalID: -2625002088528445192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_2
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 36
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4261c843b3a2b4bf0800000000000000
+      internalID: -339130913163307484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_3
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 36
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8307c1ac148b9e770800000000000000
+      internalID: 8640639952790253624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_4
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 36
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53aadf3ad656b3b70800000000000000
+      internalID: 8879802611868215861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_5
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 36
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e085662e04e987820800000000000000
+      internalID: 2916254760235849742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_6
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 36
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb8022b70a5249d10800000000000000
+      internalID: 2131369894843910335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_7
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 36
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47600d018c524bcb0800000000000000
+      internalID: -4849209357565426060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_8
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 36
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20dec3efb031f8260800000000000000
+      internalID: 7101916079617535234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_9
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 36
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83c6449c23f06a3f0800000000000000
+      internalID: -890007165559608264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_10
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 36
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9e237e02e9178b70800000000000000
+      internalID: 8901111647216807578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_11
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 36
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ebda9a20866b54d0800000000000000
+      internalID: -3144807214131520541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_12
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 36
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 887edd1eeb4b13140800000000000000
+      internalID: 4697734618250340232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_13
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 36
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b212743284dc2b2d0800000000000000
+      internalID: -3264321070176984789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_14
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 36
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de8ca62b15383b910800000000000000
+      internalID: 1851968258688338157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_15
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 36
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0112fba0fdcfc4430800000000000000
+      internalID: 3768665023090467088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 24
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e10ae4e38ccffc9f0800000000000000
+      internalID: -445859901117390818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_17
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 24
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93d31974bb812f850800000000000000
+      internalID: 6409212412340288825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_18
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 24
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09ee69aa87e70cc70800000000000000
+      internalID: 8989323912954703504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_19
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 24
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9554abd64009db3d0800000000000000
+      internalID: -3189234612413250215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_20
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 24
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2948193fda7ff44e0800000000000000
+      internalID: -1995103783414037358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_21
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 24
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6532a627b646cb60800000000000000
+      internalID: 7765972359888123246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_22
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 24
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f3c49f19b3e962e0800000000000000
+      internalID: -2131922564344921099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_23
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 24
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3151bb9ff453d03d0800000000000000
+      internalID: -3238873939401042669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_24
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 24
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 708c5f35c80c215e0800000000000000
+      internalID: -1940276780506691577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_25
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 24
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ecf0fbc024628e60800000000000000
+      internalID: 7963037183167757539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_26
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 24
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f20691e5407094f00800000000000000
+      internalID: 1101419299208781871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_27
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 24
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc5c63b7f7b461a80800000000000000
+      internalID: -8496520636087745075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_28
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 24
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fb8cb6d542a0ae80800000000000000
+      internalID: -8169351303210955783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_29
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 24
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 796efcb5d98286aa0800000000000000
+      internalID: -6167635033368566121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_30
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 24
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7724dda5cf29766a0800000000000000
+      internalID: -6456029928258452873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_31
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 24
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fafa5c75cbc672b0800000000000000
+      internalID: -5587054238651188493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 12
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1b41db70b4f32b40800000000000000
+      internalID: 5414440215858203422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_33
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 12
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8585c0eebfd3c42c0800000000000000
+      internalID: -4446110579881650088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_34
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c45741db17ce5a620800000000000000
+      internalID: 2784891917846213964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_35
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 12
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a3d69a191e7ed570800000000000000
+      internalID: 8493364593552708512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_36
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 0
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbac9d97e3ded9630800000000000000
+      internalID: 3935562501979753148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_37
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 12
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e54c328c95a235b70800000000000000
+      internalID: 8886493054830363742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_38
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 0
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0612f6830c56598f0800000000000000
+      internalID: -534409104518602400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_39
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 0
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ec4d71b561422d50800000000000000
+      internalID: 6710998299760741600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_40
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 0
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aac2358e4c51b5f0800000000000000
+      internalID: -742710971227518298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_41
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 12
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37ed73826fa93cae0800000000000000
+      internalID: -1530209066348454285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_42
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 0
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be820fd4f1e176480800000000000000
+      internalID: -8906116618301462293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_43
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 0
+        width: 9
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26bd7b42ca144ce60800000000000000
+      internalID: 7981576647213570914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_44
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 12
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84685577b27f1f8f0800000000000000
+      internalID: -508353516858407352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_45
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 12
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7e451258c3aa1f70800000000000000
+      internalID: 9158812872977239675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_46
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 12
+        width: 23
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06f0fb5e6d4e7f3e0800000000000000
+      internalID: -2019894296223740064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_47
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 12
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ee93bce716129410800000000000000
+      internalID: 1482271519369567972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FuentePixel_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6de2f6c084d6232c0800000000000000
+      internalID: -4453376925302313258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FuentePixel_0: 1101911606473187910
+      FuentePixel_1: -2625002088528445192
+      FuentePixel_10: 8901111647216807578
+      FuentePixel_11: -3144807214131520541
+      FuentePixel_12: 4697734618250340232
+      FuentePixel_13: -3264321070176984789
+      FuentePixel_14: 1851968258688338157
+      FuentePixel_15: 3768665023090467088
+      FuentePixel_16: -445859901117390818
+      FuentePixel_17: 6409212412340288825
+      FuentePixel_18: 8989323912954703504
+      FuentePixel_19: -3189234612413250215
+      FuentePixel_2: -339130913163307484
+      FuentePixel_20: -1995103783414037358
+      FuentePixel_21: 7765972359888123246
+      FuentePixel_22: -2131922564344921099
+      FuentePixel_23: -3238873939401042669
+      FuentePixel_24: -1940276780506691577
+      FuentePixel_25: 7963037183167757539
+      FuentePixel_26: 1101419299208781871
+      FuentePixel_27: -8496520636087745075
+      FuentePixel_28: -8169351303210955783
+      FuentePixel_29: -6167635033368566121
+      FuentePixel_3: 8640639952790253624
+      FuentePixel_30: -6456029928258452873
+      FuentePixel_31: -5587054238651188493
+      FuentePixel_32: 5414440215858203422
+      FuentePixel_33: -4446110579881650088
+      FuentePixel_34: 2784891917846213964
+      FuentePixel_35: 8493364593552708512
+      FuentePixel_36: 3935562501979753148
+      FuentePixel_37: 8886493054830363742
+      FuentePixel_38: -534409104518602400
+      FuentePixel_39: 6710998299760741600
+      FuentePixel_4: 8879802611868215861
+      FuentePixel_40: -742710971227518298
+      FuentePixel_41: -1530209066348454285
+      FuentePixel_42: -8906116618301462293
+      FuentePixel_43: 7981576647213570914
+      FuentePixel_44: -508353516858407352
+      FuentePixel_45: 9158812872977239675
+      FuentePixel_46: -2019894296223740064
+      FuentePixel_47: 1482271519369567972
+      FuentePixel_48: -4453376925302313258
+      FuentePixel_5: 2916254760235849742
+      FuentePixel_6: 2131369894843910335
+      FuentePixel_7: -4849209357565426060
+      FuentePixel_8: 7101916079617535234
+      FuentePixel_9: -890007165559608264
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

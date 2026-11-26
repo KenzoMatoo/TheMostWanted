@@ -81,6 +81,8 @@ public class CharacterCombat : MonoBehaviour
     // Eventos para el tutorial (puertas que se abren al aprender cada cosa)
     public event System.Action CaptureCompleted;
     public event System.Action Absorbed;
+    /// <summary>Igual que Absorbed, pero dice a quien se absorbio (el final del tutorial lo usa).</summary>
+    public event System.Action<GameObject> AbsorbedTarget;
 
     /// <summary>0..1 mientras se absorbe (para la UI). 0 si no se esta absorbiendo.</summary>
     public float AbsorbProgress01 => absorbProgress;
@@ -232,6 +234,7 @@ public class CharacterCombat : MonoBehaviour
 
         // Absorbido: curar y matar al enemigo (CharacterCombat lo suelta solo al ver que murio)
         IDamageable victim = targetMB != null ? targetMB.GetComponent<IDamageable>() : null;
+        GameObject victimObject = targetMB != null ? targetMB.gameObject : null;
 
         // Explota en gotas blancas de slime (las mismas del jugador), desde el centro del enemigo
         if (targetMB != null)
@@ -255,6 +258,7 @@ public class CharacterCombat : MonoBehaviour
         if (victim != null && !victim.IsDead()) victim.TakeDamage(9999, transform.position);
         Debug.Log("[ABSORBER] Enemigo absorbido, vida +" + stats.AbsorbHealMasks);
         Absorbed?.Invoke();
+        if (victimObject != null) AbsorbedTarget?.Invoke(victimObject);
     }
 
     // Gotas que salen del enemigo y vuelan hacia el jugador, como si lo estuviera sorbiendo

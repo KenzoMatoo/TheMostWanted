@@ -1,0 +1,1612 @@
+fileFormatVersion: 2
+guid: d23de0785a4bba0478c02e82ba89b8ba
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5819819287588057100
+    second: CartelElite_0
+  - first:
+      213: 7541665544560107946
+    second: CartelElite_1
+  - first:
+      213: -4712353523858396467
+    second: CartelElite_2
+  - first:
+      213: -4035253617882777457
+    second: CartelElite_3
+  - first:
+      213: -2755678945585259584
+    second: CartelElite_4
+  - first:
+      213: 4326645661477175135
+    second: CartelElite_5
+  - first:
+      213: -1085168492338186013
+    second: CartelElite_6
+  - first:
+      213: -1386651840664605422
+    second: CartelElite_7
+  - first:
+      213: 3218083176751416104
+    second: CartelElite_8
+  - first:
+      213: -7122536762718860002
+    second: CartelElite_9
+  - first:
+      213: -4953179797863760054
+    second: CartelElite_10
+  - first:
+      213: 4601272374990264799
+    second: CartelElite_11
+  - first:
+      213: 4187824339667413904
+    second: CartelElite_12
+  - first:
+      213: -5585841410180833539
+    second: CartelElite_13
+  - first:
+      213: -3137560686126059916
+    second: CartelElite_14
+  - first:
+      213: -472801374794887929
+    second: CartelElite_15
+  - first:
+      213: 3356479631607729664
+    second: CartelElite_16
+  - first:
+      213: 7574048321050359800
+    second: CartelElite_17
+  - first:
+      213: -4543144596904443149
+    second: CartelElite_18
+  - first:
+      213: 961677482483189181
+    second: CartelElite_19
+  - first:
+      213: -4645864522231436707
+    second: CartelElite_20
+  - first:
+      213: -731286470632558083
+    second: CartelElite_21
+  - first:
+      213: 865376721126611744
+    second: CartelElite_22
+  - first:
+      213: 9146012603457986096
+    second: CartelElite_23
+  - first:
+      213: 213375190997731597
+    second: CartelElite_24
+  - first:
+      213: 1182600742197617933
+    second: CartelElite_25
+  - first:
+      213: -9034069862537979014
+    second: CartelElite_26
+  - first:
+      213: 4407077498708888995
+    second: CartelElite_27
+  - first:
+      213: 6061571699892528325
+    second: CartelElite_28
+  - first:
+      213: 4052214162317710120
+    second: CartelElite_29
+  - first:
+      213: -8545038031673558021
+    second: CartelElite_30
+  - first:
+      213: 8911622854645863754
+    second: CartelElite_31
+  - first:
+      213: -378024780311460432
+    second: CartelElite_32
+  - first:
+      213: -7016799066362109807
+    second: CartelElite_33
+  - first:
+      213: 8606216182223183056
+    second: CartelElite_34
+  - first:
+      213: 4100120768355159703
+    second: CartelElite_35
+  - first:
+      213: 7711213846663480886
+    second: CartelElite_36
+  - first:
+      213: -6520926443874137858
+    second: CartelElite_37
+  - first:
+      213: 5968077334030380830
+    second: CartelElite_38
+  - first:
+      213: 6825512587975329568
+    second: CartelElite_39
+  - first:
+      213: -6087094757992098522
+    second: CartelElite_40
+  - first:
+      213: 6769676267306411633
+    second: CartelElite_41
+  - first:
+      213: 3995295704201834753
+    second: CartelElite_42
+  - first:
+      213: -6797814327347498363
+    second: CartelElite_43
+  - first:
+      213: 1664104768237776329
+    second: CartelElite_44
+  - first:
+      213: -5859197335099594135
+    second: CartelElite_45
+  - first:
+      213: 7397314813459094804
+    second: CartelElite_46
+  - first:
+      213: 2782828260547977941
+    second: CartelElite_47
+  - first:
+      213: 2312511960400513082
+    second: CartelElite_48
+  - first:
+      213: -3629707026060704308
+    second: CartelElite_49
+  - first:
+      213: -1026747749979428449
+    second: CartelElite_50
+  - first:
+      213: -6541406475666597151
+    second: CartelElite_51
+  - first:
+      213: -7102579731074330131
+    second: CartelElite_52
+  - first:
+      213: 4251776204472808735
+    second: CartelElite_53
+  - first:
+      213: 3413589815498770074
+    second: CartelElite_54
+  - first:
+      213: -4775530596021753172
+    second: CartelElite_55
+  - first:
+      213: 6081150227732511443
+    second: CartelElite_56
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CartelElite_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 198
+        width: 62
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0037adaec624c050800000000000000
+      internalID: 5819819287588057100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_1
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa1ee46fad069a860800000000000000
+      internalID: 7541665544560107946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dca2c5aef6b5a9eb0800000000000000
+      internalID: -4712353523858396467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_3
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f88bc77d636eff7c0800000000000000
+      internalID: -4035253617882777457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_4
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cb1e55699cd1c9d0800000000000000
+      internalID: -2755678945585259584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_5
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5ff4593e455b0c30800000000000000
+      internalID: 4326645661477175135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_6
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e87cb47105b0f0f0800000000000000
+      internalID: -1085168492338186013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_7
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 146
+        width: 48
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21d6b0a6f7f91cce0800000000000000
+      internalID: -1386651840664605422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_8
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 128
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 823cdef599de8ac20800000000000000
+      internalID: 3218083176751416104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_9
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 128
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1d4b761d8aa72d90800000000000000
+      internalID: -7122536762718860002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_10
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4f70b78735c24bb0800000000000000
+      internalID: -4953179797863760054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_11
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd9dc12b8d00bdf30800000000000000
+      internalID: 4601272374990264799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_12
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09b6c938c042e1a30800000000000000
+      internalID: 4187824339667413904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_13
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfe118e15da1b72b0800000000000000
+      internalID: -5585841410180833539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_14
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47ea932fd252574d0800000000000000
+      internalID: -3137560686126059916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_15
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 112
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70dc80697a54079f0800000000000000
+      internalID: -472801374794887929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_16
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00e00d9017c949e20800000000000000
+      internalID: 3356479631607729664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_17
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f7b9d7a1dc6c1960800000000000000
+      internalID: 7574048321050359800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_18
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f2864a4f0283f0c0800000000000000
+      internalID: -4543144596904443149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_19
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db507eb3390985d00800000000000000
+      internalID: 961677482483189181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_20
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 112
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5a2ec5f4d2968fb0800000000000000
+      internalID: -4645864522231436707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_21
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df1b5e854d2f9d5f0800000000000000
+      internalID: -731286470632558083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_22
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02bd4abfa8f620c00800000000000000
+      internalID: 865376721126611744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_23
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03edb54510a2dee70800000000000000
+      internalID: 9146012603457986096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_24
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 100
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d090d4f0b9f06f200800000000000000
+      internalID: 213375190997731597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_25
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d056dcdfb11796010800000000000000
+      internalID: 1182600742197617933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_26
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7b9c57135980a280800000000000000
+      internalID: -9034069862537979014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_27
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ad0928a2a5192d30800000000000000
+      internalID: 4407077498708888995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_28
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 102
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c4a7a078570f1450800000000000000
+      internalID: 6061571699892528325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_29
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 92
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82311c2af4b5c3830800000000000000
+      internalID: 4052214162317710120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_30
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 92
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfbf4e90f2de96980800000000000000
+      internalID: -8545038031673558021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_31
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 92
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a455b6f35c17cab70800000000000000
+      internalID: 8911622854645863754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_32
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 92
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b58d35177cf0caf0800000000000000
+      internalID: -378024780311460432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_33
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 92
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 190a13dfc625f9e90800000000000000
+      internalID: -7016799066362109807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_34
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 92
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dc91a1250c6f6770800000000000000
+      internalID: 8606216182223183056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_35
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 92
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79ec20e8d1e86e830800000000000000
+      internalID: 4100120768355159703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_36
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 92
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6364375432cb30b60800000000000000
+      internalID: 7711213846663480886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_37
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 92
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef84e6ad2f30185a0800000000000000
+      internalID: -6520926443874137858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_38
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1fe0fe07bed2d250800000000000000
+      internalID: 5968077334030380830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_39
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0270a30298719be50800000000000000
+      internalID: 6825512587975329568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_40
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6251db3819b468ba0800000000000000
+      internalID: -6087094757992098522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_41
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 176e035a2b8b2fd50800000000000000
+      internalID: 6769676267306411633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_42
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 82
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10138956644227730800000000000000
+      internalID: 3995295704201834753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_43
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 28
+        width: 62
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5823469b2ef49a1a0800000000000000
+      internalID: -6797814327347498363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_44
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cda8db4876181710800000000000000
+      internalID: 1664104768237776329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_45
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96a297c2113ffaea0800000000000000
+      internalID: -5859197335099594135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_46
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41dd6f351aa88a660800000000000000
+      internalID: 7397314813459094804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_47
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d261e41f879e9620800000000000000
+      internalID: 2782828260547977941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_48
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a38c3823061b71020800000000000000
+      internalID: 2312511960400513082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_49
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc589e8d0b0b0adc0800000000000000
+      internalID: -3629707026060704308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_50
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f996b808c5240c1f0800000000000000
+      internalID: -1026747749979428449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_51
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ead37ed7714835a0800000000000000
+      internalID: -6541406475666597151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_52
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de1dc6c9d519e6d90800000000000000
+      internalID: -7102579731074330131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_53
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 14
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f157f0c5ee7510b30800000000000000
+      internalID: 4251776204472808735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_54
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 14
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9602b9e9d18f5f20800000000000000
+      internalID: 3413589815498770074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_55
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 14
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caa2d1a8938e9bdb0800000000000000
+      internalID: -4775530596021753172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelElite_56
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 14
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3da38cda9e5946450800000000000000
+      internalID: 6081150227732511443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CartelElite_0: 5819819287588057100
+      CartelElite_1: 7541665544560107946
+      CartelElite_10: -4953179797863760054
+      CartelElite_11: 4601272374990264799
+      CartelElite_12: 4187824339667413904
+      CartelElite_13: -5585841410180833539
+      CartelElite_14: -3137560686126059916
+      CartelElite_15: -472801374794887929
+      CartelElite_16: 3356479631607729664
+      CartelElite_17: 7574048321050359800
+      CartelElite_18: -4543144596904443149
+      CartelElite_19: 961677482483189181
+      CartelElite_2: -4712353523858396467
+      CartelElite_20: -4645864522231436707
+      CartelElite_21: -731286470632558083
+      CartelElite_22: 865376721126611744
+      CartelElite_23: 9146012603457986096
+      CartelElite_24: 213375190997731597
+      CartelElite_25: 1182600742197617933
+      CartelElite_26: -9034069862537979014
+      CartelElite_27: 4407077498708888995
+      CartelElite_28: 6061571699892528325
+      CartelElite_29: 4052214162317710120
+      CartelElite_3: -4035253617882777457
+      CartelElite_30: -8545038031673558021
+      CartelElite_31: 8911622854645863754
+      CartelElite_32: -378024780311460432
+      CartelElite_33: -7016799066362109807
+      CartelElite_34: 8606216182223183056
+      CartelElite_35: 4100120768355159703
+      CartelElite_36: 7711213846663480886
+      CartelElite_37: -6520926443874137858
+      CartelElite_38: 5968077334030380830
+      CartelElite_39: 6825512587975329568
+      CartelElite_4: -2755678945585259584
+      CartelElite_40: -6087094757992098522
+      CartelElite_41: 6769676267306411633
+      CartelElite_42: 3995295704201834753
+      CartelElite_43: -6797814327347498363
+      CartelElite_44: 1664104768237776329
+      CartelElite_45: -5859197335099594135
+      CartelElite_46: 7397314813459094804
+      CartelElite_47: 2782828260547977941
+      CartelElite_48: 2312511960400513082
+      CartelElite_49: -3629707026060704308
+      CartelElite_5: 4326645661477175135
+      CartelElite_50: -1026747749979428449
+      CartelElite_51: -6541406475666597151
+      CartelElite_52: -7102579731074330131
+      CartelElite_53: 4251776204472808735
+      CartelElite_54: 3413589815498770074
+      CartelElite_55: -4775530596021753172
+      CartelElite_56: 6081150227732511443
+      CartelElite_6: -1085168492338186013
+      CartelElite_7: -1386651840664605422
+      CartelElite_8: 3218083176751416104
+      CartelElite_9: -7122536762718860002
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

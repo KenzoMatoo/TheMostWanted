@@ -1,0 +1,1404 @@
+fileFormatVersion: 2
+guid: 94b3e75d102e8a441a1a114f75b6db86
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3921463346183947853
+    second: CartelJefe_0
+  - first:
+      213: -4744059871608662215
+    second: CartelJefe_1
+  - first:
+      213: -4899168986959838612
+    second: CartelJefe_2
+  - first:
+      213: -2709754731058900917
+    second: CartelJefe_3
+  - first:
+      213: -6985236134434069304
+    second: CartelJefe_4
+  - first:
+      213: -2131397226631479365
+    second: CartelJefe_5
+  - first:
+      213: 3936133244649626342
+    second: CartelJefe_6
+  - first:
+      213: -2204330664298166315
+    second: CartelJefe_7
+  - first:
+      213: 8431338664640822844
+    second: CartelJefe_8
+  - first:
+      213: 1355896933447202573
+    second: CartelJefe_9
+  - first:
+      213: -8542513679310119145
+    second: CartelJefe_10
+  - first:
+      213: -1658740993239450128
+    second: CartelJefe_11
+  - first:
+      213: -6115611538934616640
+    second: CartelJefe_12
+  - first:
+      213: 143249050911159868
+    second: CartelJefe_13
+  - first:
+      213: 2934219890750698783
+    second: CartelJefe_14
+  - first:
+      213: 6187068451116792379
+    second: CartelJefe_15
+  - first:
+      213: -3596330850212529393
+    second: CartelJefe_16
+  - first:
+      213: -9070012277810788355
+    second: CartelJefe_17
+  - first:
+      213: 9154396721063359299
+    second: CartelJefe_18
+  - first:
+      213: 4410953952370632684
+    second: CartelJefe_19
+  - first:
+      213: -4776149711249981447
+    second: CartelJefe_20
+  - first:
+      213: -8966303643784093665
+    second: CartelJefe_21
+  - first:
+      213: 4205056455032433548
+    second: CartelJefe_22
+  - first:
+      213: -137539193611194631
+    second: CartelJefe_23
+  - first:
+      213: -5813755202212788105
+    second: CartelJefe_24
+  - first:
+      213: 8427039046165437210
+    second: CartelJefe_25
+  - first:
+      213: 4601081593452668078
+    second: CartelJefe_26
+  - first:
+      213: 1687735903037920472
+    second: CartelJefe_27
+  - first:
+      213: 2220481400414536657
+    second: CartelJefe_28
+  - first:
+      213: -5936997902819587843
+    second: CartelJefe_29
+  - first:
+      213: -3009402353443133868
+    second: CartelJefe_30
+  - first:
+      213: 5351236019407081455
+    second: CartelJefe_31
+  - first:
+      213: 2004863632449773688
+    second: CartelJefe_32
+  - first:
+      213: -1894522643452757933
+    second: CartelJefe_33
+  - first:
+      213: -3956196178257650501
+    second: CartelJefe_34
+  - first:
+      213: 1012167934399339379
+    second: CartelJefe_35
+  - first:
+      213: 2346310417017286706
+    second: CartelJefe_36
+  - first:
+      213: 7621296933416765258
+    second: CartelJefe_37
+  - first:
+      213: 3922483763322894113
+    second: CartelJefe_38
+  - first:
+      213: 3230908958082183155
+    second: CartelJefe_39
+  - first:
+      213: 2607124296304413773
+    second: CartelJefe_40
+  - first:
+      213: -6580292570177374278
+    second: CartelJefe_41
+  - first:
+      213: 6736492953217667681
+    second: CartelJefe_42
+  - first:
+      213: -3707609788346565233
+    second: CartelJefe_43
+  - first:
+      213: 8449934544797526307
+    second: CartelJefe_44
+  - first:
+      213: -8105099834510372936
+    second: CartelJefe_45
+  - first:
+      213: -6430908050441225085
+    second: CartelJefe_46
+  - first:
+      213: 444513188593049977
+    second: CartelJefe_47
+  - first:
+      213: 3638580125764874799
+    second: CartelJefe_48
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CartelJefe_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 198
+        width: 62
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d464205f226db6630800000000000000
+      internalID: 3921463346183947853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_1
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 937949f8ea6b92eb0800000000000000
+      internalID: -4744059871608662215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6206a563c7a20cb0800000000000000
+      internalID: -4899168986959838612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_3
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b40dcc2dd64056ad0800000000000000
+      internalID: -2709754731058900917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_4
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c4a5debeb47f0f90800000000000000
+      internalID: -6985236134434069304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_5
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbfb067d381cb62e0800000000000000
+      internalID: -2131397226631479365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_6
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ea52fbd454ff9630800000000000000
+      internalID: 3936133244649626342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_7
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 148
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d7c10b90f4a861e0800000000000000
+      internalID: -2204330664298166315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_8
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3ebee628d1220570800000000000000
+      internalID: 8431338664640822844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_9
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d07792eb31d11d210800000000000000
+      internalID: 1355896933447202573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_10
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71f1ecf9115e27980800000000000000
+      internalID: -8542513679310119145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_11
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fd7593ead7faf8e0800000000000000
+      internalID: -1658740993239450128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_12
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cda58d05bbf02ba0800000000000000
+      internalID: -6115611538934616640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_13
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c36b8f9b04cecf100800000000000000
+      internalID: 143249050911159868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_14
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f15b419c17178b820800000000000000
+      internalID: 2934219890750698783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_15
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3ab7ddc9f1ecd550800000000000000
+      internalID: 6187068451116792379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_16
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0bbd4a5524471ec0800000000000000
+      internalID: -3596330850212529393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_17
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df708a863e7d02280800000000000000
+      internalID: -9070012277810788355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_18
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3437bf3d053fa0f70800000000000000
+      internalID: 9154396721063359299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_19
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce728abdf3bd63d30800000000000000
+      internalID: 4410953952370632684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_20
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ff3cda8425b7bdb0800000000000000
+      internalID: -4776149711249981447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_21
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1065fb675a419380800000000000000
+      internalID: -8966303643784093665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_22
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8beba6019c5b5a30800000000000000
+      internalID: 4205056455032433548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_23
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fe6c1605dc571ef0800000000000000
+      internalID: -137539193611194631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_24
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77807093274615fa0800000000000000
+      internalID: -5813755202212788105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_25
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1b99073d5bd2f470800000000000000
+      internalID: 8427039046165437210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_26
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea4a558e4535adf30800000000000000
+      internalID: 4601081593452668078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_27
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d49f3f9cda0c6710800000000000000
+      internalID: 1687735903037920472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_28
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d3021ea11cb0de10800000000000000
+      internalID: 2220481400414536657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_29
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 92
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df8033aecdb8b9da0800000000000000
+      internalID: -5936997902819587843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_30
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 92
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4562cc801847c36d0800000000000000
+      internalID: -3009402353443133868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_31
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 92
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fefc80ebec8634a40800000000000000
+      internalID: 5351236019407081455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_32
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 92
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 870a44bf9d4b2db10800000000000000
+      internalID: 2004863632449773688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_33
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 92
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 358701281bd45b5e0800000000000000
+      internalID: -1894522643452757933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_34
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 28
+        width: 62
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbcd1356984c819c0800000000000000
+      internalID: -3956196178257650501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_35
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37bd9e6af51fb0e00800000000000000
+      internalID: 1012167934399339379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_36
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2303d1b94e4cf8020800000000000000
+      internalID: 2346310417017286706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_37
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a47841c7e2944c960800000000000000
+      internalID: 7621296933416765258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_38
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 127391653367f6630800000000000000
+      internalID: 3922483763322894113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_39
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ffad1c449e76dc20800000000000000
+      internalID: 3230908958082183155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_40
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4cc38efbbd5e2420800000000000000
+      internalID: 2607124296304413773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_41
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab77f6475ca1ea4a0800000000000000
+      internalID: -6580292570177374278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_42
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 162167446a4dc7d50800000000000000
+      internalID: 6736492953217667681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_43
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8d77df8a8ceb8cc0800000000000000
+      internalID: -3707609788346565233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_44
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 14
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32965f5e2b2344570800000000000000
+      internalID: 8449934544797526307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_45
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 14
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bf8ee6a4a6e48f80800000000000000
+      internalID: -8105099834510372936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_46
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 14
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38c30465333d0c6a0800000000000000
+      internalID: -6430908050441225085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_47
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 14
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 971a010d36a3b2600800000000000000
+      internalID: 444513188593049977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelJefe_48
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 14
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f22f20ba855de7230800000000000000
+      internalID: 3638580125764874799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CartelJefe_0: 3921463346183947853
+      CartelJefe_1: -4744059871608662215
+      CartelJefe_10: -8542513679310119145
+      CartelJefe_11: -1658740993239450128
+      CartelJefe_12: -6115611538934616640
+      CartelJefe_13: 143249050911159868
+      CartelJefe_14: 2934219890750698783
+      CartelJefe_15: 6187068451116792379
+      CartelJefe_16: -3596330850212529393
+      CartelJefe_17: -9070012277810788355
+      CartelJefe_18: 9154396721063359299
+      CartelJefe_19: 4410953952370632684
+      CartelJefe_2: -4899168986959838612
+      CartelJefe_20: -4776149711249981447
+      CartelJefe_21: -8966303643784093665
+      CartelJefe_22: 4205056455032433548
+      CartelJefe_23: -137539193611194631
+      CartelJefe_24: -5813755202212788105
+      CartelJefe_25: 8427039046165437210
+      CartelJefe_26: 4601081593452668078
+      CartelJefe_27: 1687735903037920472
+      CartelJefe_28: 2220481400414536657
+      CartelJefe_29: -5936997902819587843
+      CartelJefe_3: -2709754731058900917
+      CartelJefe_30: -3009402353443133868
+      CartelJefe_31: 5351236019407081455
+      CartelJefe_32: 2004863632449773688
+      CartelJefe_33: -1894522643452757933
+      CartelJefe_34: -3956196178257650501
+      CartelJefe_35: 1012167934399339379
+      CartelJefe_36: 2346310417017286706
+      CartelJefe_37: 7621296933416765258
+      CartelJefe_38: 3922483763322894113
+      CartelJefe_39: 3230908958082183155
+      CartelJefe_4: -6985236134434069304
+      CartelJefe_40: 2607124296304413773
+      CartelJefe_41: -6580292570177374278
+      CartelJefe_42: 6736492953217667681
+      CartelJefe_43: -3707609788346565233
+      CartelJefe_44: 8449934544797526307
+      CartelJefe_45: -8105099834510372936
+      CartelJefe_46: -6430908050441225085
+      CartelJefe_47: 444513188593049977
+      CartelJefe_48: 3638580125764874799
+      CartelJefe_5: -2131397226631479365
+      CartelJefe_6: 3936133244649626342
+      CartelJefe_7: -2204330664298166315
+      CartelJefe_8: 8431338664640822844
+      CartelJefe_9: 1355896933447202573
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

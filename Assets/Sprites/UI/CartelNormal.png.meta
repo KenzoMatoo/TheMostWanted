@@ -1,0 +1,1768 @@
+fileFormatVersion: 2
+guid: 9b5d17889044bcf45971b1664eb8b944
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7380358655373375119
+    second: CartelNormal_0
+  - first:
+      213: 1816779518377057658
+    second: CartelNormal_1
+  - first:
+      213: 984526153948646587
+    second: CartelNormal_2
+  - first:
+      213: -7874849118863522354
+    second: CartelNormal_3
+  - first:
+      213: 8159186934554215209
+    second: CartelNormal_4
+  - first:
+      213: -6330985799429150804
+    second: CartelNormal_5
+  - first:
+      213: -5435622227685097596
+    second: CartelNormal_6
+  - first:
+      213: 345052334408041779
+    second: CartelNormal_7
+  - first:
+      213: -8216560664033835975
+    second: CartelNormal_8
+  - first:
+      213: -2220762678788628987
+    second: CartelNormal_9
+  - first:
+      213: -6272932864714740594
+    second: CartelNormal_10
+  - first:
+      213: 7747937614291279599
+    second: CartelNormal_11
+  - first:
+      213: 6126339459037318182
+    second: CartelNormal_12
+  - first:
+      213: -3613916351105141477
+    second: CartelNormal_13
+  - first:
+      213: -6018563033174821792
+    second: CartelNormal_14
+  - first:
+      213: -5742550528703915473
+    second: CartelNormal_15
+  - first:
+      213: 4695256363266327260
+    second: CartelNormal_16
+  - first:
+      213: 1749034467703170828
+    second: CartelNormal_17
+  - first:
+      213: 4989078425106201555
+    second: CartelNormal_18
+  - first:
+      213: 2807947866287589464
+    second: CartelNormal_19
+  - first:
+      213: -1836138185967025822
+    second: CartelNormal_20
+  - first:
+      213: -8393139974957618179
+    second: CartelNormal_21
+  - first:
+      213: 1695650061379626790
+    second: CartelNormal_22
+  - first:
+      213: -549926227783417841
+    second: CartelNormal_23
+  - first:
+      213: -5505780362707342968
+    second: CartelNormal_24
+  - first:
+      213: 8227519502239791208
+    second: CartelNormal_25
+  - first:
+      213: 5102425042474888381
+    second: CartelNormal_26
+  - first:
+      213: 5476465008528656949
+    second: CartelNormal_27
+  - first:
+      213: 2096646057351567748
+    second: CartelNormal_28
+  - first:
+      213: -1661448875836685772
+    second: CartelNormal_29
+  - first:
+      213: -1617695558899532372
+    second: CartelNormal_30
+  - first:
+      213: -4594389253065536486
+    second: CartelNormal_31
+  - first:
+      213: -3320335154446020496
+    second: CartelNormal_32
+  - first:
+      213: -3406022391892810334
+    second: CartelNormal_33
+  - first:
+      213: -2793337986420864525
+    second: CartelNormal_34
+  - first:
+      213: 1370909677422049824
+    second: CartelNormal_35
+  - first:
+      213: 2516379747972887261
+    second: CartelNormal_36
+  - first:
+      213: 4927596775237875357
+    second: CartelNormal_37
+  - first:
+      213: -4660246132174887958
+    second: CartelNormal_38
+  - first:
+      213: -2354267897423946178
+    second: CartelNormal_39
+  - first:
+      213: 358491115206072008
+    second: CartelNormal_40
+  - first:
+      213: 8418213267078211672
+    second: CartelNormal_41
+  - first:
+      213: 2039965510332037462
+    second: CartelNormal_42
+  - first:
+      213: -1904750232071341833
+    second: CartelNormal_43
+  - first:
+      213: -6504388560415590100
+    second: CartelNormal_44
+  - first:
+      213: 3553785012676285081
+    second: CartelNormal_45
+  - first:
+      213: 1313426355306590959
+    second: CartelNormal_46
+  - first:
+      213: -182542915396415628
+    second: CartelNormal_47
+  - first:
+      213: 1984813990038993411
+    second: CartelNormal_48
+  - first:
+      213: -5689766518996843145
+    second: CartelNormal_49
+  - first:
+      213: -6687597482315412195
+    second: CartelNormal_50
+  - first:
+      213: 8088540329856490570
+    second: CartelNormal_51
+  - first:
+      213: -614724941257335304
+    second: CartelNormal_52
+  - first:
+      213: 330538985532751095
+    second: CartelNormal_53
+  - first:
+      213: -1884004078414972731
+    second: CartelNormal_54
+  - first:
+      213: -1234017386228664983
+    second: CartelNormal_55
+  - first:
+      213: 8896301399545396821
+    second: CartelNormal_56
+  - first:
+      213: 2354160454538447205
+    second: CartelNormal_57
+  - first:
+      213: 8529383248500656706
+    second: CartelNormal_58
+  - first:
+      213: -7993639373142589759
+    second: CartelNormal_59
+  - first:
+      213: 3906249508042846025
+    second: CartelNormal_60
+  - first:
+      213: -8812579743427354774
+    second: CartelNormal_61
+  - first:
+      213: -3244000931133213575
+    second: CartelNormal_62
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CartelNormal_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 198
+        width: 62
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1798d7fd7e2b39990800000000000000
+      internalID: -7380358655373375119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_1
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7dd114a85f763910800000000000000
+      internalID: 1816779518377057658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbcc03e125db9ad00800000000000000
+      internalID: 984526153948646587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_3
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec5875af27ae6b290800000000000000
+      internalID: -7874849118863522354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_4
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 923cc1aa9414b3170800000000000000
+      internalID: 8159186934554215209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_5
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca7abfa55f1d328a0800000000000000
+      internalID: -6330985799429150804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_6
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 202
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48fbc91126ac094b0800000000000000
+      internalID: -5435622227685097596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_7
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 146
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3358f4d154fd9c400800000000000000
+      internalID: 345052334408041779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_8
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 934c0d8fb99e8fd80800000000000000
+      internalID: -8216560664033835975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_9
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50edb581c144e21e0800000000000000
+      internalID: -2220762678788628987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_10
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8cedc28bc012f8a0800000000000000
+      internalID: -6272932864714740594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_11
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fee18b9b534368b60800000000000000
+      internalID: 7747937614291279599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_12
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62cc06d7741250550800000000000000
+      internalID: 6126339459037318182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_13
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 128
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b15f66cd93ac8ddc0800000000000000
+      internalID: -3613916351105141477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_14
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 064315d1fc4c97ca0800000000000000
+      internalID: -6018563033174821792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_15
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 112
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2a1fdf28bc5e40b0800000000000000
+      internalID: -5742550528703915473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_16
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 112
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd2c1ed29c6e82140800000000000000
+      internalID: 4695256363266327260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_17
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c07ac53e491d54810800000000000000
+      internalID: 1749034467703170828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_18
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3db3505f464cc3540800000000000000
+      internalID: 4989078425106201555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_19
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85843ed05b5d7f620800000000000000
+      internalID: 2807947866287589464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_20
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 261c7e25c0ab486e0800000000000000
+      internalID: -1836138185967025822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_21
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfb258a59a3958b80800000000000000
+      internalID: -8393139974957618179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_22
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 627e6e33fb8288710800000000000000
+      internalID: 1695650061379626790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_23
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f008c4c62054e58f0800000000000000
+      internalID: -549926227783417841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_24
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 889e1855ee98793b0800000000000000
+      internalID: -5505780362707342968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_25
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 868f99165650e2270800000000000000
+      internalID: 8227519502239791208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_26
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbce5c5da847fc640800000000000000
+      internalID: 5102425042474888381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_27
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 102
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53a0532e8ef400c40800000000000000
+      internalID: 5476465008528656949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_28
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 92
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 489d92c0b78c81d10800000000000000
+      internalID: 2096646057351567748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_29
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 92
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4324847dc0951f8e0800000000000000
+      internalID: -1661448875836685772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_30
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 92
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cadf019c57acc89e0800000000000000
+      internalID: -1617695558899532372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_31
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 92
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1c082301537d30c0800000000000000
+      internalID: -4594389253065536486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_32
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 92
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 070d008d4cccbe1d0800000000000000
+      internalID: -3320335154446020496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_33
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 92
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a5e3323ea06bb0d0800000000000000
+      internalID: -3406022391892810334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_34
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 92
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f987cda6e11c39d0800000000000000
+      internalID: -2793337986420864525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_35
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02af2e59613760310800000000000000
+      internalID: 1370909677422049824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_36
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd239e56c0afbe220800000000000000
+      internalID: 2516379747972887261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_37
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d96f968d827526440800000000000000
+      internalID: 4927596775237875357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_38
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae3e3d575da735fb0800000000000000
+      internalID: -4660246132174887958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_39
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3e90fb12d5f35fd0800000000000000
+      internalID: -2354267897423946178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_40
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c6ddf815cd99f400800000000000000
+      internalID: 358491115206072008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_41
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 82
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8586da36d5083d470800000000000000
+      internalID: 8418213267078211672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_42
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 659b36dc2d96f4c10800000000000000
+      internalID: 2039965510332037462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_43
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f87b8771c7f095e0800000000000000
+      internalID: -1904750232071341833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_44
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 82
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c297057e015cbb5a0800000000000000
+      internalID: -6504388560415590100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_45
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 72
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9925da8e3a4915130800000000000000
+      internalID: 3553785012676285081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_46
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 72
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe27fa2bf4a3a3210800000000000000
+      internalID: 1313426355306590959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_47
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 72
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47f48838f2a777df0800000000000000
+      internalID: -182542915396415628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_48
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 72
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30aff75dec97b8b10800000000000000
+      internalID: 1984813990038993411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_49
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 72
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77548442f73e901b0800000000000000
+      internalID: -5689766518996843145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_50
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 28
+        width: 62
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1d0bc1b581e033a0800000000000000
+      internalID: -6687597482315412195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_51
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4c54883394404070800000000000000
+      internalID: 8088540329856490570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_52
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fd98c14cee0877f0800000000000000
+      internalID: -614724941257335304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_53
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fcf811c47f469400800000000000000
+      internalID: 330538985532751095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_54
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c830b6c54caad5e0800000000000000
+      internalID: -1884004078414972731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_55
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9653f2fa9b3efdee0800000000000000
+      internalID: -1234017386228664983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_56
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55eb6befcf2067b70800000000000000
+      internalID: 8896301399545396821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_57
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5694905e578aba020800000000000000
+      internalID: 2354160454538447205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_58
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24a8c08bfd47e5670800000000000000
+      internalID: 8529383248500656706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_59
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 28
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ce724d9753e01190800000000000000
+      internalID: -7993639373142589759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_60
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 14
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94f20fa3b39c53630800000000000000
+      internalID: 3906249508042846025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_61
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 14
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6f95361a6d63b580800000000000000
+      internalID: -8812579743427354774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CartelNormal_62
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 14
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 974b4c0375efaf2d0800000000000000
+      internalID: -3244000931133213575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CartelNormal_0: -7380358655373375119
+      CartelNormal_1: 1816779518377057658
+      CartelNormal_10: -6272932864714740594
+      CartelNormal_11: 7747937614291279599
+      CartelNormal_12: 6126339459037318182
+      CartelNormal_13: -3613916351105141477
+      CartelNormal_14: -6018563033174821792
+      CartelNormal_15: -5742550528703915473
+      CartelNormal_16: 4695256363266327260
+      CartelNormal_17: 1749034467703170828
+      CartelNormal_18: 4989078425106201555
+      CartelNormal_19: 2807947866287589464
+      CartelNormal_2: 984526153948646587
+      CartelNormal_20: -1836138185967025822
+      CartelNormal_21: -8393139974957618179
+      CartelNormal_22: 1695650061379626790
+      CartelNormal_23: -549926227783417841
+      CartelNormal_24: -5505780362707342968
+      CartelNormal_25: 8227519502239791208
+      CartelNormal_26: 5102425042474888381
+      CartelNormal_27: 5476465008528656949
+      CartelNormal_28: 2096646057351567748
+      CartelNormal_29: -1661448875836685772
+      CartelNormal_3: -7874849118863522354
+      CartelNormal_30: -1617695558899532372
+      CartelNormal_31: -4594389253065536486
+      CartelNormal_32: -3320335154446020496
+      CartelNormal_33: -3406022391892810334
+      CartelNormal_34: -2793337986420864525
+      CartelNormal_35: 1370909677422049824
+      CartelNormal_36: 2516379747972887261
+      CartelNormal_37: 4927596775237875357
+      CartelNormal_38: -4660246132174887958
+      CartelNormal_39: -2354267897423946178
+      CartelNormal_4: 8159186934554215209
+      CartelNormal_40: 358491115206072008
+      CartelNormal_41: 8418213267078211672
+      CartelNormal_42: 2039965510332037462
+      CartelNormal_43: -1904750232071341833
+      CartelNormal_44: -6504388560415590100
+      CartelNormal_45: 3553785012676285081
+      CartelNormal_46: 1313426355306590959
+      CartelNormal_47: -182542915396415628
+      CartelNormal_48: 1984813990038993411
+      CartelNormal_49: -5689766518996843145
+      CartelNormal_5: -6330985799429150804
+      CartelNormal_50: -6687597482315412195
+      CartelNormal_51: 8088540329856490570
+      CartelNormal_52: -614724941257335304
+      CartelNormal_53: 330538985532751095
+      CartelNormal_54: -1884004078414972731
+      CartelNormal_55: -1234017386228664983
+      CartelNormal_56: 8896301399545396821
+      CartelNormal_57: 2354160454538447205
+      CartelNormal_58: 8529383248500656706
+      CartelNormal_59: -7993639373142589759
+      CartelNormal_6: -5435622227685097596
+      CartelNormal_60: 3906249508042846025
+      CartelNormal_61: -8812579743427354774
+      CartelNormal_62: -3244000931133213575
+      CartelNormal_7: 345052334408041779
+      CartelNormal_8: -8216560664033835975
+      CartelNormal_9: -2220762678788628987
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
