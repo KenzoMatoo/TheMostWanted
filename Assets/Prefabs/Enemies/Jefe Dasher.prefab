@@ -21,8 +21,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: e3ae037c5c2ed6343b7ba4c71ee9570a, type: 2}
     - target: {fileID: 5316585408525247431, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+      propertyPath: m_Size.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316585408525247431, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+      propertyPath: m_Size.y
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316585408525247431, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316585408525247431, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 5316585408525247431, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -62,15 +74,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7175489581682502656, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.8999999
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 7175489581682502656, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.25
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 7175489581682502656, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7175489581682502656, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -120,6 +132,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3081933642787246480, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7412099557394026483}
+    - targetCorrespondingSourceObject: {fileID: 3081933642787246480, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7368377851945913519}
+    - targetCorrespondingSourceObject: {fileID: 3081933642787246480, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7934120611141086326}
   m_SourcePrefab: {fileID: 100100000, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
 --- !u!1 &4099441523338661042 stripped
 GameObject:
@@ -171,21 +189,21 @@ MonoBehaviour:
   patrolSpeed: 2
   patrolWaitTime: 2
   waypointReachDistance: 0.2
-  detectionRange: 5
+  detectionRange: 40
   chaseSpeed: 4
   loseTargetDistance: 8
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 520
   requireLineOfSight: 1
   visionCheckInterval: 0.2
   visionOrigin: {fileID: 8193573607734849826}
   debugLineOfSight: 1
   loseLineOfSightDelay: 0.5
-  attackRange: 1.5
+  attackRange: 9
   attackCooldown: 1.5
   attackDamage: 10
   attackWindupTime: 0.3
@@ -207,10 +225,11 @@ MonoBehaviour:
     telegraphSprite: {fileID: 21300000, guid: 4cfe7b9c12e29ea49af65d9f69819db8, type: 3}
     dashSprite: {fileID: 21300000, guid: a67b9ebc30c539f4d931089dd3ce5938, type: 3}
     summonSprite: {fileID: 21300000, guid: 88f233970ff270e478c12d2fd7825aad, type: 3}
+    deathSprite: {fileID: 21300000, guid: 1ff0975509d0ab942b35b89267cc71b9, type: 3}
     tint: {r: 1, g: 1, b: 1, a: 1}
-    chaseSpeed: 3.5
+    chaseSpeed: 5
     jumpCooldown: 1.2
-    telegraphTime: 0.8
+    telegraphTime: 0.65
     dashSpeed: 11
     dashesPerAttack: 1
     chainedTelegraphTime: 0.3
@@ -222,8 +241,8 @@ MonoBehaviour:
     summonWeight: 1
     teleportStrikeWeight: 0
     burstHitsThreshold: 6
-    recoveryTime: 1.2
-    attackCooldown: 2.5
+    recoveryTime: 0.9
+    attackCooldown: 1.5
   - idleSprite: {fileID: 21300000, guid: 45d0d89d11d436a4e96bcc43059948fa, type: 3}
     jumpSprite: {fileID: 21300000, guid: 45def1a8d945a4e4ab4e17a2d21c98c3, type: 3}
     hurtSprite: {fileID: 0}
@@ -231,10 +250,11 @@ MonoBehaviour:
     telegraphSprite: {fileID: 21300000, guid: 570a6b90d33d77a43a5c10786bb3eb02, type: 3}
     dashSprite: {fileID: 21300000, guid: bbf11f40e4ae0054cac875f09d6e15c7, type: 3}
     summonSprite: {fileID: 21300000, guid: ffed1a612e8d13c4297abb336ed4daa1, type: 3}
+    deathSprite: {fileID: 21300000, guid: 92ecb5781742a1b45a42b42395ef8bff, type: 3}
     tint: {r: 1, g: 0.85, b: 0.7, a: 1}
-    chaseSpeed: 4.5
+    chaseSpeed: 6
     jumpCooldown: 0.9
-    telegraphTime: 0.6
+    telegraphTime: 0.5
     dashSpeed: 14
     dashesPerAttack: 1
     chainedTelegraphTime: 0.3
@@ -246,8 +266,8 @@ MonoBehaviour:
     summonWeight: 2
     teleportStrikeWeight: 1
     burstHitsThreshold: 5
-    recoveryTime: 0.9
-    attackCooldown: 1.8
+    recoveryTime: 0.7
+    attackCooldown: 1.1
   - idleSprite: {fileID: 21300000, guid: da61195b11cb42e4793cff0183231682, type: 3}
     jumpSprite: {fileID: 21300000, guid: 4a04c214c3bff5845bd2438d9e4ce807, type: 3}
     hurtSprite: {fileID: 0}
@@ -255,10 +275,11 @@ MonoBehaviour:
     telegraphSprite: {fileID: 21300000, guid: 5695ace319fbf43499429ae4d311513d, type: 3}
     dashSprite: {fileID: 21300000, guid: a0adc68e41efba640a5bb60b3caaae16, type: 3}
     summonSprite: {fileID: 21300000, guid: 198cace0ea2fab44eb889adde90c1a0b, type: 3}
+    deathSprite: {fileID: 21300000, guid: 71755309543eb41428bdbcb8182a9ff5, type: 3}
     tint: {r: 1, g: 0.65, b: 0.65, a: 1}
-    chaseSpeed: 5.5
+    chaseSpeed: 7
     jumpCooldown: 0.6
-    telegraphTime: 0.4
+    telegraphTime: 0.35
     dashSpeed: 17
     dashesPerAttack: 2
     chainedTelegraphTime: 0.25
@@ -270,8 +291,8 @@ MonoBehaviour:
     summonWeight: 2
     teleportStrikeWeight: 3
     burstHitsThreshold: 4
-    recoveryTime: 0.6
-    attackCooldown: 1.2
+    recoveryTime: 0.5
+    attackCooldown: 0.8
   phaseHealthThresholds:
   - 0.66
   - 0.33
@@ -325,6 +346,7 @@ MonoBehaviour:
   postTeleportDelay: 0.35
   arenaBounds: {fileID: 0}
   teleportVfxPrefab: {fileID: 0}
+  insideWallTeleportTime: 0.4
   dashOvershootBuffer: 2
   obstacleCheck: {fileID: 6808491501852380164}
   obstacleCheckRadius: 0.3
@@ -351,13 +373,12 @@ MonoBehaviour:
   burstVfxPrefab: {fileID: 0}
   minionPrefabs:
   - {fileID: 24182163444947434, guid: 49caa14e2902d82478b9b7f508393b7f, type: 3}
-  spawnPoints:
-  - {fileID: 8193573607734849826}
+  spawnPoints: []
   minSpawnDistance: 1.5
   spawnRadius: 4
   minionSpawnStagger: 0.25
   killMinionsOnDeath: 1
-  deathSprite: {fileID: 0}
+  deathSprite: {fileID: 21300000, guid: 1ff0975509d0ab942b35b89267cc71b9, type: 3}
   onBossEngaged:
     m_PersistentCalls:
       m_Calls: []
@@ -373,6 +394,80 @@ MonoBehaviour:
   onDamageBlocked:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7368377851945913519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4099441523338661042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e156910b72070545a1f3da66cf1fd0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossVisuals
+  breatheAmount: 0.03
+  breatheSpeed: 2.5
+  telegraphShake: 0.03
+  dashLean: 6
+  landSquash: 0.18
+  afterimageInterval: 0.04
+  afterimageLife: 0.25
+  afterimageColor: {r: 1, g: 0.45, b: 0.3, a: 0.55}
+  flashTime: 0.08
+  embersPerSecond:
+  - 0
+  - 10
+  - 26
+  flameTrailPerSecond: 90
+  stepInterval: 0.28
+  fireColors:
+  - {r: 1, g: 0.93, b: 0.55, a: 1}
+  - {r: 1, g: 0.7, b: 0.25, a: 1}
+  - {r: 1, g: 0.45, b: 0.15, a: 1}
+  - {r: 0.85, g: 0.2, b: 0.12, a: 1}
+  dustColors:
+  - {r: 0.78, g: 0.7, b: 0.6, a: 1}
+  - {r: 0.62, g: 0.54, b: 0.46, a: 1}
+  - {r: 0.9, g: 0.84, b: 0.74, a: 1}
+  landShake: 0.12
+  burstShake: 0.4
+  phaseShake: 0.5
+--- !u!114 &7934120611141086326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4099441523338661042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb4563ac50745444b8328885a068272d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossSounds
+  steps:
+  - {fileID: 8300000, guid: de7b23bb0f0b1174697760e00c2294a9, type: 3}
+  - {fileID: 8300000, guid: d9c68da3cd44136449a7709e55716979, type: 3}
+  - {fileID: 8300000, guid: cf2263e5a49a6984fa91a001e9d9aa35, type: 3}
+  land: {fileID: 8300000, guid: 8aa2bf0c423356f4f8bb4b6474a6ab1a, type: 3}
+  bellow: {fileID: 8300000, guid: 40e4b048bd0e39748b8d2dc47f8d7908, type: 3}
+  dash: {fileID: 8300000, guid: 5c97f8072f20fe24c9edbc532c7ac7d1, type: 3}
+  dashFire: {fileID: 8300000, guid: 135829601c0448f419cf525ddfadc505, type: 3}
+  burstCharge: {fileID: 8300000, guid: 597b7cd021a75ea46a7f9b6821254571, type: 3}
+  burstExplosion: {fileID: 8300000, guid: e0c67ac1211f52b4e9c92e1f1c85c9e3, type: 3}
+  teleport: {fileID: 8300000, guid: 6893fe00bedf64843b016213b82516c2, type: 3}
+  hurt: {fileID: 8300000, guid: 1899a66c257957e4f9e820e42f71818d, type: 3}
+  blocked: {fileID: 8300000, guid: 5b1faeea65a389a4e8816a8dd8dafecf, type: 3}
+  phaseChange: {fileID: 8300000, guid: 89a072ff537cbd34192e275ae3bf2fed, type: 3}
+  death: {fileID: 8300000, guid: 76cead69c6bfa8841967122f6970a920, type: 3}
+  fireLoop: {fileID: 8300000, guid: 6e778983495c94a49b383261896ba1ad, type: 3}
+  fireVolumePhase2: 0.25
+  fireVolumePhase3: 0.45
+  volume: 0.85
+  stepsVolume: 0.55
+  hurtVolume: 0.6
+  pitchVariation: 0.07
+  stepInterval: 0.3
 --- !u!212 &4901619935647953266 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 6207951870099090512, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}

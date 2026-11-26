@@ -101,6 +101,9 @@ public class RunProgression : ScriptableObject
         usedLore.Clear();
     }
 
+    /// <summary>Ends the current run (the player died). The hub starts a new one next time.</summary>
+    public static void EndRun() => ResetStatics();
+
     /// <summary>Begins a new run from the first step. Call it from the hub (or main menu) when the player starts.</summary>
     public void StartRun()
     {

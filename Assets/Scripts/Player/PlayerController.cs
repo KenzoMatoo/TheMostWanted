@@ -69,11 +69,11 @@ public class PlayerController : MonoBehaviour
         controls.Movement.Move.canceled += ctx => moveInput = Vector2.zero;
 
         // Jump input
-        controls.Movement.Jump.performed += ctx => lastJumpPressedTime = Time.time;
+        controls.Movement.Jump.performed += ctx => { if (!pausa.GameIsPaused) lastJumpPressedTime = Time.time; };
         controls.Movement.Jump.canceled += ctx => CutJump();
 
         // Dash input
-        controls.Movement.Dash.performed += ctx => TryDash();
+        controls.Movement.Dash.performed += ctx => { if (!pausa.GameIsPaused) TryDash(); };
 
     }
 
@@ -82,6 +82,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (pausa.GameIsPaused) return;   // menus open: no input
         if (!canMove && !grapplingHook.IsHooked()) return;
 
         // Ground check

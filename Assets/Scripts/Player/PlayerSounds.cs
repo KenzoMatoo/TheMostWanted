@@ -27,6 +27,10 @@ public class PlayerSounds : MonoBehaviour
     [Header("Volumen")]
     [Range(0f, 1f)] public float volume = 1f;
     [Range(0f, 1f)] public float stepsVolume = 0.6f;
+    [Tooltip("Volumen del aterrizaje (en caidas cortas suena todavia mas bajo)")]
+    [Range(0f, 1f)] public float landVolume = 0.3f;
+    [Tooltip("Segundos minimos entre dos sonidos de aterrizaje")]
+    public float landCooldown = 0.35f;
 
     [Header("Variación")]
     [Tooltip("Cambia un poco el tono en cada reproducción para que no suene repetitivo.")]
@@ -44,6 +48,7 @@ public class PlayerSounds : MonoBehaviour
     private AudioSource sfxSource;
     private AudioSource stepSource;
     private float nextStepTime;
+    private float nextLandTime;
 
     private void Awake()
     {
@@ -75,7 +80,10 @@ public class PlayerSounds : MonoBehaviour
 
     public void PlayLand(float airTime)
     {
-        if (airTime >= minAirTimeForLand) Play(land);
+        // Quieter and less frequent: soft on short hops, a bit louder only after real falls
+        if (airTime < Mathf.Max(minAirTimeForLand, 0.25f) || Time.time < nextLandTime) return;
+        nextLandTime = Time.time + landCooldown;
+        Play(land, landVolume * Mathf.Lerp(0.5f, 1f, Mathf.InverseLerp(0.25f, 1f, airTime)));
     }
 
     /// <summary>Llamar cada frame mientras camina en el suelo; respeta el intervalo entre pasos.</summary>

@@ -25,6 +25,8 @@ public class BossPhaseSettings
     public Sprite dashSprite;
     [Tooltip("Sprite al invocar enemigos. Vacío = idleSprite.")]
     public Sprite summonSprite;
+    [Tooltip("Sprite al morir en esta fase. Vacío = el Death Sprite general.")]
+    public Sprite deathSprite;
     [Tooltip("Tinte del sprite al perseguir en esta fase. Déjalo en blanco si cada fase ya tiene su propio arte.")]
     public Color tint = Color.white;
 
@@ -203,6 +205,8 @@ public class BossEnemy : MeleeChaserEnemy
     [Tooltip("Opcional: límites de la arena. Si se asigna, solo se teletransporta dentro de ellos.")]
     [SerializeField] private Collider2D arenaBounds;
     [SerializeField] private GameObject teleportVfxPrefab;
+    [Tooltip("Si el cuerpo queda dentro de una pared mas de estos segundos, se teletransporta a un lugar libre (seguridad).")]
+    [SerializeField] private float insideWallTeleportTime = 0.4f;
 
     // ───────────────────────────── Carga (Dash) ─────────────────────────────
     [Header("Dash Settings")]
@@ -312,6 +316,13 @@ public class BossEnemy : MeleeChaserEnemy
     private float progressTimer;
     private Vector2 progressCheckPos;
     private bool isAirborne;
+    private float insideWallTimer;
+    private float insidePlatformTimer;
+    private float dashElapsed;
+    private float dashBlockedTimer;
+    private Vector2 dashLastPos;
+    private static readonly Collider2D[] solidBuffer = new Collider2D[16];
+    private static readonly RaycastHit2D[] castBuffer = new RaycastHit2D[16];
 
     // Burst / invulnerabilidad
     private readonly List<HitRecord> recentHits = new List<HitRecord>();
@@ -341,6 +352,92 @@ public class BossEnemy : MeleeChaserEnemy
     public bool IsInvulnerable =>
         Time.time < invulnerableUntil ||
         (invulnerableDuringTransition && isAttacking && attackPhase == AttackPhase.Transition);
+
+    // ───────────────────────────── Para efectos (BossVisuals) y la arena (BossArena) ─────────────────────────────
+    public bool IsTelegraphing => isAttacking && (attackPhase == AttackPhase.Telegraph || attackPhase == AttackPhase.Reappear);
+    public bool IsDashing => IsDashingNow;
+    public bool IsAirborneNow => isAirborne;
+    public bool IsChargingBurst => isAttacking && attackPhase == AttackPhase.BurstCharge;
+    public bool IsInPhaseTransition => isAttacking && attackPhase == AttackPhase.Transition;
+    public float BurstRadius => burstRadius;
+    public float BurstWindup => burstWindup;
+    public Color BurstColor => burstColor;
+    public int PhaseNumber => currentPhaseIndex + 1;
+    public int PhaseCount => phases != null ? phases.Length : 1;
+    /// <summary>Cada golpe que si le hace dano.</summary>
+    public event System.Action Hurt;
+    /// <summary>Al desaparecer (posicion de donde se fue) y al reaparecer (a donde llego).</summary>
+    public event System.Action<Vector3> TeleportedFrom, TeleportedTo;
+
+    /// <summary>Cambia el SpriteRenderer que usa el jefe (BossVisuals lo pasa a un objeto hijo para animarlo).</summary>
+    public void SetVisualRenderer(SpriteRenderer renderer) { if (renderer != null) spriteRenderer = renderer; }
+
+    /// <summary>Limites de la arena: el jefe solo se teletransporta dentro de ellos (BossArena lo asigna).</summary>
+    public void SetArenaBounds(Collider2D bounds)
+    {
+        arenaBounds = bounds;
+        if (!hasArenaHome) { arenaHome = transform.position; hasArenaHome = true; }
+    }
+
+    private Vector2 arenaHome;
+    private bool hasArenaHome;
+
+    private bool InsideArena(Vector2 p)
+    {
+        if (arenaBounds == null) return true;
+        Bounds a = arenaBounds.bounds;
+        return p.x > a.min.x && p.x < a.max.x && p.y > a.min.y && p.y < a.max.y;
+    }
+
+    // Never leaves the boss room: if it ends up outside (pushed through a wall, chased through a door...), it teleports back
+    private void CheckOutsideArena()
+    {
+        if (arenaBounds == null || isTeleporting || isDead || rb == null || !hasArenaHome) return;
+        if (InsideArena(transform.position)) return;
+        jumpCommitted = false;
+        float side = player != null ? -SignNonZero(player.position.x - arenaHome.x) : 1f;
+        StartCoroutine(TeleportRoutine(side, arenaHome, null));
+    }
+
+    /// <summary>
+    /// Deja al jefe como al principio: vida llena, fase 1, sin subditos, quieto en 'position'.
+    /// La arena lo usa cuando el jugador muere y reaparece afuera.
+    /// </summary>
+    public void ResetBoss(Vector3 position)
+    {
+        if (isDead) return;
+        StopAllCoroutines();
+        isTeleporting = false;
+        isSpawning = false;
+        burstQueued = false;
+        recentHits.Clear();
+        invulnerableUntil = 0f;
+        burstSpriteActive = false;
+        currentAttack = AttackType.None;
+        lastAttack = AttackType.None;
+        isAttacking = false;
+        attackPhase = AttackPhase.Telegraph;
+        jumpCommitted = false;
+        hasEngaged = false;
+        if (dashHitboxCollider != null) dashHitboxCollider.enabled = false;
+
+        foreach (GameObject m in aliveMinions.ToArray()) if (m != null) Destroy(m);
+        aliveMinions.Clear();
+
+        targetPhaseIndex = 0;
+        ApplyPhase(0);
+        Heal(GetMaxHealth());
+        ClearStunned();
+        CancelKnockback();
+
+        transform.position = position;
+        arenaHome = position; hasArenaHome = true;
+        if (rb != null) { rb.simulated = true; rb.position = position; rb.linearVelocity = Vector2.zero; }
+        if (spriteRenderer != null) spriteRenderer.enabled = true;
+        attackTimer = CurrentPhase.attackCooldown;
+        ResetPathingMemory();
+        ChangeState(ChaserState.Patrol);
+    }
 
     // ───────────────────────────── Inicialización ─────────────────────────────
     protected override void Start()
@@ -418,6 +515,20 @@ public class BossEnemy : MeleeChaserEnemy
             onDamageBlocked?.Invoke();
             return;
         }
+
+        // No skipping phases with one big hit: the health stops at the threshold of the next phase,
+        // and the phase change (invulnerable) has to happen before it can go lower.
+        if (!isDead && phaseHealthThresholds != null && currentPhaseIndex < phaseHealthThresholds.Length && currentPhaseIndex < phases.Length - 1)
+        {
+            int floor = Mathf.FloorToInt(phaseHealthThresholds[currentPhaseIndex] * GetMaxHealth() + 0.001f); // at or below the threshold, so the phase change does trigger
+            int allowed = GetCurrentHealth() - floor;
+            if (allowed <= 0)
+            {
+                onDamageBlocked?.Invoke();   // already at the threshold, waiting for the phase change
+                return;
+            }
+            amount = Mathf.Min(amount, allowed);
+        }
         base.TakeDamage(amount, damageSourcePosition);
     }
 
@@ -463,6 +574,8 @@ public class BossEnemy : MeleeChaserEnemy
         if (teleportCooldownTimer > 0) teleportCooldownTimer -= Time.deltaTime;
 
         isAirborne = !IsGrounded();
+        CheckInsideWall();
+        CheckOutsideArena();
 
         // Parpadeo mientras es invencible por el burst
         bool burstInvulnerable = Time.time < invulnerableUntil;
@@ -496,6 +609,13 @@ public class BossEnemy : MeleeChaserEnemy
     protected override void ChaseBehavior()
     {
         if (isTeleporting || player == null)
+        {
+            FreezeMovement();
+            return;
+        }
+
+        // Doesn't follow the player out of its room (nor before the player walks in): it waits inside
+        if (arenaBounds != null && !InsideArena(player.position))
         {
             FreezeMovement();
             return;
@@ -662,6 +782,121 @@ public class BossEnemy : MeleeChaserEnemy
         }
     }
 
+    // Safety net: if the body ends up inside a wall (a dash into a corner, a bad landing...), teleport out of it
+    private void CheckInsideWall()
+    {
+        if (bodyCollider == null || isTeleporting || isDead || obstacleLayer.value == 0) { insideWallTimer = 0f; insidePlatformTimer = 0f; return; }
+        Bounds b = bodyCollider.bounds;
+
+        // Solid wall: teleport to a free spot
+        bool inside = OverlapSolidBox(b.center, b.size * 0.6f, obstacleLayer);
+        insideWallTimer = inside ? insideWallTimer + Time.deltaTime : 0f;
+        if (insideWallTimer >= insideWallTeleportTime)
+        {
+            insideWallTimer = 0f;
+            float side = player != null ? -SignNonZero(player.position.x - transform.position.x) : 1f;
+            StartTeleport(side, null);
+            return;
+        }
+
+        // One-way platform: passing through is fine, but sitting inside one (no vertical motion) means it got wedged
+        bool inPlatform = OverlapPlatformBox(b.center, new Vector2(b.size.x * 0.6f, b.size.y * 0.8f), groundLayer, out Collider2D platform);
+        bool still = rb == null || Mathf.Abs(rb.linearVelocity.y) < 0.5f;
+        insidePlatformTimer = inPlatform && still ? insidePlatformTimer + Time.deltaTime : 0f;
+        if (insidePlatformTimer >= 0.3f)
+        {
+            insidePlatformTimer = 0f;
+            PopOnTopOf(platform, b);
+        }
+    }
+
+    // Lifts the boss so its feet rest on the platform's top surface (teleports if there is no room up there)
+    private void PopOnTopOf(Collider2D platform, Bounds b)
+    {
+        // Local top surface of the platform under the body (a tilemap's bounds cover ALL its platforms)
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(b.center.x, b.max.y + 0.1f), Vector2.down, b.size.y + 0.2f, groundLayer);
+        bool found = hit.collider == platform && hit.distance > 0f;
+        float top = hit.point.y;
+
+        Vector2 newCenter = new Vector2(b.center.x, top + b.extents.y + 0.03f);
+        if (!found || OverlapSolidBox(newCenter, b.size * 0.9f, obstacleLayer) || OverlapPlatformBox(newCenter, b.size * 0.9f, groundLayer, out _))
+        {
+            float side = player != null ? -SignNonZero(player.position.x - transform.position.x) : 1f;
+            StartTeleport(side, null);
+            return;
+        }
+
+        Vector2 delta = newCenter - (Vector2)b.center;
+        transform.position += (Vector3)delta;
+        if (rb != null)
+        {
+            rb.position += delta;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
+        }
+        jumpCommitted = false;
+    }
+
+    // True if the feet start above the platform surface (a ray started inside a collider reports distance 0)
+    private bool FeetAbovePlatform(Bounds b, Collider2D platform)
+    {
+        RaycastHit2D h = Physics2D.Raycast(new Vector2(b.center.x, b.min.y + 0.1f), Vector2.down, 0.3f, groundLayer);
+        return h.collider == platform && h.distance > 0f;
+    }
+
+    // Physics helpers: one-way platforms share the Ground layer with walls, so they are told apart by their effector
+    private bool IsOwnCollider(Collider2D c) => c.attachedRigidbody != null && c.attachedRigidbody == rb;
+
+    private bool OverlapSolidBox(Vector2 center, Vector2 size, int mask)
+    {
+        int n = Physics2D.OverlapBoxNonAlloc(center, size, 0f, solidBuffer, mask);
+        for (int i = 0; i < n; i++)
+        {
+            Collider2D c = solidBuffer[i];
+            if (!c.isTrigger && !c.usedByEffector && !IsOwnCollider(c)) return true;
+        }
+        return false;
+    }
+
+    private bool OverlapSolidCircle(Vector2 center, float radius, int mask)
+    {
+        int n = Physics2D.OverlapCircleNonAlloc(center, radius, solidBuffer, mask);
+        for (int i = 0; i < n; i++)
+        {
+            Collider2D c = solidBuffer[i];
+            if (!c.isTrigger && !c.usedByEffector && !IsOwnCollider(c)) return true;
+        }
+        return false;
+    }
+
+    private bool OverlapPlatformBox(Vector2 center, Vector2 size, int mask, out Collider2D platform)
+    {
+        platform = null;
+        int n = Physics2D.OverlapBoxNonAlloc(center, size, 0f, solidBuffer, mask);
+        for (int i = 0; i < n; i++)
+        {
+            Collider2D c = solidBuffer[i];
+            if (!c.isTrigger && c.usedByEffector && !IsOwnCollider(c)) { platform = c; return true; }
+        }
+        return false;
+    }
+
+    // BoxCast that skips one-way platforms unless allowed; a platform only counts if the box starts outside it (lands on top)
+    private RaycastHit2D CastBody(Vector2 pos, Vector2 size, Vector2 dir, float dist, int mask, bool allowPlatforms)
+    {
+        int n = Physics2D.BoxCastNonAlloc(pos, size, 0f, dir, castBuffer, dist, mask);
+        RaycastHit2D best = default;
+        float bestDist = float.MaxValue;
+        for (int i = 0; i < n; i++)
+        {
+            RaycastHit2D h = castBuffer[i];
+            Collider2D c = h.collider;
+            if (c == null || c.isTrigger || IsOwnCollider(c)) continue;
+            if (c.usedByEffector && (!allowPlatforms || h.distance <= 0f)) continue;
+            if (h.distance < bestDist) { bestDist = h.distance; best = h; }
+        }
+        return best;
+    }
+
     private void ResetPathingMemory()
     {
         stuckTimer = 0f;
@@ -677,7 +912,16 @@ public class BossEnemy : MeleeChaserEnemy
         if (bodyCollider == null) return true;
         Bounds b = bodyCollider.bounds;
         Vector2 p = new Vector2(b.center.x, b.min.y - 0.02f);
-        return Physics2D.OverlapCircle(p, groundCheckRadius, groundLayer) != null;
+        bool rising = rb != null && rb.linearVelocity.y > 0.1f;
+        int n = Physics2D.OverlapCircleNonAlloc(p, groundCheckRadius, solidBuffer, groundLayer);
+        for (int i = 0; i < n; i++)
+        {
+            Collider2D c = solidBuffer[i];
+            if (c.isTrigger || IsOwnCollider(c)) continue;
+            if (c.usedByEffector && (rising || !FeetAbovePlatform(b, c))) continue; // passing through it, not standing on it
+            return true;
+        }
+        return false;
     }
 
     private void ProbeTerrain(float facing, out bool wallAhead, out bool gapAhead)
@@ -689,7 +933,7 @@ public class BossEnemy : MeleeChaserEnemy
         Bounds b = bodyCollider.bounds;
 
         Vector2 wallPos = new Vector2(b.center.x + facing * (b.extents.x + wallCheckDistance), b.center.y + wallCheckHeightOffset);
-        wallAhead = Physics2D.OverlapCircle(wallPos, wallCheckRadius, obstacleLayer) != null;
+        wallAhead = OverlapSolidCircle(wallPos, wallCheckRadius, obstacleLayer);
 
         Vector2 ledgePos = new Vector2(b.center.x + facing * (b.extents.x + ledgeCheckForward), b.min.y - ledgeCheckDepth);
         gapAhead = Physics2D.OverlapCircle(ledgePos, ledgeCheckRadius, groundLayer) == null;
@@ -727,7 +971,7 @@ public class BossEnemy : MeleeChaserEnemy
         float bestScore = Vector2.Distance(start, target) - jumpPlanMinImprovement;
         bool found = false;
 
-        int horizMask = oneWayPlatforms ? obstacleLayer.value : (obstacleLayer.value | groundLayer.value);
+        int horizMask = obstacleLayer.value | groundLayer.value; // one-way platforms are filtered in CastBody
         int landMask = obstacleLayer.value | groundLayer.value;
 
         float[] velocities = { jumpVelocity, highJumpVelocity };
@@ -777,7 +1021,7 @@ public class BossEnemy : MeleeChaserEnemy
             if (Mathf.Abs(mx) > 0.0001f)
             {
                 Vector2 hdir = new Vector2(Mathf.Sign(mx), 0f);
-                RaycastHit2D hh = Physics2D.BoxCast(pos, size, 0f, hdir, Mathf.Abs(mx), horizMask);
+                RaycastHit2D hh = CastBody(pos, size, hdir, Mathf.Abs(mx), horizMask, !oneWayPlatforms);
                 if (hh.collider != null) pos.x += hdir.x * Mathf.Max(0f, hh.distance);
                 else pos.x += mx;
             }
@@ -788,7 +1032,7 @@ public class BossEnemy : MeleeChaserEnemy
             {
                 Vector2 vdir = new Vector2(0f, Mathf.Sign(my));
                 int mask = my > 0f ? horizMask : landMask;
-                RaycastHit2D hv = Physics2D.BoxCast(pos, size, 0f, vdir, Mathf.Abs(my), mask);
+                RaycastHit2D hv = CastBody(pos, size, vdir, Mathf.Abs(my), mask, !oneWayPlatforms || my < 0f);
                 if (hv.collider != null)
                 {
                     if (my > 0f) return false;                       // se golpea la cabeza
@@ -981,6 +1225,9 @@ public class BossEnemy : MeleeChaserEnemy
         dashStartPosition = rb != null ? rb.position : (Vector2)transform.position;
         float distanceToPlayer = player != null ? Mathf.Abs(player.position.x - transform.position.x) : 0f;
         dashTargetDistance = distanceToPlayer + dashOvershootBuffer;
+        dashElapsed = 0f;
+        dashBlockedTimer = 0f;
+        dashLastPos = dashStartPosition;
     }
 
     private void UpdateDash()
@@ -1002,6 +1249,19 @@ public class BossEnemy : MeleeChaserEnemy
         }
 
         Vector2 currentPosition = rb != null ? rb.position : (Vector2)transform.position;
+
+        // Watchdog: a charge that is blocked by anything (wall, player, corner) or runs too long always ends
+        dashElapsed += Time.deltaTime;
+        float stepMoved = Mathf.Abs(currentPosition.x - dashLastPos.x);
+        dashLastPos = currentPosition;
+        dashBlockedTimer = stepMoved < speed * Time.deltaTime * 0.25f ? dashBlockedTimer + Time.deltaTime : 0f;
+        float maxDashTime = dashTargetDistance / Mathf.Max(1f, speed) + 0.5f;
+        if (dashBlockedTimer > 0.15f || dashElapsed > maxDashTime)
+        {
+            EndDash(false);
+            return;
+        }
+
         if (Vector2.Distance(dashStartPosition, currentPosition) >= dashTargetDistance)
         {
             EndDash(false);
@@ -1010,14 +1270,29 @@ public class BossEnemy : MeleeChaserEnemy
 
     private bool CheckObstacleAhead()
     {
-        if (obstacleCheck == null) return false;
-        Vector2 checkPosition = (Vector2)obstacleCheck.position + dashDirection * obstacleCheckDistance;
-        return Physics2D.OverlapCircle(checkPosition, obstacleCheckRadius, obstacleLayer);
+        // Checks just in front of the body (the boss is big: a point near its center would be inside itself)
+        Vector2 checkPosition;
+        if (bodyCollider != null)
+        {
+            Bounds b = bodyCollider.bounds;
+            checkPosition = new Vector2(b.center.x + dashDirection.x * (b.extents.x + obstacleCheckDistance * 0.5f), b.center.y);
+        }
+        else if (obstacleCheck != null)
+            checkPosition = (Vector2)obstacleCheck.position + dashDirection * obstacleCheckDistance;
+        else return false;
+        return OverlapSolidCircle(checkPosition, obstacleCheckRadius, obstacleLayer);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other) => TryDashHit(other);
+
+    // Stay too: if the player is already touching the boss when the dash starts, Enter never fires
+    private void OnTriggerStay2D(Collider2D other) => TryDashHit(other);
+
+    private void TryDashHit(Collider2D other)
     {
         if (!IsDashingNow) return;
+        // The boss has other triggers (detection area...): only count real contact with the dash hitbox
+        if (dashHitboxCollider != null && !dashHitboxCollider.IsTouching(other)) return;
         if (currentAttack != AttackType.Dash && currentAttack != AttackType.TeleportStrike) return;
         if (((1 << other.gameObject.layer) & playerLayer) == 0) return;
 
@@ -1331,6 +1606,7 @@ public class BossEnemy : MeleeChaserEnemy
         isTeleporting = true;
 
         if (teleportVfxPrefab != null) Instantiate(teleportVfxPrefab, transform.position, Quaternion.identity);
+        TeleportedFrom?.Invoke(transform.position);
 
         if (dashHitboxCollider != null) dashHitboxCollider.enabled = false;
         rb.linearVelocity = Vector2.zero;
@@ -1347,6 +1623,7 @@ public class BossEnemy : MeleeChaserEnemy
 
         if (spriteRenderer != null) spriteRenderer.enabled = true;
         if (teleportVfxPrefab != null) Instantiate(teleportVfxPrefab, dest, Quaternion.identity);
+        TeleportedTo?.Invoke(dest);
 
         FaceTarget();
         ResetPathingMemory();
@@ -1377,7 +1654,7 @@ public class BossEnemy : MeleeChaserEnemy
             if (arenaBounds != null && !arenaBounds.bounds.Contains(new Vector3(candidate.x, candidate.y, arenaBounds.bounds.center.z)))
                 continue;
 
-            if (Physics2D.OverlapBox(candidate, size * 0.9f, 0f, obstacleLayer) != null)
+            if (OverlapSolidBox(candidate, size * 0.9f, obstacleLayer) || OverlapPlatformBox(candidate, size * 0.9f, groundLayer, out _))
                 continue;
 
             point = candidate;
@@ -1394,6 +1671,7 @@ public class BossEnemy : MeleeChaserEnemy
         if (isDead) return;
 
         hurtTimer = hurtSpriteDuration;
+        Hurt?.Invoke();
         UpdateTargetPhase();
         RegisterHitForBurst(damageAmount);
     }
@@ -1407,7 +1685,7 @@ public class BossEnemy : MeleeChaserEnemy
         {
             for (int i = 0; i < phaseHealthThresholds.Length; i++)
             {
-                if (healthPercent <= phaseHealthThresholds[i]) idx = i + 1;
+                if (healthPercent <= phaseHealthThresholds[i] + 0.0001f) idx = i + 1; // tolerance: 165/250 vs 0.66f float rounding
             }
         }
 
@@ -1511,9 +1789,10 @@ public class BossEnemy : MeleeChaserEnemy
 
     protected override void OnDeathVisuals()
     {
-        if (spriteRenderer != null && deathSprite != null)
+        Sprite death = CurrentPhase.deathSprite != null ? CurrentPhase.deathSprite : deathSprite;
+        if (spriteRenderer != null && death != null)
         {
-            spriteRenderer.sprite = deathSprite;
+            spriteRenderer.sprite = death;
             spriteRenderer.color = Color.white;
         }
     }

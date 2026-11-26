@@ -28,7 +28,7 @@ public class GrapplingHook : MonoBehaviour
     void Awake()
     {
         controls = new PlayerControls();
-        controls.Movement.FireWhip.performed += ctx => TryHook();
+        controls.Movement.FireWhip.performed += ctx => { if (!pausa.GameIsPaused) TryHook(); };
         controls.Movement.FireWhip.canceled += ctx => ReleaseHook();
     }
 

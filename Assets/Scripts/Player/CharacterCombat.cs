@@ -111,9 +111,9 @@ public class CharacterCombat : MonoBehaviour
             }
         }
 
-        controls.Combat.HitWhip.performed += ctx => HandleHitWhipInput();
+        controls.Combat.HitWhip.performed += ctx => { if (!pausa.GameIsPaused) HandleHitWhipInput(); };
 
-        controls.Combat.Capture.started += ctx => HandleCaptureClick();
+        controls.Combat.Capture.started += ctx => { if (!pausa.GameIsPaused) HandleCaptureClick(); };
 
 
         // Validar que las stats existan
@@ -134,6 +134,7 @@ public class CharacterCombat : MonoBehaviour
     }
     void Update()
     {
+        if (pausa.GameIsPaused) return;   // no attacks from clicks on the pause / death menus
         UpdateHoverDetection();
 
         if (isCapturing)
@@ -437,8 +438,8 @@ public class CharacterCombat : MonoBehaviour
     {
         if (hasEnemyCaptured)
         {
-            // Si ya hay un enemigo capturado, liberarlo
-            ReleaseEnemy();
+            // Ya hay algo capturado: la rueda no hace nada (antes lo soltaba y era facil soltarlo por accidente).
+            // Para lanzarlo/soltarlo se usa el clic izquierdo.
             return;
         }
 

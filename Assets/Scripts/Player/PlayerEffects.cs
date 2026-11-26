@@ -72,6 +72,12 @@ public class PlayerEffects : MonoBehaviour
     [Tooltip("Las gotas de la explosion son un poco mas grandes (multiplica el tamano normal).")]
     public float absorbSizeScale = 1.5f;
 
+    [Header("Muerte: el slime explota en gotas blancas")]
+    public bool deathEnabled = true;
+    public int deathCount = 160;
+    public Vector2 deathSpeed = new Vector2(3f, 14f);
+    public float deathSizeScale = 2f;
+
     private PlayerController playerController;
     private SpriteRenderer bodyRenderer;
     private ParticleSystem particles;
@@ -81,6 +87,30 @@ public class PlayerEffects : MonoBehaviour
         playerController = GetComponent<PlayerController>();
         bodyRenderer = GetComponent<SpriteRenderer>();
         particles = CreateParticleSystem();
+
+        var stats = GetComponent<PlayerStats>();
+        if (stats != null) stats.OnDeath.AddListener(PlayDeathExplosion);
+    }
+
+    /// <summary>Al morir: el cuerpo desaparece y estalla en muchas gotas blancas (dos oleadas).</summary>
+    public void PlayDeathExplosion()
+    {
+        if (!deathEnabled || particles == null) return;
+        Vector2 center = bodyRenderer != null ? (Vector2)bodyRenderer.bounds.center : (Vector2)transform.position;
+
+        // Hide the body (PlayerStats shows it again on Revive)
+        foreach (var sr in GetComponentsInChildren<SpriteRenderer>()) sr.enabled = false;
+
+        for (int i = 0; i < deathCount; i++)
+        {
+            Vector2 dir = Rotate(Vector2.right, Random.Range(0f, 360f));
+            dir = (dir + Vector2.up * 0.45f).normalized;
+            // Two waves: a fast ring of big drops and a slower cloud of small ones
+            bool fast = i % 3 != 0;
+            float speed = fast ? Random.Range(deathSpeed.x * 1.5f, deathSpeed.y) : Random.Range(deathSpeed.x * 0.4f, deathSpeed.x * 1.5f);
+            Emit((Vector3)(center + Random.insideUnitCircle * 0.25f), dir * speed, fast ? deathSizeScale : deathSizeScale * 0.6f);
+        }
+        ScreenShake.Shake(0.35f, 0.3f);
     }
 
     ///////////////////////// ACCIONES (las llaman PlayerController y WhipAttack)

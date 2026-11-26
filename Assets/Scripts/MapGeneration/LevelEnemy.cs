@@ -35,6 +35,8 @@ public class LevelEnemy : MonoBehaviour
     private void OnDestroy()
     {
         Active.Remove(this);
+        // Closing the scene (or leaving Play) destroys everything: that is not a kill, and the exit door may be gone already
+        if (!gameObject.scene.isLoaded) return;
         NotifyDefeated();
     }
 }
