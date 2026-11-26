@@ -28,6 +28,23 @@ public class EnemyEvilBat : MeleeChaserEnemy
     [Header("Animation Controller")]
     [SerializeField] private BatAnimationController animationController;
 
+    [Header("Animaciones Bat")]
+    [SerializeField] private Animator batAnimator;
+    [SerializeField] private float animCrossFade = 0.05f;
+
+    [Header("Spot (alerta)")]
+    [Tooltip("Tiempo que el murciélago se queda en el aire con la animación Spot antes de atacar")]
+    [SerializeField] private float spotDuration = 0.8f;
+    [Tooltip("Segundos sin perseguir al jugador para que el Spot se reinicie")]
+    [SerializeField] private float spotResetDelay = 3f;
+
+    // Nombres de los estados del Animator
+    private static readonly int AnimIdle = Animator.StringToHash("BatIdle");
+    private static readonly int AnimFly = Animator.StringToHash("BatFly");
+    private static readonly int AnimSpot = Animator.StringToHash("BatSpot");
+    private static readonly int AnimAttack = Animator.StringToHash("BatAtack");
+    private int currentAnimHash = 0;
+
     private Vector2 patrolCenter; // Centro de la patrulla
     private Vector2 currentPatrolTarget; // Punto actual al que se dirige
 
@@ -36,6 +53,12 @@ public class EnemyEvilBat : MeleeChaserEnemy
     private float perlinNoiseOffset;
     private Vector3 waitingStartPosition;
 
+    // Control del Spot
+    private bool hasSpotted = false;   // ya hizo el Spot en esta persecución
+    private bool isSpotting = false;   // está haciendo el Spot ahora mismo
+    private float spotTimer = 0f;
+    private float lastChaseTime = -999f;
+
     protected override void Start()
     {
         base.Start();
@@ -43,6 +66,11 @@ public class EnemyEvilBat : MeleeChaserEnemy
         if (animationController == null)
         {
             animationController = GetComponent<BatAnimationController>();
+        }
+
+        if (batAnimator == null)
+        {
+            batAnimator = GetComponentInChildren<Animator>();
         }
 
         // Establecer centro de patrulla
@@ -60,10 +88,47 @@ public class EnemyEvilBat : MeleeChaserEnemy
         // Generar primer punto de patrulla
         GenerateNewPatrolPoint();
 
+        PlayAnim(AnimFly);
+
         if (logBehaviorDetails)
         {
             Debug.Log($"Evil Bat {gameObject.name} inicializado. Centro de patrulla: {patrolCenter}");
         }
+    }
+
+    protected override void OnActiveUpdate()
+    {
+        // Marca la última vez que estuvo persiguiendo (o con el jugador en rango de ataque)
+        if (currentState == ChaserState.Chase || IsPlayerInAttackRange())
+        {
+            lastChaseTime = Time.time;
+        }
+
+        // Reiniciar el Spot solo si perdió al jugador por un buen rato
+        if (hasSpotted && Time.time - lastChaseTime > spotResetDelay)
+        {
+            hasSpotted = false;
+            isSpotting = false;
+        }
+
+        // Si estaba en Spot pero ya volvió a patrullar/esperar, cancelar el Spot
+        if (isSpotting && (currentState == ChaserState.Patrol || currentState == ChaserState.Waiting))
+        {
+            isSpotting = false;
+        }
+
+        // El temporizador del Spot corre aquí, sin depender del estado
+        if (isSpotting)
+        {
+            spotTimer -= Time.deltaTime;
+            if (spotTimer <= 0f)
+            {
+                isSpotting = false;
+                hasSpotted = true; // el Spot ya se hizo, ahora persigue
+            }
+        }
+
+        UpdateAnimation();
     }
 
     protected override void FreezeMovement()
@@ -81,6 +146,44 @@ public class EnemyEvilBat : MeleeChaserEnemy
         flapTimer = 0f;
         horizontalWaveTimer = 0f;
     }
+
+    #region Animation
+
+    private void PlayAnim(int hash)
+    {
+        if (batAnimator == null || currentAnimHash == hash) return;
+
+        currentAnimHash = hash;
+        batAnimator.CrossFade(hash, animCrossFade, 0, 0f);
+    }
+
+    private bool IsPlayerInAttackRange()
+    {
+        Vector2 attackPos = attackPoint != null ? (Vector2)attackPoint.position : (Vector2)transform.position;
+        return Physics2D.OverlapCircle(attackPos, attackRadius, playerLayer) != null;
+    }
+
+    private void UpdateAnimation()
+    {
+        // 1) Spot: tiene prioridad
+        if (isSpotting)
+        {
+            PlayAnim(AnimSpot);
+            return;
+        }
+
+        // 2) Persiguiendo: ataque si está en rango, si no vuela
+        if (currentState == ChaserState.Chase)
+        {
+            PlayAnim(IsPlayerInAttackRange() ? AnimAttack : AnimFly);
+            return;
+        }
+
+        // 3) Esperando: idle. Patrullando: vuela
+        PlayAnim(currentState == ChaserState.Waiting ? AnimIdle : AnimFly);
+    }
+
+    #endregion
 
     #region Wing Flap Movement System
     private Vector2 CalculateFlapOffset(Vector2 baseDirection)
@@ -113,6 +216,7 @@ public class EnemyEvilBat : MeleeChaserEnemy
 
         return flapOffset;
     }
+
     private void ApplyFlapMovement(Vector2 baseDirection, float speed)
     {
         Vector2 flapOffset = CalculateFlapOffset(baseDirection);
@@ -191,6 +295,7 @@ public class EnemyEvilBat : MeleeChaserEnemy
 
         return true;
     }
+
     private bool IsPointValid(Vector2 point)
     {
         Collider2D hit = Physics2D.OverlapCircle(point, 0.2f, pathObstacleLayer);
@@ -271,6 +376,7 @@ public class EnemyEvilBat : MeleeChaserEnemy
             }
         }
     }
+
     protected override void PatrolBehavior()
     {
         Vector2 direction = (currentPatrolTarget - (Vector2)transform.position).normalized;
@@ -288,6 +394,7 @@ public class EnemyEvilBat : MeleeChaserEnemy
             OnReachedPatrolPoint();
         }
     }
+
     private void OnReachedPatrolPoint()
     {
         // Generar nuevo punto aleatorio
@@ -296,6 +403,7 @@ public class EnemyEvilBat : MeleeChaserEnemy
         // Entrar en estado de espera
         ChangeState(ChaserState.Waiting);
     }
+
     protected override void WaitBehavior()
     {
         // Movimiento de aleteo estacionario (hover)
@@ -347,6 +455,26 @@ public class EnemyEvilBat : MeleeChaserEnemy
         }
 
         Vector2 direction = (player.position - transform.position).normalized;
+
+        // --- Spot: solo la primera vez que ve al jugador ---
+        if (!hasSpotted && !isSpotting)
+        {
+            isSpotting = true;
+            spotTimer = spotDuration;
+        }
+
+        if (isSpotting)
+        {
+            // Quieto en el aire, mirando al jugador
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector2.zero;
+            }
+            UpdateSpriteFlip(direction.x);
+            return;
+        }
+
+        // --- Persecución normal ---
         float speed = chaseSpeed * GetMovementSpeedMultiplier();
 
         // Aplicar movimiento con aleteo (más agresivo en persecución)

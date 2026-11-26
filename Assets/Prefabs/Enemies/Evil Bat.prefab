@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1737434713822099933}
@@ -87,8 +87,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 727594bfa47c4d44f8dff44722c9f343, type: 3}
-  m_Color: {r: 0.36767787, g: 0.20580275, b: 0.4641509, a: 1}
+  m_Sprite: {fileID: -5989603999673368074, guid: 5389910ae1eb203488a63f9e81c31352, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -136,7 +136,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -184,6 +184,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: d322ef7c26a3886429b8b470dd040c02, type: 2}
+  dealsContactDamage: 1
+  contactDamage: 10
+  contactDamageLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  contactDamageCooldown: 0.5
   OnDamageTaken:
     m_PersistentCalls:
       m_Calls: []
@@ -232,7 +238,7 @@ MonoBehaviour:
   attackRadius: 1.2
   spriteRenderer: {fileID: 3095086617460813404}
   autoFlipSprite: 1
-  chaseColor: {r: 1, g: 0, b: 0, a: 1}
+  chaseColor: {r: 1, g: 1, b: 1, a: 1}
   patrolColor: {r: 1, g: 1, b: 1, a: 1}
   deathGravityScale: 100
   deathFallSpeed: 120
@@ -258,6 +264,10 @@ MonoBehaviour:
   idleHorizontalDrift: 5
   idleDriftFrequency: 5
   animationController: {fileID: 498072142825603395}
+  batAnimator: {fileID: 0}
+  animCrossFade: 0.05
+  spotDuration: 0.8
+  spotResetDelay: 3
 --- !u!95 &2206693882901801491
 Animator:
   serializedVersion: 7
@@ -268,7 +278,7 @@ Animator:
   m_GameObject: {fileID: 24182163444947434}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8afeb417cecab294c8ee5ad2e6684a43, type: 2}
+  m_Controller: {fileID: 9100000, guid: ef9f829539e936e49b1e44379edc720c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

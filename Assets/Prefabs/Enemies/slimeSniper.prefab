@@ -224,7 +224,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isDead: 0
-  player: {fileID: 0}
+  player: {fileID: 8720605379785435561, guid: a3d3c6088e01f1c458bdbf7ce0388727, type: 3}
   gun: {fileID: 4395076200342689085}
   muzzle: {fileID: 6696731015209464103}
   bodyAnimator: {fileID: 6970872517313557618}
