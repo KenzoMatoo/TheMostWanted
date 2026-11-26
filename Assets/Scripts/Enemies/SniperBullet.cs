@@ -23,6 +23,7 @@ public class SniperBullet : MonoBehaviour
         hitMask = mask;
         this.owner = owner;
         transform.right = dir;
+        GameAudio.PlayAt(owner != null && owner.GetComponent<TankEnemy>() != null ? "Tanque_Disparo" : "Rifle_Disparo", transform.position, 0.8f);
 
         // Si el prefab no tiene visual, crea una estela simple
         if (GetComponentInChildren<Renderer>() == null)
@@ -71,6 +72,7 @@ public class SniperBullet : MonoBehaviour
                 target.TakeDamage(damage, hit.point - dir * 0.5f);
             }
 
+            GameAudio.PlayAt("Bala_Impacto", hit.point, 0.7f);
             Destroy(gameObject);
             return;
         }

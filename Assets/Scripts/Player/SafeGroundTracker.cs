@@ -94,6 +94,7 @@ public class SafeGroundTracker : MonoBehaviour
     private IEnumerator Respawn()
     {
         respawning = true;
+        GameAudio.Play("Pinchos");
         if (controller != null) controller.canMove = false;
         if (rb != null) rb.linearVelocity = Vector2.zero;
 
@@ -102,6 +103,7 @@ public class SafeGroundTracker : MonoBehaviour
 
         if (hook != null) hook.ReleaseHook();
         transform.position = safePosition;
+        GameAudio.Play("Reaparecer", 0.8f);
         if (rb != null) { rb.position = safePosition; rb.linearVelocity = Vector2.zero; }
         Physics2D.SyncTransforms();
 

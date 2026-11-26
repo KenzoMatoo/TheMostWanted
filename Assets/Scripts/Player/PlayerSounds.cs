@@ -27,6 +27,8 @@ public class PlayerSounds : MonoBehaviour
     [Header("Volumen")]
     [Range(0f, 1f)] public float volume = 1f;
     [Range(0f, 1f)] public float stepsVolume = 0.6f;
+    [Tooltip("Si esta apagado, el cubo no hace ningun sonido al caer al piso")]
+    public bool playLandSound = false;
     [Tooltip("Volumen del aterrizaje (en caidas cortas suena todavia mas bajo)")]
     [Range(0f, 1f)] public float landVolume = 0.3f;
     [Tooltip("Segundos minimos entre dos sonidos de aterrizaje")]
@@ -80,6 +82,7 @@ public class PlayerSounds : MonoBehaviour
 
     public void PlayLand(float airTime)
     {
+        if (!playLandSound) return;
         // Quieter and less frequent: soft on short hops, a bit louder only after real falls
         if (airTime < Mathf.Max(minAirTimeForLand, 0.25f) || Time.time < nextLandTime) return;
         nextLandTime = Time.time + landCooldown;

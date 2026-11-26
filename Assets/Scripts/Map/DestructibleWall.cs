@@ -222,6 +222,7 @@ public class DestructibleWall : MonoBehaviour
     {
         if (destructionParticlePrefab != null) Instantiate(destructionParticlePrefab, worldPosition, Quaternion.identity);
         if (destructionSound != null && audioSource != null) audioSource.PlayOneShot(destructionSound);
+        else GameAudio.PlayAt("Pared_Rompe", worldPosition);
 
         tilemap.SetTile(tilePos, null);
         Debug.Log($"[DestructibleWall] Tile destruido en {tilePos}");

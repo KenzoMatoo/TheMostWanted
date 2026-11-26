@@ -68,6 +68,7 @@ public class TutorialFinale : MonoBehaviour
         var hook = player != null ? player.GetComponent<GrapplingHook>() : null;
         if (hook != null) hook.ReleaseHook();
 
+        GameAudio.Play("Retumbo");
         // Rumble: shake growing, the floor flickers darker (cracks) and dust falls from the ceiling
         var cells = new List<Vector3Int>();
         for (int y = breakMax.y; y >= breakMin.y; y--)
@@ -87,6 +88,7 @@ public class TutorialFinale : MonoBehaviour
             yield return null;
         }
 
+        GameAudio.Play("Derrumbe");
         // Crumble row by row from the top, throwing pieces of stone
         shake = shakeStrength * 1.3f;
         if (player != null) player.canMove = true;     // the player can wiggle while falling

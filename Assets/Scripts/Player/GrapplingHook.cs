@@ -94,6 +94,7 @@ public class GrapplingHook : MonoBehaviour
         if (Time.time - lastHookTime < stats.CooldownTime) return;
 
         Vector2 shootDirection = GetMouseDirection();
+        GameAudio.Play("Gancho_Disparo", 0.7f);
         // CircleCast en vez de un Raycast de una sola línea: le da un pequeño margen de
         // perdón a la puntería (no hace falta apuntar exacto al borde del objeto).
         RaycastHit2D hit = Physics2D.CircleCast(firePoint.position, stats.GrappleAimRadius, shootDirection, stats.MaxGrappleDistance, stats.GrappleLayer);

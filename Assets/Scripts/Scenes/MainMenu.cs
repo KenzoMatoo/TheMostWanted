@@ -68,6 +68,7 @@ public class MainMenu : MonoBehaviour
     {
         if (loading || string.IsNullOrEmpty(scene)) return;
         loading = true;
+        GameAudio.PlayUI("UI_Transicion");
         StartCoroutine(LoadRoutine(scene));
     }
 

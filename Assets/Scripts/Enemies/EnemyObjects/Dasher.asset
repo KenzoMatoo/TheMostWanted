@@ -46,7 +46,7 @@ MonoBehaviour:
     CaptureDifficulty: 0.67
     CapturedColor: {r: 0, g: 1, b: 0, a: 1}
     StunToCaptureProgressMultiplier: 0.4
-    RequireMinimumStunToCapture: 1
+    RequireMinimumStunToCapture: 0
     MinimumStunForCapture: 50
   Stun:
     StunnedDecayBaseRate: 10

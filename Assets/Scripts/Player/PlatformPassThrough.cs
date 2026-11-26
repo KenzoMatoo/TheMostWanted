@@ -78,6 +78,16 @@ public class PlatformPassThrough : MonoBehaviour
         }
     }
 
+    private float lastImpact;
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (held || !ignoring || Time.time - lastImpact < 0.15f) return;
+        if (collision.relativeVelocity.magnitude < 6f) return;
+        lastImpact = Time.time;
+        GameAudio.PlayAt("Impacto_Lanzado", transform.position, Mathf.Clamp01(collision.relativeVelocity.magnitude / 18f) + 0.3f);
+    }
+
     // Turning collisions back on while it is inside a platform would get it stuck
     private bool InsideAPlatform()
     {

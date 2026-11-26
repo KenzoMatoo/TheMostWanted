@@ -48,6 +48,12 @@ public class HubScreen : MonoBehaviour
     private RectTransform currentNode;
     private bool loading;
 
+    // Testing cheat: typing 1 2 3 4 5 in order opens every poster (type it again to turn it off).
+    // It stays on while the game is open, so you can jump between levels freely.
+    public static bool TestUnlockAll;
+    private int cheatIndex;
+    private float cheatTime;
+
     private void Start()
     {
         Time.timeScale = 1f;
@@ -72,6 +78,8 @@ public class HubScreen : MonoBehaviour
 
     private void Update()
     {
+        CheckTestCheat();
+
         if (currentNode != null)
         {
             float s = 1.3f + 0.08f * Mathf.Sin(Time.unscaledTime * 4f);
@@ -81,6 +89,29 @@ public class HubScreen : MonoBehaviour
         {
             var kb = UnityEngine.InputSystem.Keyboard.current;
             if (kb != null && kb.anyKey.wasPressedThisFrame) SelectFirst();
+        }
+    }
+
+    private void CheckTestCheat()
+    {
+        var kb = UnityEngine.InputSystem.Keyboard.current;
+        if (kb == null || loading) return;
+        var row = new[] { kb.digit1Key, kb.digit2Key, kb.digit3Key, kb.digit4Key, kb.digit5Key };
+        var pad = new[] { kb.numpad1Key, kb.numpad2Key, kb.numpad3Key, kb.numpad4Key, kb.numpad5Key };
+        if (cheatIndex > 0 && Time.unscaledTime - cheatTime > 3f) cheatIndex = 0;   // too slow: start over
+        for (int i = 0; i < 5; i++)
+        {
+            if (!row[i].wasPressedThisFrame && !pad[i].wasPressedThisFrame) continue;
+            cheatIndex = i == cheatIndex ? cheatIndex + 1 : (i == 0 ? 1 : 0);
+            cheatTime = Time.unscaledTime;
+            if (cheatIndex == 5)
+            {
+                cheatIndex = 0;
+                TestUnlockAll = !TestUnlockAll;
+                GameAudio.PlayUI(TestUnlockAll ? "Salida_Abre" : "Captura_Fallida");
+                Build();
+            }
+            return;
         }
     }
 
@@ -100,7 +131,7 @@ public class HubScreen : MonoBehaviour
         // Posters on the board (anchored to the background, so they stay on their frames at any resolution)
         foreach (var p in posters)
         {
-            bool available = !done && progression.IsAvailable(p.type);
+            bool available = TestUnlockAll || (!done && progression.IsAvailable(p.type));
             var btn = PosterButton(p, available);
             if (available) choices.Add(btn);
         }
@@ -114,6 +145,7 @@ public class HubScreen : MonoBehaviour
         Text(bottom, done ? "¡CORRIDA COMPLETA!" : $"PASO {progression.StepNumber} DE {progression.StepCount}", 5,
              new Vector2(-690, 0), 0, PixelText.Align.Center, textColor);
         BuildPath(bottom, new Vector2(80, 8));
+        if (TestUnlockAll) Text(root, "MODO PRUEBA: TODO ABIERTO (1 2 3 4 5 PARA QUITAR)", 3, new Vector2(0, 410), 0, PixelText.Align.Center, stampColor);
         menuButton = SmallButton(bottom, new Vector2(800, 0), new Vector2(220, 76), "MENU", 4);
         menuButton.onClick.AddListener(() => Load(menuScene));
 
@@ -212,7 +244,7 @@ public class HubScreen : MonoBehaviour
 
     private void Choose(LevelType type)
     {
-        if (!progression.IsAvailable(type)) return;
+        if (!TestUnlockAll && !progression.IsAvailable(type)) return;
         Load(progression.GetSceneName(type));
     }
 
@@ -220,6 +252,7 @@ public class HubScreen : MonoBehaviour
     {
         if (loading || string.IsNullOrEmpty(scene)) return;
         loading = true;
+        GameAudio.PlayUI("UI_Transicion");
         StartCoroutine(LoadRoutine(scene));
     }
 

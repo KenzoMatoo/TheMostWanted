@@ -124,6 +124,7 @@ public class GameMenus : MonoBehaviour
         Time.timeScale = 0f;
         pausa.GameIsPaused = true;
         AudioListener.pause = true;   // sounds and loops freeze with the game
+        GameAudio.PlayUI("UI_Pausa_Abrir");
         StopAllCoroutines();
         StartCoroutine(Show(pauseGroup, pauseTitle, 0.18f));
         Select(continueButton);
@@ -137,6 +138,7 @@ public class GameMenus : MonoBehaviour
         Time.timeScale = 1f;
         pausa.GameIsPaused = false;
         AudioListener.pause = false;
+        GameAudio.PlayUI("UI_Pausa_Cerrar");
         StopAllCoroutines();
         StartCoroutine(Hide(pauseGroup, 0.12f));
         if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
@@ -159,6 +161,7 @@ public class GameMenus : MonoBehaviour
         StopHitStop();
         Time.timeScale = 0f;
         pausa.GameIsPaused = true;
+        GameAudio.PlayUI("UI_Muerte");
         yield return Show(deathGroup, deathTitle, 0.6f);
         Select(deathMenuButton);
     }
@@ -169,6 +172,7 @@ public class GameMenus : MonoBehaviour
     {
         if (loading) return;
         loading = true;
+        GameAudio.PlayUI("UI_Transicion");
         StartCoroutine(LoadMenu());
     }
 

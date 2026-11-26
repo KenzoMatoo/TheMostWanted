@@ -28,13 +28,17 @@ public class MenuButtonFx : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     }
     private Vector3 baseScale;
 
+    private float enabledAt;
+
     private void Awake()
     {
+        var button = GetComponent<UnityEngine.UI.Button>();
+        if (button != null) button.onClick.AddListener(() => GameAudio.PlayUI("UI_Click"));
         baseScale = transform.localScale;
         if (marker != null) marker.canvasRenderer.SetAlpha(0f);
     }
 
-    private void OnEnable() { hovered = selected = false; }
+    private void OnEnable() { hovered = selected = false; enabledAt = Time.unscaledTime; }
 
     public void OnPointerEnter(PointerEventData e)
     {
@@ -43,7 +47,12 @@ public class MenuButtonFx : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(gameObject);
     }
     public void OnPointerExit(PointerEventData e) { hovered = false; }
-    public void OnSelect(BaseEventData e) { selected = true; }
+    public void OnSelect(BaseEventData e)
+    {
+        selected = true;
+        // No blip for the automatic selection when a menu opens
+        if (Time.unscaledTime - enabledAt > 0.2f) GameAudio.PlayUI("UI_Hover", 0.6f);
+    }
     public void OnDeselect(BaseEventData e) { selected = false; }
 
     private void Update()

@@ -37,10 +37,22 @@ public class EnemyDasher : MeleeChaserEnemy
     [Tooltip("Cuánto dura el retroceso antes de que el Dasher se quede quieto en recuperación.")]
     [SerializeField] private float recoilDuration = 0.15f;
 
+    [Header("Animaciones (cabra)")]
+    [SerializeField] private Animator animator;
+    [Tooltip("Segundos quieto sin ver al jugador para que la proxima vez vuelva a hacer la alerta (el '!' y tirar el cigarro)")]
+    [SerializeField] private float spotResetDelay = 4f;
+    private const string AnimIdle = "Idle", AnimSpot = "Alerta", AnimWindup = "Preparar", AnimDash = "Embestida", AnimHit = "Choque";
+    private string currentAnim;
+    private bool hasSpotted;
+    private float idleSince;
+
     private Vector2 dashDirection;
     private Vector2 dashStartPosition;
     private float dashTargetDistance;
     private float recoilTimer;
+    private float dashElapsed, dashBlockedTimer;
+    private Vector2 dashLastPos;
+    private Collider2D bodyCollider;
 
     protected override void Start()
     {
@@ -65,6 +77,38 @@ public class EnemyDasher : MeleeChaserEnemy
         }
 
         dashHitboxCollider.enabled = false;
+
+        if (animator == null) animator = GetComponentInChildren<Animator>();
+        PlayAnim(AnimIdle);
+    }
+
+    // Plays a state of the goat's Animator; 'duration' > 0 stretches the clip to last exactly that long
+    private void PlayAnim(string state, float duration = 0f)
+    {
+        if (animator == null || animator.runtimeAnimatorController == null) return;
+        animator.speed = 1f;
+        if (duration > 0f)
+        {
+            foreach (var clip in animator.runtimeAnimatorController.animationClips)
+                if (clip.name == state) { animator.speed = clip.length / duration; break; }
+        }
+        if (currentAnim == state && duration <= 0f) return;
+        currentAnim = state;
+        animator.Play(state, 0, 0f);
+    }
+
+    protected override void OnActiveUpdate()
+    {
+        base.OnActiveUpdate();
+        // Back to calm: after a while without attacking, the next sighting shows the alert again
+        if (!isAttacking)
+        {
+            if (currentAnim != AnimIdle && currentAnim != AnimHit) PlayAnim(AnimIdle);
+            if (currentAnim == AnimHit && animator != null && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f) PlayAnim(AnimIdle);
+            idleSince += Time.deltaTime;
+            if (idleSince > spotResetDelay) hasSpotted = false;
+        }
+        else idleSince = 0f;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -156,6 +200,9 @@ public class EnemyDasher : MeleeChaserEnemy
         attackWindupTimer = attackWindupTime;
 
         UpdateVisualFeedback(telegraphColor);
+        // First time it sees the player: "!" and drops the cigarette. Later charges: just lowers the head.
+        PlayAnim(hasSpotted ? AnimWindup : AnimSpot, attackWindupTime);
+        hasSpotted = true;
 
         // Encarar al jugador desde ya para que el "tell" visual sea claro (el hitbox
         // se termina de orientar en StartDash, por si se mueve durante el telegraph).
@@ -183,6 +230,7 @@ public class EnemyDasher : MeleeChaserEnemy
         dashPhase = DashPhase.Dashing;
 
         UpdateVisualFeedback(dashColor);
+        PlayAnim(AnimDash);
 
         if (dashHitboxCollider != null)
         {
@@ -200,6 +248,9 @@ public class EnemyDasher : MeleeChaserEnemy
         lastMoveDirection = dashDirection;
 
         dashStartPosition = rb != null ? rb.position : (Vector2)transform.position;
+        dashElapsed = 0f;
+        dashBlockedTimer = 0f;
+        dashLastPos = dashStartPosition;
 
         float distanceToPlayer = player != null ? Vector2.Distance(transform.position, player.position) : 0f;
         dashTargetDistance = distanceToPlayer + dashOvershootBuffer;
@@ -230,15 +281,37 @@ public class EnemyDasher : MeleeChaserEnemy
         if (distanceTravelled >= dashTargetDistance)
         {
             EndDash();
+            return;
+        }
+
+        // Watchdog: a charge blocked by anything (corner, step, another enemy) or running too long always ends
+        dashElapsed += Time.deltaTime;
+        float moved = Mathf.Abs(currentPosition.x - dashLastPos.x);
+        dashLastPos = currentPosition;
+        dashBlockedTimer = moved < dashSpeed * Time.deltaTime * 0.25f ? dashBlockedTimer + Time.deltaTime : 0f;
+        if (dashBlockedTimer > 0.15f || dashElapsed > dashTargetDistance / Mathf.Max(1f, dashSpeed) + 0.5f)
+        {
+            EndDash();
         }
     }
 
     private bool CheckObstacleAhead()
     {
-        if (obstacleCheck == null) return false;
+        // Just in front of the body (the old check point could be far ahead of a small sprite and stop it in place).
+        // One-way platforms are not walls: the goat runs under/through them.
+        if (bodyCollider == null) foreach (var c in GetComponents<Collider2D>()) if (!c.isTrigger) { bodyCollider = c; break; }
+        Vector2 checkPosition;
+        if (bodyCollider != null)
+        {
+            Bounds b = bodyCollider.bounds;
+            checkPosition = new Vector2(b.center.x + dashDirection.x * (b.extents.x + obstacleCheckRadius + 0.05f), b.center.y);
+        }
+        else if (obstacleCheck != null) checkPosition = (Vector2)obstacleCheck.position + dashDirection * obstacleCheckDistance;
+        else return false;
 
-        Vector2 checkPosition = (Vector2)obstacleCheck.position + dashDirection * obstacleCheckDistance;
-        return Physics2D.OverlapCircle(checkPosition, obstacleCheckRadius, obstacleLayer);
+        foreach (var hit in Physics2D.OverlapCircleAll(checkPosition, obstacleCheckRadius, obstacleLayer))
+            if (SightUtil.BlocksSight(hit)) return true;
+        return false;
     }
 
     private void EndDash()
@@ -257,6 +330,7 @@ public class EnemyDasher : MeleeChaserEnemy
 
         recoilTimer = 0f;
         attackTimer = attackCooldown;
+        PlayAnim(AnimHit);
     }
 
     private void UpdateRecovery()

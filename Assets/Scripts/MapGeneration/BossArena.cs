@@ -139,6 +139,8 @@ public class BossArena : MonoBehaviour
     private void StartFight()
     {
         state = State.Fighting;
+        GameAudio.Play("Arena_Sello");
+        GameAudio.Play("Jefe_Titulo", 0.9f, 0f);
 
         // Close the doors the player came through (the door walls are still there, just turned off)
         sealedDoors.Clear();
@@ -166,6 +168,7 @@ public class BossArena : MonoBehaviour
         if (victory)
         {
             state = State.Done;
+            GameAudio.Play("Victoria", 1f, 0f);
             var effects = FindAnyObjectByType<PlayerEffects>();
             if (effects != null) { effects.PlayAbsorbBurst(lastBossPosition); effects.PlayAbsorbBurst(lastBossPosition + Vector3.up); }
             StartCoroutine(Victory());

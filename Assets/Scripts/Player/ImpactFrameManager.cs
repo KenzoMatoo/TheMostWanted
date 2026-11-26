@@ -50,6 +50,44 @@ public class ImpactFrameManager : MonoBehaviour
     private Dictionary<Transform, int> originalLayers = new Dictionary<Transform, int>();
     private bool isActive = false;
 
+    /// <summary>True while any impact frame is on screen (enemies wait for it before exploding).</summary>
+    public static bool AnyActive { get; private set; }
+
+    // URP ignores SetReplacementShader: the white look is done by swapping the sprites' material for a
+    // white silhouette while the effect lasts, and putting the original back afterwards.
+    private static Material silhouette;
+    private readonly List<(SpriteRenderer sr, Material mat, Color color)> swapped = new List<(SpriteRenderer, Material, Color)>();
+
+    private static Material Silhouette()
+    {
+        if (silhouette != null) return silhouette;
+        Shader s = Shader.Find("GUI/Text Shader");
+        if (s == null) s = Shader.Find("Universal Render Pipeline/2D/Sprite-Unlit-Default");
+        return silhouette = s != null ? new Material(s) { name = "ImpactWhite" } : null;
+    }
+
+    private void MakeWhite(GameObject go)
+    {
+        if (go == null || Silhouette() == null) return;
+        foreach (var sr in go.GetComponentsInChildren<SpriteRenderer>())
+        {
+            swapped.Add((sr, sr.sharedMaterial, sr.color));
+            sr.sharedMaterial = silhouette;
+            sr.color = Color.white;
+        }
+    }
+
+    private void RestoreMaterials()
+    {
+        foreach (var (sr, mat, color) in swapped)
+        {
+            if (sr == null) continue;
+            sr.sharedMaterial = mat;
+            sr.color = color;
+        }
+        swapped.Clear();
+    }
+
     private void Awake()
     {
         InitializeImpactLayer();
@@ -182,6 +220,7 @@ public class ImpactFrameManager : MonoBehaviour
     private IEnumerator ImpactFrameCoroutine(GameObject objectA, GameObject objectB)
     {
         isActive = true;
+        AnyActive = true;
 
         if (showDebugLogs)
         {
@@ -196,6 +235,10 @@ public class ImpactFrameManager : MonoBehaviour
         {
             StoreAndSetLayerRecursive(objectB.transform, impactLayer);
         }
+
+        // White silhouettes (works in URP, unlike the replacement shader)
+        MakeWhite(objectA);
+        if (objectB != null && objectB != objectA) MakeWhite(objectB);
 
         // 2. Sincronizar cámara de impacto con cámara principal
         SyncCameraWithMain();
@@ -239,6 +282,7 @@ public class ImpactFrameManager : MonoBehaviour
 
         // 11. Restaurar capas originales
         RestoreOriginalLayers();
+        RestoreMaterials();
 
         if (showDebugLogs)
         {
@@ -246,6 +290,7 @@ public class ImpactFrameManager : MonoBehaviour
         }
 
         isActive = false;
+        AnyActive = false;
     }
 
     /// <summary>
@@ -315,6 +360,8 @@ public class ImpactFrameManager : MonoBehaviour
         }
 
         RestoreOriginalLayers();
+        RestoreMaterials();
+        AnyActive = false;
 
         // Nota: ya no forzamos Time.timeScale = 1f aquí. HitStopManager es el único
         // dueño de esa variable; su propia corrutina se encarga de restaurarla cuando

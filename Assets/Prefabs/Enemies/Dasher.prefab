@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 5316585408525247431}
   - component: {fileID: 5526947841018079384}
   - component: {fileID: 5238181875663975403}
+  - component: {fileID: 7841259823287445336}
   m_Layer: 6
   m_Name: Dasher
   m_TagString: Untagged
@@ -62,7 +63,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 2.5, z: 1}
+  m_LocalScale: {x: 4.5, y: 4.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2887571336662961411}
@@ -118,8 +119,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.8066677, g: 0.8490566, b: 0.22908504, a: 1}
+  m_Sprite: {fileID: 4716390043589739512, guid: 2f7c4e6a76f6b094694b202daea0e704, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -190,17 +191,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.04, y: -0.095}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 7, y: 7}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.44, y: 0.39}
   m_EdgeRadius: 0
 --- !u!61 &5526947841018079384
 BoxCollider2D:
@@ -236,17 +237,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.75, y: 0}
+  m_Offset: {x: -0.2, y: -0.08}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 7, y: 7}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5, y: 0.9}
+  m_Size: {x: 0.26, y: 0.34}
   m_EdgeRadius: 0
 --- !u!114 &5238181875663975403
 MonoBehaviour:
@@ -261,6 +262,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDasher
   enemyStats: {fileID: 11400000, guid: f15f3efc98c99ba42a813d87d3fc4468, type: 2}
+  dealsContactDamage: 1
+  contactDamage: 10
+  contactDamageLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  contactDamageCooldown: 0.5
   OnDamageTaken:
     m_PersistentCalls:
       m_Calls: []
@@ -309,7 +316,7 @@ MonoBehaviour:
   attackRadius: 1.2
   spriteRenderer: {fileID: 0}
   autoFlipSprite: 1
-  chaseColor: {r: 1, g: 0, b: 0, a: 1}
+  chaseColor: {r: 1, g: 1, b: 1, a: 1}
   patrolColor: {r: 1, g: 1, b: 1, a: 1}
   deathGravityScale: 15
   deathFallSpeed: 20
@@ -321,11 +328,35 @@ MonoBehaviour:
   obstacleCheckRadius: 1
   obstacleCheckDistance: 0.6
   dashHitboxCollider: {fileID: 5526947841018079384}
-  dashHitboxSize: {x: 1, y: 1}
-  telegraphColor: {r: 1, g: 0.55, b: 0.55, a: 1}
-  dashColor: {r: 0.75, g: 0, b: 0, a: 1}
+  dashHitboxSize: {x: 0.26, y: 0.34}
+  telegraphColor: {r: 1, g: 0.85, b: 0.85, a: 1}
+  dashColor: {r: 1, g: 0.78, b: 0.78, a: 1}
   recoilSpeed: 2
   recoilDuration: 0.45
+  animator: {fileID: 7841259823287445336}
+  spotResetDelay: 4
+--- !u!95 &7841259823287445336
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081933642787246480}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f7c78bacf3d26114b8b05037b183bbf5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5252342774148594859
 GameObject:
   m_ObjectHideFlags: 0
