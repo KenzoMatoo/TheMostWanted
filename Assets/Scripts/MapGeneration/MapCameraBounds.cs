@@ -33,23 +33,39 @@ public class MapCameraBounds : MonoBehaviour
         if (confiner == null) { Debug.LogWarning("[MapCameraBounds] No hay CinemachineConfiner2D en la camara."); return; }
         if (boundsObject != null) Destroy(boundsObject);
 
-        // Celdas ocupadas: se agrupan los tiles de todos los cuartos en cuadros de cellSize
+        // Occupied cells: each room is cut into 33x33 squares starting at its real bottom-left corner
+        // (taken from its tilemaps). Only squares that have tiles count, so the empty corner of an L is left out.
+        // Using the corner and not the room position matters: big rooms (2x1, 2x2, L) are centered between cells.
         var rooms = GetComponent<RoomManager>();
         Transform root = rooms != null ? rooms.transform : transform;
-        var chunks = new HashSet<Vector2Int>();
-        float half = cellSize * 0.5f;
+        var chunks = new HashSet<Vector2Int>();   // keys = chunk center * 2, rounded (unique per square)
+        var centers = new List<Vector2>();
         foreach (var room in root.GetComponentsInChildren<Room>())
         {
-            Vector2 origin = room.transform.position; // los cuartos estan centrados en su primera celda
-            foreach (var tm in room.GetComponentsInChildren<Tilemap>())
+            var maps = room.GetComponentsInChildren<Tilemap>();
+            bool any = false;
+            Vector2 min = new Vector2(float.MaxValue, float.MaxValue);
+            foreach (var tm in maps)
             {
                 tm.CompressBounds();
+                if (tm.cellBounds.size.x <= 0 || tm.cellBounds.size.y <= 0) continue;
+                Vector3 corner = tm.CellToWorld(tm.cellBounds.min);
+                min = Vector2.Min(min, corner);
+                any = true;
+            }
+            if (!any) continue;
+
+            foreach (var tm in maps)
+            {
                 foreach (var c in tm.cellBounds.allPositionsWithin)
                 {
                     if (!tm.HasTile(c)) continue;
                     Vector2 world = tm.GetCellCenterWorld(c);
-                    chunks.Add(new Vector2Int(Mathf.RoundToInt((world.x - origin.x) / cellSize), Mathf.RoundToInt((world.y - origin.y) / cellSize))
-                               + RoomKey(origin));
+                    int cx = Mathf.FloorToInt((world.x - min.x) / cellSize);
+                    int cy = Mathf.FloorToInt((world.y - min.y) / cellSize);
+                    Vector2 center = min + new Vector2((cx + 0.5f) * cellSize, (cy + 0.5f) * cellSize);
+                    var key = new Vector2Int(Mathf.RoundToInt(center.x * 2f), Mathf.RoundToInt(center.y * 2f));
+                    if (chunks.Add(key)) centers.Add(center);
                 }
             }
         }
@@ -64,33 +80,18 @@ public class MapCameraBounds : MonoBehaviour
         composite.geometryType = CompositeCollider2D.GeometryType.Polygons;
         composite.isTrigger = true;
         composite.generationType = CompositeCollider2D.GenerationType.Manual;
-        foreach (var k in chunks)
+        foreach (var center in centers)
         {
             var box = boundsObject.AddComponent<BoxCollider2D>();
             box.isTrigger = true;
             box.compositeOperation = Collider2D.CompositeOperation.Merge;
-            box.offset = new Vector2(k.x * cellSize, k.y * cellSize) + chunkOffset;
-            box.size = new Vector2(cellSize, cellSize);
+            box.offset = center;
+            box.size = new Vector2(cellSize + 0.02f, cellSize + 0.02f);   // tiny overlap so neighbouring squares merge cleanly
         }
         composite.GenerateGeometry();
 
         confiner.BoundingShape2D = composite;
         confiner.InvalidateBoundingShapeCache();
         Debug.Log($"[MapCameraBounds] Limites de camara: {chunks.Count} celdas.");
-    }
-
-    // Las llaves de celda se guardan en coordenadas globales: (posicion del cuarto / cellSize) redondeada,
-    // y el centro real de la celda (0,0) queda en chunkOffset (la posicion del primer cuarto puede no ser multiplo de cellSize).
-    private Vector2 chunkOffset;
-    private bool offsetSet;
-
-    Vector2Int RoomKey(Vector2 origin)
-    {
-        if (!offsetSet)
-        {
-            chunkOffset = new Vector2(origin.x - Mathf.Round(origin.x / cellSize) * cellSize, origin.y - Mathf.Round(origin.y / cellSize) * cellSize);
-            offsetSet = true;
-        }
-        return new Vector2Int(Mathf.RoundToInt((origin.x - chunkOffset.x) / cellSize), Mathf.RoundToInt((origin.y - chunkOffset.y) / cellSize));
     }
 }

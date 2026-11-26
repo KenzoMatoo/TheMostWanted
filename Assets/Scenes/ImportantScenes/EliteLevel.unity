@@ -1829,8 +1829,14 @@ MonoBehaviour:
     - prefab: {fileID: 24182163444947434, guid: 49caa14e2902d82478b9b7f508393b7f, type: 3}
       margin: 1
       weight: 1
+    - prefab: {fileID: 4383876065042344783, guid: 638745cdea9f69c40aed0cd8730be680, type: 3}
+      margin: 1
+      weight: 1
     eliteEnemies:
     - prefab: {fileID: 3081933642787246480, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+      margin: 1
+      weight: 1
+    - prefab: {fileID: 7253030082582279048, guid: 4a0f62020abd0d44bbf334b5a4b78fe1, type: 3}
       margin: 1
       weight: 1
     boss:

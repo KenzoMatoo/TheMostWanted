@@ -165,7 +165,7 @@ public abstract class MeleeChaserEnemy : EnemyBase
         Vector2 direction = targetPosition - origin;
         float distance = direction.magnitude;
 
-        RaycastHit2D hit = Physics2D.Raycast(origin, direction.normalized, distance, obstacleLayer | playerLayer);
+        RaycastHit2D hit = SightUtil.Raycast(origin, direction.normalized, distance, obstacleLayer | playerLayer);   // one-way platforms don't block the view
 
         if (debugLineOfSight)
         {

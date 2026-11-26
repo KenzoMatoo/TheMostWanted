@@ -38,6 +38,7 @@ public class LevelLighting : MonoBehaviour
     private BossEnemy boss;
     private float bossSearchTimer;
 
+    private static readonly Color voidColor = new Color(0.06f, 0.04f, 0.05f);
     private static Material litMaterial;
     private static Sprite pixel;
 
@@ -520,6 +521,12 @@ public class LevelLighting : MonoBehaviour
     {
         if (cam == null) cam = Camera.main;
         if (cam == null) return;
+        // Anything outside the rooms is dark instead of Unity's default blue
+        if (cam.clearFlags != CameraClearFlags.SolidColor || cam.backgroundColor != voidColor)
+        {
+            cam.clearFlags = CameraClearFlags.SolidColor;
+            cam.backgroundColor = voidColor;
+        }
         var data = cam.GetUniversalAdditionalCameraData();
         if (data != null && !data.renderPostProcessing) data.renderPostProcessing = true;
     }

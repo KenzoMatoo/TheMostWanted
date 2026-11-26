@@ -626,6 +626,7 @@ public class CharacterCombat : MonoBehaviour
 
                 currentCapturedController = targetMB.gameObject.AddComponent<CapturedEnemyController>();
                 currentCapturedController.Initialize(transform, mainCamera, this);
+                PlatformPassThrough.Hold(targetMB.gameObject);   // carried through one-way platforms
 
                 // Dibujar la cuerda hacia el enemigo capturado
                 DrawCaptureRope(targetMB.transform.position);
@@ -729,6 +730,8 @@ public class CharacterCombat : MonoBehaviour
             currentCapturedController = null;
         }
 
+        if (targetMB != null) PlatformPassThrough.Throw(targetMB.gameObject);   // never left "held" by mistake
+
         // Limpiar referencias
         targetCapturable = null;
         targetMB = null;
@@ -792,6 +795,7 @@ public class CharacterCombat : MonoBehaviour
             }
 
             // Liberar el enemigo con la velocidad calculada
+            PlatformPassThrough.Throw(targetMB.gameObject);   // flies through one-way platforms
             targetCapturable.Release(releaseVelocity);
             targetCapturable = null;
             targetMB = null;
