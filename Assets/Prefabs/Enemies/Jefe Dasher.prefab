@@ -13,9 +13,53 @@ PrefabInstance:
       value: Jefe Dasher
       objectReference: {fileID: 0}
     - target: {fileID: 5238181875663975403, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238181875663975403, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
       propertyPath: enemyStats
       value: 
       objectReference: {fileID: 11400000, guid: e3ae037c5c2ed6343b7ba4c71ee9570a, type: 2}
+    - target: {fileID: 5316585408525247431, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316585408525247431, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316585408525247431, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5526947841018079384, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5526947841018079384, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5526947841018079384, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207951870099090512, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e097d9971705fc24f9e0e3da41a87a8b, type: 3}
+    - target: {fileID: 6207951870099090512, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207951870099090512, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207951870099090512, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7175489581682502656, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.8999999
@@ -68,8 +112,284 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5238181875663975403, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3081933642787246480, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7412099557394026483}
   m_SourcePrefab: {fileID: 100100000, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+--- !u!1 &4099441523338661042 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3081933642787246480, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+  m_PrefabInstance: {fileID: 1306358391987150114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7412099557394026483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4099441523338661042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3879be305f05aac47b26df4a8e97b86b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossEnemy
+  enemyStats: {fileID: 11400000, guid: e3ae037c5c2ed6343b7ba4c71ee9570a, type: 2}
+  dealsContactDamage: 1
+  contactDamage: 10
+  contactDamageLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  contactDamageCooldown: 0.5
+  OnDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCaptured:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCaptureStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCaptureCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStunnedChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnReleased:
+    m_PersistentCalls:
+      m_Calls: []
+  isDead: 0
+  logBehaviorDetails: 1
+  patrolSpeed: 2
+  patrolWaitTime: 2
+  waypointReachDistance: 0.2
+  detectionRange: 5
+  chaseSpeed: 4
+  loseTargetDistance: 8
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  requireLineOfSight: 1
+  visionCheckInterval: 0.2
+  visionOrigin: {fileID: 8193573607734849826}
+  debugLineOfSight: 1
+  loseLineOfSightDelay: 0.5
+  attackRange: 1.5
+  attackCooldown: 1.5
+  attackDamage: 10
+  attackWindupTime: 0.3
+  attackPoint: {fileID: 8193573607734849826}
+  attackRadius: 1
+  spriteRenderer: {fileID: 4901619935647953266}
+  autoFlipSprite: 1
+  chaseColor: {r: 1, g: 0, b: 0, a: 1}
+  patrolColor: {r: 1, g: 1, b: 1, a: 1}
+  deathGravityScale: 15
+  deathFallSpeed: 20
+  deathDestroyDelay: 3
+  isAttacking: 0
+  phases:
+  - idleSprite: {fileID: 21300000, guid: e097d9971705fc24f9e0e3da41a87a8b, type: 3}
+    jumpSprite: {fileID: 21300000, guid: 7cd7acf27aa524f4b90784d369ade418, type: 3}
+    hurtSprite: {fileID: 0}
+    burstSprite: {fileID: 21300000, guid: 72f7fd55c1a9e234a9c31d627c75c0a9, type: 3}
+    telegraphSprite: {fileID: 21300000, guid: 4cfe7b9c12e29ea49af65d9f69819db8, type: 3}
+    dashSprite: {fileID: 21300000, guid: a67b9ebc30c539f4d931089dd3ce5938, type: 3}
+    summonSprite: {fileID: 21300000, guid: 88f233970ff270e478c12d2fd7825aad, type: 3}
+    tint: {r: 1, g: 1, b: 1, a: 1}
+    chaseSpeed: 3.5
+    jumpCooldown: 1.2
+    telegraphTime: 0.8
+    dashSpeed: 11
+    dashesPerAttack: 1
+    chainedTelegraphTime: 0.3
+    damageMultiplier: 1
+    minionsPerSummon: 2
+    maxAliveMinions: 3
+    summonWindup: 1
+    dashWeight: 3
+    summonWeight: 1
+    teleportStrikeWeight: 0
+    burstHitsThreshold: 6
+    recoveryTime: 1.2
+    attackCooldown: 2.5
+  - idleSprite: {fileID: 21300000, guid: 45d0d89d11d436a4e96bcc43059948fa, type: 3}
+    jumpSprite: {fileID: 21300000, guid: 45def1a8d945a4e4ab4e17a2d21c98c3, type: 3}
+    hurtSprite: {fileID: 0}
+    burstSprite: {fileID: 21300000, guid: 6c618f908a635f94882a020d1d69e4f1, type: 3}
+    telegraphSprite: {fileID: 21300000, guid: 570a6b90d33d77a43a5c10786bb3eb02, type: 3}
+    dashSprite: {fileID: 21300000, guid: bbf11f40e4ae0054cac875f09d6e15c7, type: 3}
+    summonSprite: {fileID: 21300000, guid: ffed1a612e8d13c4297abb336ed4daa1, type: 3}
+    tint: {r: 1, g: 0.85, b: 0.7, a: 1}
+    chaseSpeed: 4.5
+    jumpCooldown: 0.9
+    telegraphTime: 0.6
+    dashSpeed: 14
+    dashesPerAttack: 1
+    chainedTelegraphTime: 0.3
+    damageMultiplier: 1.25
+    minionsPerSummon: 3
+    maxAliveMinions: 5
+    summonWindup: 0.8
+    dashWeight: 3
+    summonWeight: 2
+    teleportStrikeWeight: 1
+    burstHitsThreshold: 5
+    recoveryTime: 0.9
+    attackCooldown: 1.8
+  - idleSprite: {fileID: 21300000, guid: da61195b11cb42e4793cff0183231682, type: 3}
+    jumpSprite: {fileID: 21300000, guid: 4a04c214c3bff5845bd2438d9e4ce807, type: 3}
+    hurtSprite: {fileID: 0}
+    burstSprite: {fileID: 21300000, guid: 167cd55d7e978ad4595247362961e715, type: 3}
+    telegraphSprite: {fileID: 21300000, guid: 5695ace319fbf43499429ae4d311513d, type: 3}
+    dashSprite: {fileID: 21300000, guid: a0adc68e41efba640a5bb60b3caaae16, type: 3}
+    summonSprite: {fileID: 21300000, guid: 198cace0ea2fab44eb889adde90c1a0b, type: 3}
+    tint: {r: 1, g: 0.65, b: 0.65, a: 1}
+    chaseSpeed: 5.5
+    jumpCooldown: 0.6
+    telegraphTime: 0.4
+    dashSpeed: 17
+    dashesPerAttack: 2
+    chainedTelegraphTime: 0.25
+    damageMultiplier: 1.5
+    minionsPerSummon: 4
+    maxAliveMinions: 6
+    summonWindup: 0.6
+    dashWeight: 3
+    summonWeight: 2
+    teleportStrikeWeight: 3
+    burstHitsThreshold: 4
+    recoveryTime: 0.6
+    attackCooldown: 1.2
+  phaseHealthThresholds:
+  - 0.66
+  - 0.33
+  phaseTransitionDuration: 1.5
+  transitionColor: {r: 1, g: 1, b: 0.4, a: 1}
+  summonOnPhaseChange: 1
+  invulnerableDuringTransition: 1
+  captureImmune: 1
+  knockbackMultiplier: 0.3
+  stunResistance: 0.75
+  stopDistance: 0.6
+  airAcceleration: 25
+  useFrictionlessMaterial: 1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  groundCheckRadius: 0.15
+  wallCheckDistance: 0.3
+  wallCheckRadius: 0.2
+  wallCheckHeightOffset: 0
+  ledgeCheckForward: 0.3
+  ledgeCheckDepth: 0.4
+  ledgeCheckRadius: 0.2
+  useJumping: 1
+  jumpVelocity: 12
+  highJumpVelocity: 17
+  jumpHeightThreshold: 1.5
+  maxJumpableHeight: 6
+  jumpTriggerHorizontalDistance: 5
+  dropDownThreshold: 1.5
+  oneWayPlatforms: 1
+  jumpPlanInterval: 0.2
+  jumpPlanStep: 0.06
+  jumpPlanMaxTime: 1.8
+  jumpPlanMaxDrop: 4
+  jumpPlanMinImprovement: 0.5
+  jumpPlanBodyShrink: 0.85
+  unstickHopFactor: 0.8
+  stuckTime: 0.8
+  stuckSpeedThreshold: 0.1
+  noProgressTime: 1.5
+  noProgressMinMove: 0.6
+  useTeleportFallback: 0
+  teleportDistance: 14
+  teleportVerticalDifference: 7
+  teleportAfterUnreachableTime: 1.2
+  teleportCooldown: 3
+  teleportVanishTime: 0.25
+  teleportOffsetX: 2.5
+  teleportRayHeight: 4
+  postTeleportDelay: 0.35
+  arenaBounds: {fileID: 0}
+  teleportVfxPrefab: {fileID: 0}
+  dashOvershootBuffer: 2
+  obstacleCheck: {fileID: 6808491501852380164}
+  obstacleCheckRadius: 0.3
+  obstacleCheckDistance: 0.6
+  dashHitboxCollider: {fileID: 6814711283640710586}
+  dashHitboxSize: {x: 1.5, y: 1.5}
+  recoilSpeed: 6
+  recoilDuration: 0.15
+  telegraphColor: {r: 1, g: 0.55, b: 0.55, a: 1}
+  dashColor: {r: 0.75, g: 0, b: 0, a: 1}
+  summonColor: {r: 0.6, g: 0.4, b: 1, a: 1}
+  spriteFacesRight: 0
+  hurtSpriteDuration: 0.2
+  enableEnergyBurst: 1
+  burstHitWindow: 3
+  burstDamagePercentThreshold: 0.12
+  burstWindup: 0.5
+  burstRecoveryTime: 0.4
+  burstRadius: 4
+  burstDamage: 15
+  burstInvulnerableDuration: 1.5
+  burstCooldown: 8
+  burstColor: {r: 0.4, g: 0.9, b: 1, a: 1}
+  burstVfxPrefab: {fileID: 0}
+  minionPrefabs:
+  - {fileID: 24182163444947434, guid: 49caa14e2902d82478b9b7f508393b7f, type: 3}
+  spawnPoints:
+  - {fileID: 8193573607734849826}
+  minSpawnDistance: 1.5
+  spawnRadius: 4
+  minionSpawnStagger: 0.25
+  killMinionsOnDeath: 1
+  deathSprite: {fileID: 0}
+  onBossEngaged:
+    m_PersistentCalls:
+      m_Calls: []
+  onPhaseChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onBurstStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnergyBurst:
+    m_PersistentCalls:
+      m_Calls: []
+  onDamageBlocked:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!212 &4901619935647953266 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6207951870099090512, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+  m_PrefabInstance: {fileID: 1306358391987150114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6808491501852380164 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5502696137650589990, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+  m_PrefabInstance: {fileID: 1306358391987150114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &6814711283640710586 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5526947841018079384, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+  m_PrefabInstance: {fileID: 1306358391987150114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8193573607734849826 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7175489581682502656, guid: 3262d8bdc3eecea4aa1d3dcc91ca66cb, type: 3}
+  m_PrefabInstance: {fileID: 1306358391987150114}
+  m_PrefabAsset: {fileID: 0}

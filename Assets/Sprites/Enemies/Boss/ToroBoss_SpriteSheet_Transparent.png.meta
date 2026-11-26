@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: a9a3c7e0c590eaa40a1f5af9913623d7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 572244087045230093
+    second: ToroBoss_SpriteSheet_Transparent_0
+  - first:
+      213: -708232568179513954
+    second: ToroBoss_SpriteSheet_Transparent_1
+  - first:
+      213: -4326286650892400108
+    second: ToroBoss_SpriteSheet_Transparent_2
+  - first:
+      213: 624264030652632585
+    second: ToroBoss_SpriteSheet_Transparent_3
+  - first:
+      213: 6416756975570565696
+    second: ToroBoss_SpriteSheet_Transparent_4
+  - first:
+      213: -2313682298819904207
+    second: ToroBoss_SpriteSheet_Transparent_5
+  - first:
+      213: -663009318388675203
+    second: ToroBoss_SpriteSheet_Transparent_6
+  - first:
+      213: -5596393476316348527
+    second: ToroBoss_SpriteSheet_Transparent_7
+  - first:
+      213: 4031067660698470897
+    second: ToroBoss_SpriteSheet_Transparent_8
+  - first:
+      213: 633042352660785019
+    second: ToroBoss_SpriteSheet_Transparent_9
+  - first:
+      213: 5309336244911186100
+    second: ToroBoss_SpriteSheet_Transparent_10
+  - first:
+      213: -1169912949524596099
+    second: ToroBoss_SpriteSheet_Transparent_11
+  - first:
+      213: -7726238549189634263
+    second: ToroBoss_SpriteSheet_Transparent_12
+  - first:
+      213: 3952781391905092028
+    second: ToroBoss_SpriteSheet_Transparent_13
+  - first:
+      213: 7011378705998310887
+    second: ToroBoss_SpriteSheet_Transparent_14
+  - first:
+      213: 4883699344458030855
+    second: ToroBoss_SpriteSheet_Transparent_15
+  - first:
+      213: -2359088198271488570
+    second: ToroBoss_SpriteSheet_Transparent_16
+  - first:
+      213: -2113370484034720468
+    second: ToroBoss_SpriteSheet_Transparent_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ToroBoss_SpriteSheet_Transparent_0
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 712
+        width: 362
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0e062d17f401f700800000000000000
+      internalID: 572244087045230093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_SpriteSheet_Transparent_1
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 974
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e952c4b4b3adb26f0800000000000000
+      internalID: -708232568179513954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_SpriteSheet_Transparent_2
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 719
+        width: 347
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41a4b017631f5f3c0800000000000000
+      internalID: -4326286650892400108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_SpriteSheet_Transparent_3
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 723
+        width: 342
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90e8a1114d4d9a800800000000000000
+      internalID: 624264030652632585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_SpriteSheet_Transparent_4
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 714
+        width: 376
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04ab4eac876ec0950800000000000000
+      internalID: 6416756975570565696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_SpriteSheet_Transparent_5
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 379
+        width: 348
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13dfab7253624efd0800000000000000
+      internalID: -2313682298819904207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_SpriteSheet_Transparent_6
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 372
+        width: 348
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7d4ba6a9848cc6f0800000000000000
+      internalID: -663009318388675203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_SpriteSheet_Transparent_7
+      rect:
+        serializedVersion: 2
+        x: 1418
+        y: 630
+        width: 32
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19fb9d4c8cd9552b0800000000000000
+      internalID: -5596393476316348527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_SpriteSheet_Transparent_8
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 383
+        width: 340
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f94f7d0eaa31f730800000000000000
+      internalID: 4031067660698470897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_SpriteSheet_Transparent_9
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 370
+        width: 377
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b77af1e6aa409c800800000000000000
+      internalID: 633042352660785019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_SpriteSheet_Transparent_10
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 591
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b0a9074f2d8ea940800000000000000
+      internalID: 5309336244911186100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_SpriteSheet_Transparent_11
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 598
+        width: 66
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7af471fe52a3cfe0800000000000000
+      internalID: -1169912949524596099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_SpriteSheet_Transparent_12
+      rect:
+        serializedVersion: 2
+        x: 1515
+        y: 467
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9275f9199f2e6c490800000000000000
+      internalID: -7726238549189634263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_SpriteSheet_Transparent_13
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 36
+        width: 349
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb1f643bbb91bd630800000000000000
+      internalID: 3952781391905092028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_SpriteSheet_Transparent_14
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 36
+        width: 346
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ed64c409cb6d4160800000000000000
+      internalID: 7011378705998310887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_SpriteSheet_Transparent_15
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 27
+        width: 380
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70f9a38cda266c340800000000000000
+      internalID: 4883699344458030855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_SpriteSheet_Transparent_16
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 212
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cd263c58c5d24fd0800000000000000
+      internalID: -2359088198271488570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_SpriteSheet_Transparent_17
+      rect:
+        serializedVersion: 2
+        x: 1177
+        y: 18
+        width: 346
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2da05cedbccba2e0800000000000000
+      internalID: -2113370484034720468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ToroBoss_SpriteSheet_Transparent_0: 572244087045230093
+      ToroBoss_SpriteSheet_Transparent_1: -708232568179513954
+      ToroBoss_SpriteSheet_Transparent_10: 5309336244911186100
+      ToroBoss_SpriteSheet_Transparent_11: -1169912949524596099
+      ToroBoss_SpriteSheet_Transparent_12: -7726238549189634263
+      ToroBoss_SpriteSheet_Transparent_13: 3952781391905092028
+      ToroBoss_SpriteSheet_Transparent_14: 7011378705998310887
+      ToroBoss_SpriteSheet_Transparent_15: 4883699344458030855
+      ToroBoss_SpriteSheet_Transparent_16: -2359088198271488570
+      ToroBoss_SpriteSheet_Transparent_17: -2113370484034720468
+      ToroBoss_SpriteSheet_Transparent_2: -4326286650892400108
+      ToroBoss_SpriteSheet_Transparent_3: 624264030652632585
+      ToroBoss_SpriteSheet_Transparent_4: 6416756975570565696
+      ToroBoss_SpriteSheet_Transparent_5: -2313682298819904207
+      ToroBoss_SpriteSheet_Transparent_6: -663009318388675203
+      ToroBoss_SpriteSheet_Transparent_7: -5596393476316348527
+      ToroBoss_SpriteSheet_Transparent_8: 4031067660698470897
+      ToroBoss_SpriteSheet_Transparent_9: 633042352660785019
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
