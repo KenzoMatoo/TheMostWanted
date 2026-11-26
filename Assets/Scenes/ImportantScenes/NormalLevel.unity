@@ -945,34 +945,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6033265025629983807, guid: 606db31fd0087a240b72f60a1d4755ce, type: 3}
   m_PrefabInstance: {fileID: 1476735489}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &967680783 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 482353064954209578, guid: 606db31fd0087a240b72f60a1d4755ce, type: 3}
-  m_PrefabInstance: {fileID: 1476735489}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &967680789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 967680783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5089155b9cbda5349b7090c9e3c323ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyCompass
-  arrow: {fileID: 0}
-  player: {fileID: 1264668324}
-  playerTag: Player
-  includeBoss: 1
-  refreshInterval: 0.1
-  rotationSpeed: 720
-  spriteAngleOffset: 0
-  orbitPlayer: 1
-  orbitRadius: 90
-  cam: {fileID: 1738505035}
-  roomCenterOffset: {x: 0, y: 0}
 --- !u!1 &1177588836
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,9 +1625,6 @@ PrefabInstance:
     - {fileID: 5348440668303768553, guid: 606db31fd0087a240b72f60a1d4755ce, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 482353064954209578, guid: 606db31fd0087a240b72f60a1d4755ce, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 967680789}
     - targetCorrespondingSourceObject: {fileID: 2533968765781946269, guid: 606db31fd0087a240b72f60a1d4755ce, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1272426066}

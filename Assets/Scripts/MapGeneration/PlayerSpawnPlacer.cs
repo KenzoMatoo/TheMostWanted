@@ -58,18 +58,21 @@ public class PlayerSpawnPlacer : MonoBehaviour
         // Tilemaps of the room around that point
         var solids = new List<Tilemap>();
         var platforms = new List<Tilemap>();
+        var hazards = new List<Tilemap>();
         Tilemap reference = null;
         foreach (Tilemap tm in rm.GetComponentsInChildren<Tilemap>(false))
         {
             var col = tm.GetComponent<TilemapCollider2D>();
-            if (col == null || !col.enabled || col.isTrigger) continue;
+            if (col == null || !col.enabled) continue;
+            if (col.isTrigger && tm.GetComponent<Spikes>() == null) continue;
             tm.CompressBounds();
             if (tm.GetUsedTilesCount() == 0) continue;
             Bounds b = tm.localBounds;
             Vector3 min = tm.transform.TransformPoint(b.min), max = tm.transform.TransformPoint(b.max);
             if (center.x < min.x - 1 || center.x > max.x + 1 || center.y < min.y - 1 || center.y > max.y + 1) continue;
 
-            if (tm.GetComponent<PlatformEffector2D>() != null) platforms.Add(tm);
+            if (tm.GetComponent<Spikes>() != null) hazards.Add(tm);
+            else if (tm.GetComponent<PlatformEffector2D>() != null) platforms.Add(tm);
             else
             {
                 solids.Add(tm);
@@ -107,7 +110,7 @@ public class PlayerSpawnPlacer : MonoBehaviour
                     for (int y = 0; y < headClearance && free; y++)
                     {
                         Vector3 p = reference.GetCellCenterWorld(c + new Vector3Int(x, y, 0));
-                        if (Has(solids, p) || Has(platforms, p)) free = false;
+                        if (Has(solids, p) || Has(platforms, p) || Has(hazards, p)) free = false;
                     }
                 if (!free) continue;
 

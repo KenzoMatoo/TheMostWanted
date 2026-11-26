@@ -54,6 +54,16 @@ public static class HandmadeRoomValidator
         return new JumpInfo { height = h, speed = speed, gravity = g, jumpForce = jumpForce, maxRise = Mathf.FloorToInt(h - 0.35f) };
     }
 
+    /// <summary>How far an air dash carries the player sideways (tiles, a bit less than the real distance).</summary>
+    public static int GetDashTiles()
+    {
+        float force = 22f, duration = 0.7f;
+        var stats = AssetDatabase.LoadAssetAtPath<ScriptableStats>(StatsPath);
+        if (stats != null) { force = stats.DashForce; duration = stats.DashDuration; }
+        // The dash starts at DashForce and slows down to 0 over DashDuration
+        return Mathf.FloorToInt(force * duration * 0.5f * 0.8f);
+    }
+
     enum Side { N, S, E, W }
 
     class DoorInfo
@@ -144,7 +154,15 @@ public static class HandmadeRoomValidator
         JumpInfo jump = GetJump();
         bool S(int x, int y) => !In(x, y, w, h) ? false : solid[x, y];
         bool P(int x, int y) => In(x, y, w, h) && plat[x, y];
-        bool Stand(int x, int y) => In(x, y, w, h) && In(x, y + 1, w, h) && !solid[x, y] && !solid[x, y + 1] && !plat[x, y] && (S(x, y - 1) || P(x, y - 1));
+        // Spikes: you can never stand in them (touching them sends you back to the last safe spot)
+        var hazard = new bool[w, h];
+        Mark(Child(room, HandmadeRoom.HazardsName), hazard, true);
+        bool Hz(int x, int y) => In(x, y, w, h) && hazard[x, y];
+        // Paths (jumps, falls) can't go through rock or spikes
+        bool Block(int x, int y) => S(x, y) || Hz(x, y);
+        bool Stand(int x, int y) => In(x, y, w, h) && In(x, y + 1, w, h) && !solid[x, y] && !solid[x, y + 1] && !plat[x, y]
+                                    && !Hz(x, y) && !Hz(x, y + 1) && (S(x, y - 1) || P(x, y - 1));
+        bool advanced = hand.AdvancedMovement;
 
         // ---------- Doors ----------
         var infos = new List<DoorInfo>();
@@ -225,7 +243,7 @@ public static class HandmadeRoomValidator
                         {
                             if (c.x < a - 1 || c.x > bb + 1) return false;
                             if (line + 2 - c.y > rise) return false;
-                            for (int y = c.y; y <= line; y++) if (S(c.x, y)) return false;
+                            for (int y = c.y; y <= line; y++) if (Block(c.x, y)) return false;
                             return true;
                         };
                         break;
@@ -247,7 +265,7 @@ public static class HandmadeRoomValidator
             return Mathf.FloorToInt(jump.speed * (up + fall) * 0.85f - 1f);
         }
 
-        bool ClearColumn(int x, int y0, int y1) { for (int y = Mathf.Min(y0, y1); y <= Mathf.Max(y0, y1); y++) if (S(x, y)) return false; return true; }
+        bool ClearColumn(int x, int y0, int y1) { for (int y = Mathf.Min(y0, y1); y <= Mathf.Max(y0, y1); y++) if (Block(x, y)) return false; return true; }
 
         bool CanMove(Vector2Int from, Vector2Int to)
         {
@@ -261,38 +279,99 @@ public static class HandmadeRoomValidator
             if (!ClearColumn(to.x, to.y, top)) return false;                  // come down onto the target from above
             int step = dx > 0 ? 1 : -1;
             if (dx != 0)
-                for (int x = from.x + step; x != to.x; x += step) if (S(x, top) || S(x, top - 1) && dy >= 0) return false;
+                for (int x = from.x + step; x != to.x; x += step) if (Block(x, top) || Block(x, top - 1) && dy >= 0) return false;
             return true;
         }
 
-        var edges = new List<int>[spots.Count];
-        for (int i = 0; i < spots.Count; i++)
+        // ---------- Dash and grapple lamps (only for platforming rooms) ----------
+        int dashTiles = GetDashTiles();
+        bool CanDash(Vector2Int from, Vector2Int to)
         {
-            edges[i] = new List<int>();
-            for (int j = 0; j < spots.Count; j++) if (i != j && CanMove(spots[i], spots[j])) edges[i].Add(j);
+            // Jump, then dash sideways at the top of the jump (no gravity while dashing)
+            int dx = to.x - from.x, dy = to.y - from.y;
+            if (dy > jump.maxRise) return false;
+            int adx = Mathf.Abs(dx);
+            if (adx > Reach(dy) + dashTiles) return false;
+            int top = Mathf.Max(from.y, to.y) + 1;
+            if (!ClearColumn(from.x, from.y, top + 1)) return false;
+            if (!ClearColumn(to.x, to.y, top + 1)) return false;
+            int step = dx > 0 ? 1 : -1;
+            if (dx != 0)
+                for (int x = from.x + step; x != to.x; x += step) if (Block(x, top) || Block(x, top + 1)) return false;
+            return true;
         }
 
-        bool[] Flood(IEnumerable<Vector2Int> start)
+        var lamps = new List<Vector2Int>();
+        foreach (var lamp in room.GetComponentsInChildren<GrappleLamp>(true))
         {
-            var seen = new bool[spots.Count];
+            Vector3Int c = walls.WorldToCell(lamp.transform.position) - b.min;
+            if (In(c.x, c.y, w, h)) lamps.Add(new Vector2Int(c.x, c.y));
+        }
+        const float HookRange = 12f, SwingReach = 12f, LetGoReach = 10f;
+        int n = spots.Count + lamps.Count;   // nodes: standing spots, then lamps
+
+        var edges = new List<int>[n];        // jump / walk / fall
+        var advEdges = new List<int>[n];     // + dash and lamps
+        for (int i = 0; i < n; i++) { edges[i] = new List<int>(); advEdges[i] = new List<int>(); }
+        for (int i = 0; i < spots.Count; i++)
+            for (int j = 0; j < spots.Count; j++)
+            {
+                if (i == j) continue;
+                if (CanMove(spots[i], spots[j])) { edges[i].Add(j); advEdges[i].Add(j); }
+                else if (advanced && CanDash(spots[i], spots[j])) advEdges[i].Add(j);
+            }
+        if (advanced)
+            for (int k = 0; k < lamps.Count; k++)
+            {
+                Vector2Int L = lamps[k];
+                int li = spots.Count + k;
+                for (int i = 0; i < spots.Count; i++)
+                {
+                    Vector2Int p = spots[i];
+                    if (L.y >= p.y + 2 && Vector2.Distance(p, L) <= HookRange) advEdges[i].Add(li);      // hook the lamp
+                    if (Mathf.Abs(p.x - L.x) <= LetGoReach && p.y <= L.y + 2 && p.y >= L.y - 14
+                        && ClearColumn(p.x, p.y, p.y + 2)) advEdges[li].Add(i);                           // swing and let go
+                }
+                for (int k2 = 0; k2 < lamps.Count; k2++)
+                    if (k2 != k && Mathf.Abs(lamps[k2].x - L.x) <= SwingReach && lamps[k2].y <= L.y + 3)
+                        advEdges[li].Add(spots.Count + k2);                                              // swing to the next lamp
+            }
+
+        bool[] Flood(IEnumerable<Vector2Int> start, bool useAdvanced = true)
+        {
+            var graph = useAdvanced ? advEdges : edges;
+            var seen = new bool[n];
             var q = new Queue<int>();
             foreach (var s in start) if (index.TryGetValue(s, out int i) && !seen[i]) { seen[i] = true; q.Enqueue(i); }
-            while (q.Count > 0) { int i = q.Dequeue(); foreach (int j in edges[i]) if (!seen[j]) { seen[j] = true; q.Enqueue(j); } }
+            while (q.Count > 0) { int i = q.Dequeue(); foreach (int j in graph[i]) if (!seen[j]) { seen[j] = true; q.Enqueue(j); } }
             return seen;
         }
+        var notes = new List<string>();
 
         var anyReached = new bool[spots.Count];
         foreach (var from in infos)
         {
             if (from.entries.Count == 0) continue;
             bool[] seen = Flood(from.entries);
-            for (int i = 0; i < seen.Length; i++) anyReached[i] |= seen[i];
+            for (int i = 0; i < spots.Count; i++) anyReached[i] |= seen[i];
             foreach (var to in infos)
             {
                 if (to == from || to.isExit == null) continue;
                 bool ok = false;
                 for (int i = 0; i < spots.Count && !ok; i++) if (seen[i] && to.isExit(spots[i])) ok = true;
-                if (!ok) problems.Add($"Sin gancho no se llega de la puerta {from.side} a la puerta {to.side}.");
+                if (!ok)
+                {
+                    problems.Add(advanced ? $"Ni con dash y lamparas se llega de la puerta {from.side} a la puerta {to.side}."
+                                          : $"Sin gancho no se llega de la puerta {from.side} a la puerta {to.side}.");
+                    continue;
+                }
+                if (advanced)
+                {
+                    bool[] basic = Flood(from.entries, false);
+                    bool easy = false;
+                    for (int i = 0; i < spots.Count && !easy; i++) if (basic[i] && to.isExit(spots[i])) easy = true;
+                    if (!easy) notes.Add($"{from.side}->{to.side} necesita dash o lampara");
+                }
             }
         }
 
@@ -307,16 +386,18 @@ public static class HandmadeRoomValidator
                 if (seen[j]) foreach (var d in infos) if (d.isExit != null && d.isExit(spots[j])) { canLeave = true; break; }
             if (!canLeave) { if (traps == 0) firstTrap = spots[i]; traps++; anyReached[i] = false; }
         }
-        if (traps > 0) problems.Add($"Trampa: {traps} lugar(es) a los que puedes caer pero de donde no sales sin gancho, ej. ({firstTrap.x},{firstTrap.y}). Marcados con x.");
+        if (traps > 0) problems.Add($"Trampa: {traps} lugar(es) a los que puedes caer pero de donde no sales{(advanced ? "" : " sin gancho")}, ej. ({firstTrap.x},{firstTrap.y}). Marcados con x.");
 
         // ---------- ASCII map ----------
         var sb = new StringBuilder();
+        if (advanced) sb.AppendLine($"Cuarto de plataformeo (dash ~{dashTiles} tiles, {lamps.Count} lamparas). " + (notes.Count == 0 ? "Todo se puede sin dash ni gancho." : string.Join("; ", notes.Distinct())));
         sb.AppendLine($"g={jump.gravity:0.00} fuerza={jump.jumpForce} vel={jump.speed}. Salto: {jump.height:0.0} tiles (sube hasta {jump.maxRise} tiles), alcance horizontal ~{Reach(jump.maxRise)}-{Reach(0)} tiles. # solido, - repisa, o alcanzable");
         for (int y = h - 1; y >= 0; y--)
         {
             for (int x = 0; x < w; x++)
             {
-                char ch = solid[x, y] ? '#' : plat[x, y] ? '-' : '.';
+                char ch = solid[x, y] ? '#' : plat[x, y] ? '-' : hazard[x, y] ? '^' : '.';
+                if (lamps.Contains(new Vector2Int(x, y))) ch = 'L';
                 if (index.TryGetValue(new Vector2Int(x, y), out int i)) ch = anyReached[i] ? 'o' : 'x';
                 sb.Append(ch);
             }

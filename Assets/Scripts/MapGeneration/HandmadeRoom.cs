@@ -31,6 +31,10 @@ public class HandmadeRoom : MonoBehaviour
     [Tooltip("En que cuadrante queda cada cuadrante al voltear (posicion 0 = Q1). 1x1 y 1x2: 1,2,3,4. 2x1 y 2x2: 2,1,4,3")]
     [SerializeField] private int[] mirroredQuadrant = { 1, 2, 3, 4 };
 
+    [Header("Plataformeo")]
+    [Tooltip("Cuarto de reto de movimiento: el validador acepta caminos que necesitan dash o las lamparas del gancho")]
+    [SerializeField] private bool advancedMovement = false;
+
     [Header("Spawns")]
     [Tooltip("Enemigos y cajas solo aparecen si hay piso a esta distancia (en tiles) o menos debajo de ellos")]
     [SerializeField, Range(1, 10)] private int maxSpawnHeight = 4;
@@ -38,11 +42,13 @@ public class HandmadeRoom : MonoBehaviour
     public const string PropsName = "Props";
     public const string PlatformsName = "Plataformas";
     public const string WallsName = "Walls";
+    public const string HazardsName = "Pinchos";
 
     public static readonly CaveSettings NoCaves = new CaveSettings { enabled = false, fillRock = false };
 
     public bool Mirrored { get; private set; }
     public IReadOnlyList<DoorPiece> DoorPieces => doorPieces;
+    public bool AdvancedMovement => advancedMovement;
 
     public void Build(Door door, System.Random rng)
     {
@@ -60,6 +66,7 @@ public class HandmadeRoom : MonoBehaviour
     {
         if (cave == null) return;
         Tilemap platforms = FindRoomTilemap(PlatformsName, null);
+        Tilemap hazards = FindRoomTilemap(HazardsName, null);
         int w = cave.width, h = cave.height;
 
         bool Solid(int x, int y)
@@ -70,18 +77,26 @@ public class HandmadeRoom : MonoBehaviour
             return platforms != null && platforms.HasTile(platforms.WorldToCell(cave.walls.GetCellCenterWorld(cell)));
         }
 
+        bool Hazard(int x, int y)
+        {
+            if (hazards == null || x < 0 || y < 0 || x >= w || y >= h) return false;
+            var cell = new Vector3Int(cave.bounds.xMin + x, cave.bounds.yMin + y, 0);
+            return hazards.HasTile(hazards.WorldToCell(cave.walls.GetCellCenterWorld(cell)));
+        }
+
         var doorCells = new HashSet<Vector2Int>(cave.doorCells);
         cave.spawnAllowed = new bool[w, h];
         for (int x = 0; x < w; x++)
             for (int y = 0; y < h; y++)
             {
                 if (!cave.freeFloor[x, y]) continue;
-                if (Solid(x, y)) { cave.freeFloor[x, y] = false; continue; }   // inside a one-way platform
+                if (Solid(x, y) || Hazard(x, y)) { cave.freeFloor[x, y] = false; continue; }   // inside a platform or spikes
 
                 for (int d = 1; d <= maxSpawnHeight; d++)
                 {
                     int yy = y - d;
                     if (doorCells.Contains(new Vector2Int(x, yy))) break;      // over a hole in the floor
+                    if (Hazard(x, yy)) break;                                   // over spikes
                     if (Solid(x, yy)) { cave.spawnAllowed[x, y] = true; break; }
                 }
             }

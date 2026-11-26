@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6df54cedecc89f4da6329c329c9b371, type: 3}
+  m_Name: Plataformeo_1x1
+  m_EditorClassIdentifier: Assembly-CSharp::ScriptableRooms
+  roomType: 0
+  roomShape: 0
+  occupiedTiles: 00000000
+  roomVariations:
+  - {fileID: 8418843181748360318, guid: bae340ba6475100469d133fdf632eddf, type: 3}
+  - {fileID: 8418843181748360318, guid: 79fc24a31f9cd894abd16c8b350f9b92, type: 3}
+  - {fileID: 8418843181748360318, guid: b389149d162e6e246bf81c882d268742, type: 3}
