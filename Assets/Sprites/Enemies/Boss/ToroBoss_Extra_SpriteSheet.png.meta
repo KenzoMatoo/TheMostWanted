@@ -1,0 +1,793 @@
+fileFormatVersion: 2
+guid: c5db32fa606281e468e0a4ad12358589
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8464119199472044939
+    second: ToroBoss_Extra_SpriteSheet_0
+  - first:
+      213: -7857397205579862569
+    second: ToroBoss_Extra_SpriteSheet_1
+  - first:
+      213: -7255774352982423870
+    second: ToroBoss_Extra_SpriteSheet_2
+  - first:
+      213: 7652919630566724381
+    second: ToroBoss_Extra_SpriteSheet_3
+  - first:
+      213: -4895796930224283575
+    second: ToroBoss_Extra_SpriteSheet_4
+  - first:
+      213: 7892439037315152548
+    second: ToroBoss_Extra_SpriteSheet_5
+  - first:
+      213: -2783209949042931097
+    second: ToroBoss_Extra_SpriteSheet_6
+  - first:
+      213: -4317858442241370850
+    second: ToroBoss_Extra_SpriteSheet_7
+  - first:
+      213: 1241920695694867966
+    second: ToroBoss_Extra_SpriteSheet_8
+  - first:
+      213: -2835804819983495227
+    second: ToroBoss_Extra_SpriteSheet_9
+  - first:
+      213: 9080317436161286353
+    second: ToroBoss_Extra_SpriteSheet_10
+  - first:
+      213: 5651944820821356057
+    second: ToroBoss_Extra_SpriteSheet_11
+  - first:
+      213: -6251357719109753287
+    second: ToroBoss_Extra_SpriteSheet_12
+  - first:
+      213: -334270933520561511
+    second: ToroBoss_Extra_SpriteSheet_13
+  - first:
+      213: 6792541397452544470
+    second: ToroBoss_Extra_SpriteSheet_14
+  - first:
+      213: -5891142142751372315
+    second: ToroBoss_Extra_SpriteSheet_15
+  - first:
+      213: 6747640650540226957
+    second: ToroBoss_Extra_SpriteSheet_16
+  - first:
+      213: -1154744439673302448
+    second: ToroBoss_Extra_SpriteSheet_17
+  - first:
+      213: -3790461451610491914
+    second: ToroBoss_Extra_SpriteSheet_18
+  - first:
+      213: 2416441048932851665
+    second: ToroBoss_Extra_SpriteSheet_19
+  - first:
+      213: 3731975668770851876
+    second: ToroBoss_Extra_SpriteSheet_20
+  - first:
+      213: 1319576167923129147
+    second: ToroBoss_Extra_SpriteSheet_21
+  - first:
+      213: 744448363453154072
+    second: ToroBoss_Extra_SpriteSheet_22
+  - first:
+      213: -6457418380795427999
+    second: ToroBoss_Extra_SpriteSheet_23
+  - first:
+      213: 2079770291384305069
+    second: ToroBoss_Extra_SpriteSheet_24
+  - first:
+      213: 3543912454374663806
+    second: ToroBoss_Extra_SpriteSheet_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 540
+        width: 213
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 574b7e2de68698a80800000000000000
+      internalID: -8464119199472044939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 520
+        width: 184
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dde34e2fdae4f290800000000000000
+      internalID: -7857397205579862569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 741
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c6c7103baf4e4b90800000000000000
+      internalID: -7255774352982423870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 750
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d131b8a6bd1a43a60800000000000000
+      internalID: 7652919630566724381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 694
+        width: 6
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 940a88981a2ae0cb0800000000000000
+      internalID: -4895796930224283575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 694
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aa789e0d73978d60800000000000000
+      internalID: 7892439037315152548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 708
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76a86f32c4d0069d0800000000000000
+      internalID: -2783209949042931097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 699
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1518cfaf92e314c0800000000000000
+      internalID: -4317858442241370850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 659
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efd3912fa403c3110800000000000000
+      internalID: 1241920695694867966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 539
+        width: 240
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cf0b8c7a8235a8d0800000000000000
+      internalID: -2835804819983495227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 656
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d0ed2e3994c30e70800000000000000
+      internalID: 9080317436161286353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 657
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91e6a278eddbf6e40800000000000000
+      internalID: 5651944820821356057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 524
+        width: 115
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 936219c8647be39a0800000000000000
+      internalID: -6251357719109753287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 520
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99ac4c46b5e6c5bf0800000000000000
+      internalID: -334270933520561511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 274
+        width: 223
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d95b4d9964f34e50800000000000000
+      internalID: 6792541397452544470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 264
+        width: 143
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eb88fb0f657e3ea0800000000000000
+      internalID: -5891142142751372315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 289
+        width: 166
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d899f6fcb6f64ad50800000000000000
+      internalID: 6747640650540226957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 269
+        width: 240
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0525aeadc0689ffe0800000000000000
+      internalID: -1154744439673302448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 264
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f3f1f97463956bc0800000000000000
+      internalID: -3790461451610491914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 265
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1df9056c45ce88120800000000000000
+      internalID: 2416441048932851665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 264
+        width: 29
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42ccc7f0914aac330800000000000000
+      internalID: 3731975668770851876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 9
+        width: 202
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3b11278883105210800000000000000
+      internalID: 1319576167923129147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 8
+        width: 156
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8130f31a7dfc45a00800000000000000
+      internalID: 744448363453154072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 8
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1634c9e0234a266a0800000000000000
+      internalID: -6457418380795427999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 9
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da54f589f04dcdc10800000000000000
+      internalID: 2079770291384305069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToroBoss_Extra_SpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 12
+        width: 240
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e76a51ec9918e2130800000000000000
+      internalID: 3543912454374663806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ToroBoss_Extra_SpriteSheet_0: -8464119199472044939
+      ToroBoss_Extra_SpriteSheet_1: -7857397205579862569
+      ToroBoss_Extra_SpriteSheet_10: 9080317436161286353
+      ToroBoss_Extra_SpriteSheet_11: 5651944820821356057
+      ToroBoss_Extra_SpriteSheet_12: -6251357719109753287
+      ToroBoss_Extra_SpriteSheet_13: -334270933520561511
+      ToroBoss_Extra_SpriteSheet_14: 6792541397452544470
+      ToroBoss_Extra_SpriteSheet_15: -5891142142751372315
+      ToroBoss_Extra_SpriteSheet_16: 6747640650540226957
+      ToroBoss_Extra_SpriteSheet_17: -1154744439673302448
+      ToroBoss_Extra_SpriteSheet_18: -3790461451610491914
+      ToroBoss_Extra_SpriteSheet_19: 2416441048932851665
+      ToroBoss_Extra_SpriteSheet_2: -7255774352982423870
+      ToroBoss_Extra_SpriteSheet_20: 3731975668770851876
+      ToroBoss_Extra_SpriteSheet_21: 1319576167923129147
+      ToroBoss_Extra_SpriteSheet_22: 744448363453154072
+      ToroBoss_Extra_SpriteSheet_23: -6457418380795427999
+      ToroBoss_Extra_SpriteSheet_24: 2079770291384305069
+      ToroBoss_Extra_SpriteSheet_25: 3543912454374663806
+      ToroBoss_Extra_SpriteSheet_3: 7652919630566724381
+      ToroBoss_Extra_SpriteSheet_4: -4895796930224283575
+      ToroBoss_Extra_SpriteSheet_5: 7892439037315152548
+      ToroBoss_Extra_SpriteSheet_6: -2783209949042931097
+      ToroBoss_Extra_SpriteSheet_7: -4317858442241370850
+      ToroBoss_Extra_SpriteSheet_8: 1241920695694867966
+      ToroBoss_Extra_SpriteSheet_9: -2835804819983495227
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
