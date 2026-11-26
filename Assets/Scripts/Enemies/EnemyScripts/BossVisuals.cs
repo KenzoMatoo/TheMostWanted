@@ -551,7 +551,7 @@ public class BossVisuals : MonoBehaviour
     private static Material Silhouette()
     {
         if (silhouette != null) return silhouette;
-        Shader shader = Shader.Find("GUI/Text Shader");
+        Shader shader = Shader.Find("Custom/SpriteSilhouette");
         if (shader == null) shader = Shader.Find("Sprites/Default");
         return silhouette = new Material(shader) { name = "BossSilhouette" };
     }

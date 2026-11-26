@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f131044713a7234f8c55434d36ff210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SniperBullet
-  logHits: 1
+  logHits: 0
 --- !u!61 &1708126310251518002
 BoxCollider2D:
   m_ObjectHideFlags: 0

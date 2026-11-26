@@ -209,7 +209,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isDead: 0
-  logBehaviorDetails: 1
+  logBehaviorDetails: 0
   patrolSpeed: 2
   patrolWaitTime: 2
   waypointReachDistance: 0.2
@@ -225,7 +225,7 @@ MonoBehaviour:
   requireLineOfSight: 1
   visionCheckInterval: 0.2
   visionOrigin: {fileID: 8193573607734849826}
-  debugLineOfSight: 1
+  debugLineOfSight: 0
   loseLineOfSightDelay: 0.5
   attackRange: 9
   attackCooldown: 1.5

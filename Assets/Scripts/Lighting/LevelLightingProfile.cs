@@ -33,7 +33,7 @@ public class LevelLightingProfile : ScriptableObject
         [Header("Faroles de pared (se colocan solos en cada cuarto)")]
         public bool wallLanterns = true;
         [Tooltip("Faroles por cada cuarto de 33x33")]
-        [Range(0, 6)] public int lanternsPerRoom = 3;
+        [Range(0, 6)] public int lanternsPerRoom = 2;
         [Range(0f, 3f)] public float lanternIntensity = 1.1f;
         public float lanternRadius = 7.5f;
 

@@ -181,6 +181,13 @@ public class LevelLighting : MonoBehaviour
         BuildHazardLights();
         if (mood.lightShafts) BuildLightShafts();
         CreateDust();
+
+        // Every light of the level gets culled by distance (only the ones near the camera stay on)
+        cullable.Clear();
+        foreach (var l in worldLights.GetComponentsInChildren<Light2D>(true)) cullable.Add(l);
+        foreach (var lamp in FindObjectsByType<GrappleLamp>(FindObjectsSortMode.None))
+            foreach (var l in lamp.GetComponentsInChildren<Light2D>(true)) cullable.Add(l);
+        if (cullRoutine == null) cullRoutine = StartCoroutine(CullLights());
     }
 
     // Lanterns hung on the side walls of every room, at eye height, away from platforms, spikes and other lights
@@ -330,7 +337,7 @@ public class LevelLighting : MonoBehaviour
                         float len = Vector3.Distance(a, c) + 1f;
                         MakePointLight(worldLights, (a + c) * 0.5f, mood.hazardLight, mood.hazardIntensity, Mathf.Clamp(len * 0.6f + 1f, 2f, 8f), "Brillo pinchos");
                         runStart = int.MinValue;
-                        if (++count > 60) return;
+                        if (++count > 30) return;
                     }
                 }
             }
@@ -368,7 +375,7 @@ public class LevelLighting : MonoBehaviour
                         RaycastHit2D hit = Physics2D.Raycast(mid + Vector2.down * 1.5f, new Vector2(slant / 14f, -1f).normalized, 16f, LayerMask.GetMask("Ground"));
                         float length = hit.collider != null ? Mathf.Max(6f, hit.distance + 2.5f) : 14f;
                         MakeShaft(left, right, length, slant * length / 14f);
-                        if (++count > 25) return;
+                        if (++count > 14) return;
                     }
                     runStart = int.MinValue;
                 }
@@ -532,6 +539,40 @@ public class LevelLighting : MonoBehaviour
     }
 
     // ---------------------------------------------------------------- Per frame
+
+    // ---------------------------------------------------------------- Light culling (performance)
+
+    private readonly List<Light2D> cullable = new List<Light2D>();
+    private Coroutine cullRoutine;
+
+    private IEnumerator CullLights()
+    {
+        var wait = new WaitForSecondsRealtime(0.25f);
+        while (true)
+        {
+            if (cam == null) cam = Camera.main;
+            if (cam != null)
+            {
+                Vector2 c = cam.transform.position;
+                float halfH = cam.orthographic ? cam.orthographicSize : 10f;
+                float view = Mathf.Sqrt(halfH * halfH + halfH * cam.aspect * halfH * cam.aspect) + 2f;   // half diagonal + margin
+                for (int i = cullable.Count - 1; i >= 0; i--)
+                {
+                    var l = cullable[i];
+                    if (l == null) { cullable.RemoveAt(i); continue; }
+                    float reach = l.lightType == Light2D.LightType.Point ? l.pointLightOuterRadius : 16f;
+                    bool on = Vector2.Distance(c, l.transform.position) < view + reach;
+                    if (l.enabled != on)
+                    {
+                        l.enabled = on;
+                        var f = l.GetComponent<LightFlicker>();
+                        if (f != null) f.enabled = on;
+                    }
+                }
+            }
+            yield return wait;
+        }
+    }
 
     private void Update()
     {

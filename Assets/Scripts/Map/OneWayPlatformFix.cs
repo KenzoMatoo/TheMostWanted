@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 //    plataforma se paraba sobre la linea de abajo del contorno y no podia salir. Aqui se pasan a POLIGONOS
 //    solidos (lo correcto para one-way), al cargar la escena y cada vez que se genera un mapa.
 // 2. Red de seguridad en el jugador: si se queda metido dentro de una plataforma sin moverse, sube encima.
+// 3. Las paredes de los cuartos ("Walls") no tenian CompositeCollider2D: cada tile era un collider aparte y en las
+//    uniones jugador y enemigos se enganchaban. Aqui se les agrega uno (contorno continuo, sin uniones).
 public class OneWayPlatformFix : MonoBehaviour
 {
     [Tooltip("Segundos metido en una plataforma sin moverse antes de subirlo encima")]
@@ -30,15 +32,48 @@ public class OneWayPlatformFix : MonoBehaviour
 
     private static void Setup()
     {
-        FixAllPlatforms();
+        FixAll();
         foreach (var gen in FindObjectsByType<MapGenerationBase>(FindObjectsSortMode.None))
         {
-            gen.MapGenerated -= FixAllPlatforms;
-            gen.MapGenerated += FixAllPlatforms;
+            gen.MapGenerated -= FixAll;
+            gen.MapGenerated += FixAll;
         }
 
         var player = FindAnyObjectByType<PlayerController>();
         if (player != null && player.GetComponent<OneWayPlatformFix>() == null) player.gameObject.AddComponent<OneWayPlatformFix>();
+    }
+
+    private static void FixAll()
+    {
+        FixAllPlatforms();
+        FixWallColliders();
+    }
+
+    // Solid tilemaps without a composite get one: a single smooth outline instead of one box per tile
+    public static void FixWallColliders()
+    {
+        int fixedCount = 0;
+        foreach (var tc in FindObjectsByType<UnityEngine.Tilemaps.TilemapCollider2D>(FindObjectsSortMode.None))
+        {
+            if (tc.isTrigger || tc.usedByEffector || !tc.enabled) continue;
+            if (tc.GetComponent<CompositeCollider2D>() != null) continue;
+            var go = tc.gameObject;
+            var body = go.GetComponent<Rigidbody2D>();
+            if (body == null)
+            {
+                body = go.AddComponent<Rigidbody2D>();
+                body.bodyType = RigidbodyType2D.Static;
+            }
+            else if (body.bodyType != RigidbodyType2D.Static) continue;   // a moving tilemap: leave it as it is
+            var composite = go.AddComponent<CompositeCollider2D>();
+            composite.geometryType = CompositeCollider2D.GeometryType.Outlines;
+            composite.generationType = CompositeCollider2D.GenerationType.Synchronous;
+            composite.sharedMaterial = tc.sharedMaterial;
+            tc.compositeOperation = Collider2D.CompositeOperation.Merge;
+            composite.GenerateGeometry();
+            fixedCount++;
+        }
+        if (fixedCount > 0) Physics2D.SyncTransforms();
     }
 
     public static void FixAllPlatforms()
@@ -95,8 +130,9 @@ public class OneWayPlatformFix : MonoBehaviour
                 return;
             }
         }
-        // No room above: let it fall through
-        rb.position += Vector2.down * (b.size.y * 0.6f);
+        // No room above: drop below the platform, but only if that space is free (never into a wall)
+        Vector2 down = Vector2.down * (b.size.y * 0.6f);
+        if (OnlyPlatforms((Vector2)b.center + down, b.size * 0.9f)) rb.position += down;
     }
 
     private static bool OnlyPlatforms(Vector2 center, Vector2 size)

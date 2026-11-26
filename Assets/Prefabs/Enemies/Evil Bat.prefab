@@ -212,7 +212,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isDead: 0
-  logBehaviorDetails: 1
+  logBehaviorDetails: 0
   patrolSpeed: 2.5
   patrolWaitTime: 1
   waypointReachDistance: 0.5

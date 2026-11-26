@@ -275,7 +275,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isDead: 0
-  logBehaviorDetails: 1
+  logBehaviorDetails: 0
   patrolSpeed: 2
   patrolWaitTime: 2
   waypointReachDistance: 0.5
@@ -324,7 +324,7 @@ MonoBehaviour:
   obstacleCheckRadius: 0.2
   obstacleCheckDistance: 0.5
   playerAboveDetectionHeight: 5
-  debugJump: 1
+  debugJump: 0
   cactusAnimator: {fileID: 2759727597684398457}
   animCrossFade: 0.05
   walkVelocityThreshold: 0.1

@@ -8911,6 +8911,7 @@ MonoBehaviour:
     whenClosed: {fileID: 0}
   allowMirror: 1
   mirroredQuadrant: 02000000010000000400000003000000
+  advancedMovement: 0
   maxSpawnHeight: 4
 --- !u!1 &5572378450843683028
 GameObject:

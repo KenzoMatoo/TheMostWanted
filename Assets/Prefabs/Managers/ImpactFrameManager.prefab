@@ -55,4 +55,4 @@ MonoBehaviour:
   soundPitch: 1
   pitchVariation: 0.1
   audioSource: {fileID: 0}
-  showDebugLogs: 1
+  showDebugLogs: 0

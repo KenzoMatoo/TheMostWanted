@@ -61,7 +61,7 @@ public class ImpactFrameManager : MonoBehaviour
     private static Material Silhouette()
     {
         if (silhouette != null) return silhouette;
-        Shader s = Shader.Find("GUI/Text Shader");
+        Shader s = Shader.Find("Custom/SpriteSilhouette");
         if (s == null) s = Shader.Find("Universal Render Pipeline/2D/Sprite-Unlit-Default");
         return silhouette = s != null ? new Material(s) { name = "ImpactWhite" } : null;
     }

@@ -59,7 +59,7 @@ public class AbsorbGlow : MonoBehaviour
     private static Material GetMaterial()
     {
         if (silhouette != null) return silhouette;
-        Shader shader = Shader.Find("GUI/Text Shader");
+        Shader shader = Shader.Find("Custom/SpriteSilhouette");
         if (shader == null) shader = Shader.Find("Sprites/Default");
         silhouette = new Material(shader) { name = "AbsorbSilhouette" };
         return silhouette;
